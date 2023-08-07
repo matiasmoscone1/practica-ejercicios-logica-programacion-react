@@ -6,22 +6,22 @@ const Contador = () => {
 
 
     const sumarFunc = () => {
-        contador ++;
+        setContador(contador + 1);
     };
 
     const restarFunc = () => {
-        contador --;
+        setContador(contador - 1);
     }
 
 
     return(
         <>
         <div>
-            <h2>Contador</h2>
+            <h2>Ejercicio 1: Contador</h2>
             <button onClick={sumarFunc}>Agregar</button>
             <button onClick={restarFunc}>Restar</button>
             <br/>
-            <span>Resultado: </span>
+            <span>Resultado: {contador}</span>
         </div>
         </>
     )

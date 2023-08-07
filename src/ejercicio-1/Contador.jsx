@@ -13,13 +13,17 @@ const Contador = () => {
         setContador(contador - 1);
     }
 
+    const resetearFunc = () => {
+        setContador(0);
+    }
 
     return(
         <>
         <div>
             <h2>Ejercicio 1: Contador</h2>
-            <button onClick={sumarFunc}>Agregar</button>
+            <button onClick={sumarFunc}>Sumar</button>
             <button onClick={restarFunc}>Restar</button>
+            <button onClick={resetearFunc}>Resetear</button>
             <br/>
             <span>Resultado: {contador}</span>
         </div>

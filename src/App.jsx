@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Contador from './ejercicio-1/Contador';
+import ContadorClicks from './ejercicio-1/ContadorClicks';
 import ListaElementos from './ejercicio-1/ListaElementos';
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
 
     <Contador />
     <ListaElementos/>
+    <ContadorClicks />
     
     </>
   )

@@ -18,8 +18,8 @@ const ListaElementos = () => {
             {
                 arregloNombres.map((nombre) => {
                     return(
-                    <ul>
-                        <li key={nombre}>{nombre}</li>
+                    <ul key={nombre}>
+                        <li>{nombre}</li>
                     </ul>
                     )
                 })

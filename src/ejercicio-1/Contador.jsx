@@ -1,3 +1,6 @@
+
+//1. Crear un contador usando 3 botones, agregar, restar y resetear
+
 import { useState } from "react";
 
 

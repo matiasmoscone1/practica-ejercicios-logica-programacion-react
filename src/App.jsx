@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Contador from './ejercicio-1/Contador';
+import ListaElementos from './ejercicio-1/ListaElementos';
 
 function App() {
 
@@ -10,7 +11,7 @@ function App() {
     </div>
 
     <Contador />
-
+    <ListaElementos/>
     
     </>
   )

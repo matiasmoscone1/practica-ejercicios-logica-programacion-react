@@ -6,32 +6,24 @@ import { useState } from "react";
 
 const OcultarTexto = () => {
 
-    const [texto, setTexto] = useState(""); 
     const [flag, setFlag] = useState(false);
 
     const toggleTexto = () => {
-        if(!flag){
-            setFlag(true);
-            return(<p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus rem 
-                voluptas perspiciatis quisquam corporis doloremque magnam repudiandae 
-                cupiditate culpa pariatur aliquid tempore sapiente tempora asperiores, 
-                maiores, inventore iusto. Vel, est.
-            </p>);
-        }
-        if(flag){
-            setFlag(false);
-            return(<p></p>);
-        }
-    };
+        setFlag(!flag);
+    }
 
 
     return(
         <>
         <div>
-            
-            <button onClick={toggleTexto()}>Switch</button>
-
+            <h2>Ejercicio 4: Ocultar/Mostrar texto</h2>
+            <button onClick={toggleTexto}>Switch</button>
+            {flag && (<p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus rem 
+                voluptas perspiciatis quisquam corporis doloremque magnam repudiandae 
+                cupiditate culpa pariatur aliquid tempore sapiente tempora asperiores, 
+                maiores, inventore iusto. Vel, est.
+            </p>)}
         </div>
         </>
     )

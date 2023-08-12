@@ -4,10 +4,13 @@
 //mostrarse y ocultarse.
 import { useState } from "react";
 
+//Creando componente
 const OcultarTexto = () => {
 
+    //Creando variable de estado, estilo bandera (booleano)
     const [flag, setFlag] = useState(false);
 
+    //Creando funcion que cambia el estado de la variable creada anteriormente
     const toggleTexto = () => {
         setFlag(!flag);
     }
@@ -18,7 +21,8 @@ const OcultarTexto = () => {
         <div>
             <h2>Ejercicio 4: Ocultar/Mostrar texto</h2>
             <button onClick={toggleTexto}>Switch</button>
-            {flag && (<p>
+            {//si flag es true, imprime el texto
+            flag && (<p>
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus rem 
                 voluptas perspiciatis quisquam corporis doloremque magnam repudiandae 
                 cupiditate culpa pariatur aliquid tempore sapiente tempora asperiores, 

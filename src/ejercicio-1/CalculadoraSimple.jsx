@@ -14,19 +14,19 @@ const CalculadoraSimple = () => {
     //console.log(segundoNum);
 
     const funcSumar = (a, b) => {
-        resultado = a + b;
+        resultado = parseInt(a) + parseInt(b);
         console.log(resultado);
     }
     const funcRestar = (a, b) => {
-        resultado = a - b;
+        resultado = parseInt(a) - parseInt(b);
         console.log(resultado);
     }
     const funcMultiplicar = (a, b) => {
-        resultado = a * b;    
+        resultado = parseInt(a) * parseInt(b);    
         console.log(resultado);
     }
     const funcDividir = (a, b) => {
-        resultado = a / b;
+        resultado = parseInt(a) / parseInt(b);
         console.log(resultado);
     }
 
@@ -35,10 +35,10 @@ const CalculadoraSimple = () => {
     <>
         <div>
             <h2>Ejercicio 5: Calculadora simple</h2>
-            <button onClick={funcSumar(primerNum, segundoNum)}>Sumar</button>
-            <button onClick={funcRestar(primerNum, segundoNum)}>Restar</button>
-            <button onClick={funcMultiplicar(primerNum, segundoNum)}>Multiplicar</button>
-            <button onClick={funcDividir(primerNum, segundoNum)}>Dividir</button><br/>
+            <button onClick={() => {funcSumar(primerNum, segundoNum)}}>Sumar</button>
+            <button onClick={() => {funcRestar(primerNum, segundoNum)}}>Restar</button>
+            <button onClick={() => {funcMultiplicar(primerNum, segundoNum)}}>Multiplicar</button>
+            <button onClick={() => {funcDividir(primerNum, segundoNum)}}>Dividir</button><br/>
             <input type="number" onChange={(e) => {setPrimerNum(e.target.value)}}/>
             <input type="number" onChange={(e) => {setSegundoNum(e.target.value)}}/>
             <p>{}</p>

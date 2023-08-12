@@ -3,6 +3,7 @@ import Contador from './ejercicio-1/Contador';
 import ContadorClicks from './ejercicio-1/ContadorClicks';
 import ListaElementos from './ejercicio-1/ListaElementos';
 import OcultarTexto from './ejercicio-1/OcultarTexto';
+import CalculadoraSimple from './ejercicio-1/CalculadoraSimple';
 
 function App() {
 
@@ -16,7 +17,9 @@ function App() {
     <ListaElementos/>
     <ContadorClicks />
     <OcultarTexto />
-    
+    <CalculadoraSimple />
+
+
     </>
   )
 }

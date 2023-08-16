@@ -10,31 +10,29 @@ const CalculadoraSimple = () => {
     //creando variables de estado
     const [primerNum, setPrimerNum] = useState(0);
     const [segundoNum, setSegundoNum] = useState(0);
-    
-    //creando variable que almacenara el resultado
-    let resultado = 0;
+    const [resultado, setResultado] = useState(0);
 
     //console.log(primerNum);
     //console.log(segundoNum);
 
     //Creando funcion sumar, toma como parametros dos numeros.
     const funcSumar = (a, b) => {
-        resultado = parseInt(a) + parseInt(b);
+        setResultado(parseInt(a) + parseInt(b));
         //console.log(resultado);
     }
     //Creando funcion restar, toma como parametros dos numeros.
     const funcRestar = (a, b) => {
-        resultado = parseInt(a) - parseInt(b);
+        setResultado(parseInt(a) - parseInt(b));
         //console.log(resultado);
     }
     //Creando funcion multiplicar, toma como parametros dos numeros.
     const funcMultiplicar = (a, b) => {
-        resultado = parseInt(a) * parseInt(b);    
+        setResultado(parseInt(a) * parseInt(b));    
         //console.log(resultado);
     }
     //Creando funcion dividir, toma como parametros dos numeros.
     const funcDividir = (a, b) => {
-        resultado = parseInt(a) / parseInt(b);
+        setResultado(parseInt(a) / parseInt(b));
         //console.log(resultado);
     }
 
@@ -53,7 +51,7 @@ const CalculadoraSimple = () => {
             variables de estado */}
             <input type="number" onChange={(e) => {setPrimerNum(e.target.value)}}/>
             <input type="number" onChange={(e) => {setSegundoNum(e.target.value)}}/>
-            <p>{}</p>
+            <p>{`El resultado es: ${resultado}`}</p>
         </div>
     </>)
 

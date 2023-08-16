@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import Contador from './ejercicio-1/Contador';
-import ContadorClicks from './ejercicio-1/ContadorClicks';
-import ListaElementos from './ejercicio-1/ListaElementos';
-import OcultarTexto from './ejercicio-1/OcultarTexto';
-import CalculadoraSimple from './ejercicio-1/CalculadoraSimple';
+import Contador from './ejercicios/Contador';
+import ContadorClicks from './ejercicios/ContadorClicks';
+import ListaElementos from './ejercicios/ListaElementos';
+import OcultarTexto from './ejercicios/OcultarTexto';
+import CalculadoraSimple from './ejercicios/CalculadoraSimple';
 
 function App() {
 

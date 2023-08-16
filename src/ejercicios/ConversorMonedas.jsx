@@ -8,8 +8,8 @@ import { useState } from "react";
 const ConversorMonedas = () => {
 
     
-    const [dolares, setDolares] = useState(0);
-    const [pesos, setPesos] = useState(0);
+    const [dolares, setDolares] = useState("");
+    const [pesos, setPesos] = useState("");
 
 
     const convertirDolares = (dol) => {
@@ -17,23 +17,25 @@ const ConversorMonedas = () => {
     }
 
     const convertirPesos = (pes) => {
-        setDolares(pes / 750)
+        setDolares(pes / 750);
     }
 
-
+   
     return(<>
     <div>
         <h2>6. Conversor de monedas</h2>
         <br/>
         <label>USD </label>
         <input value={dolares} onChange={(e) => {
-            setDolares(e.target.value);
-            convertirDolares(dolares);
+            const nuevosDolares = e.target.value;
+            setDolares(nuevosDolares);
+            convertirDolares(nuevosDolares);
         }}/>
         <label> ARS </label>
         <input value={pesos} onChange={(e) => {
-            setPesos(e.target.value);
-            convertirPesos(pesos);
+            const nuevosPesos = e.target.value;
+            setPesos(nuevosPesos);
+            convertirPesos(nuevosPesos);
         }}/>
     </div>
     </>)

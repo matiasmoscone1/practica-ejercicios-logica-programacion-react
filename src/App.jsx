@@ -5,6 +5,7 @@ import ListaElementos from './ejercicios/ListaElementos';
 import OcultarTexto from './ejercicios/OcultarTexto';
 import CalculadoraSimple from './ejercicios/CalculadoraSimple';
 import ConversorMonedas from './ejercicios/ConversorMonedas';
+import MostrarHora from './ejercicios/MostrarHora';
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
     <OcultarTexto />
     <CalculadoraSimple />
     <ConversorMonedas />
+    <MostrarHora />
 
     </>
   )

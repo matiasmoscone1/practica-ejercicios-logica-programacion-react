@@ -8,16 +8,20 @@ import { useState } from "react";
 
 const MostrarHora = () => {
 
-    const [hora, setHora] = useState("");
-
+    
     let intervalo;
     
     
     const crearIntervalo = () => {
         intervalo = setInterval(() => {
             const fechaHoy = new Date;
+            
+            let hora = fechaHoy.getHours();
+            let minutos = fechaHoy.getMinutes();
+            let segundos = fechaHoy.getSeconds();
+            
             console.log(fechaHoy);
-
+            console.log(hora,minutos,segundos);
 
         }, 1000);
     }

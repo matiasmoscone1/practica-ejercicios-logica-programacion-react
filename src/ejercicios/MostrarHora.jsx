@@ -10,9 +10,9 @@ const MostrarHora = () => {
 
     
     const [intervalo, setIntervalo] = useState(null);;
-    const [hora, setHora] = useState("");
-    const [minutos, setMinutos] = useState("");
-    const [segundos, setSegundos] = useState("");
+    const [hora, setHora] = useState("horas");
+    const [minutos, setMinutos] = useState("minutos");
+    const [segundos, setSegundos] = useState("segundos");
 
     //let hora, minutos, segundos;
     
@@ -44,9 +44,9 @@ const MostrarHora = () => {
     }
 
     const cerrarIntervalo = () => {
-        setHora("");
-        setMinutos("");
-        setSegundos("");
+        setHora("horas");
+        setMinutos("minutos");
+        setSegundos("segundos");
         clearInterval(intervalo);
     }
 

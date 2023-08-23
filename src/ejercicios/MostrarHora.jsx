@@ -23,12 +23,15 @@ const MostrarHora = () => {
             //let hora = fechaHoy.getHours();
             //let minutos = fechaHoy.getMinutes();
             //let segundos = fechaHoy.getSeconds();
-            let nuevaHora = setHora(fechaHoy.getHours());
-            let nuevoMinuto = setMinutos(fechaHoy.getMinutes());
-            let nuevoSegundo = setSegundos(fechaHoy.getSeconds());
-            
+            const nuevaHora = fechaHoy.getHours();
+            const nuevoMinuto = fechaHoy.getMinutes();
+            const nuevoSegundo = fechaHoy.getSeconds();
+            setHora(nuevaHora);
+            setMinutos(nuevoMinuto);
+            setSegundos(nuevoSegundo);
+
             console.log(fechaHoy);
-            console.log(nuevaHora,nuevoMinuto,nuevoSegundo);
+            console.log(hora,minutos,segundos);
             
 
         }, 1000);
@@ -38,6 +41,9 @@ const MostrarHora = () => {
     }
 
     const cerrarIntervalo = () => {
+        setHora("");
+        setMinutos("");
+        setSegundos("");
         clearInterval(intervalo);
     }
 
@@ -54,7 +60,7 @@ const MostrarHora = () => {
         <h2>7. Mostrar hora en tiempo real</h2>
         <button onClick={() => {crearIntervalo()}}>Mostrar</button>
         <button onClick={() => {cerrarIntervalo()}}>Ocultar</button>        
-        <span> </span>
+        <span>{`${hora}:${minutos}:${segundos}`}</span>
 
     </div>
     </>)

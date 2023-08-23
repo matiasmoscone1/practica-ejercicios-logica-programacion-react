@@ -16,6 +16,10 @@ const MostrarHora = () => {
 
     //let hora, minutos, segundos;
     
+    const formatoDosDigitos = (numero) => {
+        return numero < 10 ? `0${numero}` : numero;
+    }
+
     const crearIntervalo = () => {
         const nuevoIntervalo = setInterval(() => {
             const fechaHoy = new Date;
@@ -26,18 +30,17 @@ const MostrarHora = () => {
             const nuevaHora = fechaHoy.getHours();
             const nuevoMinuto = fechaHoy.getMinutes();
             const nuevoSegundo = fechaHoy.getSeconds();
-            setHora(nuevaHora);
-            setMinutos(nuevoMinuto);
-            setSegundos(nuevoSegundo);
+            setHora(formatoDosDigitos(nuevaHora));
+            setMinutos(formatoDosDigitos(nuevoMinuto));
+            setSegundos(formatoDosDigitos(nuevoSegundo));
+
 
             console.log(fechaHoy);
             console.log(hora,minutos,segundos);
             
-
         }, 1000);
 
         setIntervalo(nuevoIntervalo);
-
     }
 
     const cerrarIntervalo = () => {
@@ -55,6 +58,9 @@ const MostrarHora = () => {
         }
     },[intervalo]);
 
+    
+
+    
     return(<>
     <div>
         <h2>7. Mostrar hora en tiempo real</h2>

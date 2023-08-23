@@ -10,7 +10,7 @@ const MostrarHora = () => {
 
     
     let intervalo;
-    
+    let hora, minutos, segundos;
     
     const crearIntervalo = () => {
         intervalo = setInterval(() => {
@@ -36,7 +36,7 @@ const MostrarHora = () => {
         <h2>7. Mostrar hora en tiempo real</h2>
         <button onClick={() => {crearIntervalo()}}>Mostrar</button>
         <button onClick={() => {cerrarIntervalo()}}>Ocultar</button>
-        <span></span>
+        <span>{`${hora}:${minutos}:${segundos}`}</span>
 
     </div>
     </>)

@@ -38,27 +38,33 @@ const MostrarHora = () => {
             setSegundos(formatoDosDigitos(nuevoSegundo));
 
 
-            console.log(fechaHoy);
-            console.log(hora,minutos,segundos);
+            //console.log(fechaHoy);
+            //console.log(hora,minutos,segundos);
             
         }, 1000);
 
+        //Actualiza la variable intervalo, para despues poder limpiarlo
         setIntervalo(nuevoIntervalo);
     }
 
+    //funcion que detiene el intervalo, vuelve a las variables de estado hora minuto y segundo
+    //a su estado inicial
     const cerrarIntervalo = () => {
         setHora("horas");
         setMinutos("minutos");
         setSegundos("segundos");
+        //detiene el intervalo creado
         clearInterval(intervalo);
     }
 
+    //hook que verifica si existe intervalo, cierra el intervalo.
     useEffect(() => {
         return() => {
             if(intervalo){
                 clearInterval(intervalo);
             }
         }
+        //cada vez que la variable intervalo cambie, se ejecuta este hook
     },[intervalo]);
 
     
@@ -67,8 +73,11 @@ const MostrarHora = () => {
     return(<>
     <div>
         <h2>7. Mostrar hora en tiempo real</h2>
+        {/* cuando se presiona click en cada boton, se le asigna mediante callback su funcion
+        correspondiente*/} 
         <button onClick={() => {crearIntervalo()}}>Mostrar</button>
-        <button onClick={() => {cerrarIntervalo()}}>Ocultar</button>        
+        <button onClick={() => {cerrarIntervalo()}}>Ocultar</button>       
+        {/* muestra en pantalla la hora exacta */} 
         <span>{`${hora}:${minutos}:${segundos}`}</span>
 
     </div>

@@ -15,8 +15,8 @@ const VisualizarImagen = () => {
 
     const ImagenMaximizada = () => {
 
-        return(<div className="imagen-maximizada-ej-8">
-            <img src={url} />
+        return(<div>
+            <img className="imagen-maximizada-ej-8" src={url} />
         </div>)
     }
 

@@ -10,27 +10,35 @@ import { useState } from "react";
 
 const VisualizarImagen = () => {
 
-    const ImagenMaximizada = (url) => {
+    const [url, setUrl] = useState("src\imagenes\img1.jpg");
+
+
+    const ImagenMaximizada = () => {
 
         return(<div className="imagen-maximizada-ej-8">
             <img src="src\imagenes\img1.jpg" />
         </div>)
     }
 
+    const cambioUrl = (cadena) => {
+        setUrl(cadena);
+    }
 
-
+    console.log(url);
 
 
     return(<>
         <div>
             <h2>8. Visualizador de imagenes</h2>
+            <ImagenMaximizada />
+            
             <div className="imagen-container-ej-8">
-                <ImagenMaximizada />
-                <br/>
-                <img className="img-ej-8" src="src\imagenes\img1.jpg"/>
-                <img className="img-ej-8" src="src\imagenes\img2.jpg"/>
-                <img className="img-ej-8" src="src\imagenes\img3.jpg"/>
-                <img className="img-ej-8" src="src\imagenes\img4.jpg"/>
+                
+               
+                <img className="img-ej-8" src="src\imagenes\img1.jpg" onClick={() => {cambioUrl("src\imagenes\img1.jpg")}}/>
+                <img className="img-ej-8" src="src\imagenes\img2.jpg" onClick={() => {cambioUrl("src\imagenes\img2.jpg")}}/>
+                <img className="img-ej-8" src="src\imagenes\img3.jpg" onClick={() => {cambioUrl("src\imagenes\img3.jpg")}}/>
+                <img className="img-ej-8" src="src\imagenes\img4.jpg" onClick={() => {cambioUrl("src\imagenes\img4.jpg")}}/>
             </div>
             
         </div>   

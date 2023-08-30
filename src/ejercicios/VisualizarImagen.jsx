@@ -28,19 +28,16 @@ const VisualizarImagen = () => {
 
 
     return(<>
-        <div>
-            <h2>8. Visualizador de imagenes</h2>
-            <ImagenMaximizada />
-            
+        <h2>8. Visualizador de imagenes</h2>
+        
+        <div className="contenedor-ej-8">
+             <ImagenMaximizada />    
             <div className="imagen-container-ej-8">
-                
-               
                 <img className="img-ej-8" src="src\imagenes\img1.jpg" onClick={() => {cambioUrl("src/imagenes/img1.jpg")}}/>
                 <img className="img-ej-8" src="src\imagenes\img2.jpg" onClick={() => {cambioUrl("src/imagenes/img2.jpg")}}/>
                 <img className="img-ej-8" src="src\imagenes\img3.jpg" onClick={() => {cambioUrl("src/imagenes/img3.jpg")}}/>
                 <img className="img-ej-8" src="src\imagenes\img4.jpg" onClick={() => {cambioUrl("src/imagenes/img4.jpg")}}/>
             </div>
-            
         </div>   
     </>)
 

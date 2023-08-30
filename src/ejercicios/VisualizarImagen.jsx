@@ -10,9 +10,12 @@ import { useState } from "react";
 
 const VisualizarImagen = () => {
    
+    //creando variable de estado url, que almacenara temporalmente la ruta de la imagen
     const [url, setUrl] = useState("src/imagenes/img1.jpg");
 
 
+    //creando componente interno, donde retorna la imagen con la ruta de la variable de estado
+    //url
     const ImagenMaximizada = () => {
 
         return(<div>
@@ -20,6 +23,8 @@ const VisualizarImagen = () => {
         </div>)
     }
 
+    //funcion que recibe por parametro la ruta nueva al hacer click a alguna imagen y modifica
+    //el valor que tenia la variable de estado url, por la nueva ruta
     const cambioUrl = (cadena) => {
         setUrl(cadena);
     }
@@ -31,7 +36,11 @@ const VisualizarImagen = () => {
         <h2>8. Visualizador de imagenes</h2>
         
         <div className="contenedor-ej-8">
+            {/* Renderiza el componente interno */}
              <ImagenMaximizada />    
+            {/* Renderiza las imagenes y se le agrega un evento que al hacerle click, 
+            llama a la funcion cambioUrl y le pasa por parametro la ruta especifica de
+            cada imagen */}
             <div className="imagen-container-ej-8">
                 <img className="img-ej-8" src="src\imagenes\img1.jpg" onClick={() => {cambioUrl("src/imagenes/img1.jpg")}}/>
                 <img className="img-ej-8" src="src\imagenes\img2.jpg" onClick={() => {cambioUrl("src/imagenes/img2.jpg")}}/>

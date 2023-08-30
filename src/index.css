@@ -13,6 +13,11 @@
     height: 50px;
 }
 
+.img-ej-8:hover{
+    cursor: pointer;
+}
 
-
-
+.imagen-maximizada-ej-8{
+    width: 200px;
+    height: 200px;
+}

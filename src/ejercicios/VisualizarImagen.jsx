@@ -10,12 +10,23 @@ import { useState } from "react";
 
 const VisualizarImagen = () => {
 
+    const ImagenMaximizada = (url) => {
+
+        return(<div className="imagen-maximizada-ej-8">
+            <img src="src\imagenes\img1.jpg" />
+        </div>)
+    }
+
+
+
 
 
     return(<>
         <div>
             <h2>8. Visualizador de imagenes</h2>
             <div className="imagen-container-ej-8">
+                <ImagenMaximizada />
+                <br/>
                 <img className="img-ej-8" src="src\imagenes\img1.jpg"/>
                 <img className="img-ej-8" src="src\imagenes\img2.jpg"/>
                 <img className="img-ej-8" src="src\imagenes\img3.jpg"/>

@@ -6,6 +6,7 @@ import OcultarTexto from './ejercicios/OcultarTexto';
 import CalculadoraSimple from './ejercicios/CalculadoraSimple';
 import ConversorMonedas from './ejercicios/ConversorMonedas';
 import MostrarHora from './ejercicios/MostrarHora';
+import VisualizarImagen from './ejercicios/VisualizarImagen';
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
     <CalculadoraSimple />
     <ConversorMonedas />
     <MostrarHora />
+    <VisualizarImagen />
 
     </>
   )

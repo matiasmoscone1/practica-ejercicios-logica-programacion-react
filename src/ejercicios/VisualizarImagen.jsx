@@ -15,9 +15,11 @@ const VisualizarImagen = () => {
     return(<>
         <div>
             <h2>8. Visualizador de imagenes</h2>
-            <div>
-            <img src="imagenes/img1.jpg"/>
-
+            <div className="imagen-container-ej-8">
+                <img className="img-ej-8" src="src\imagenes\img1.jpg"/>
+                <img className="img-ej-8" src="src\imagenes\img2.jpg"/>
+                <img className="img-ej-8" src="src\imagenes\img3.jpg"/>
+                <img className="img-ej-8" src="src\imagenes\img4.jpg"/>
             </div>
             
         </div>   

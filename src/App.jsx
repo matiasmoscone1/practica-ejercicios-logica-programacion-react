@@ -7,6 +7,7 @@ import CalculadoraSimple from './ejercicios/CalculadoraSimple';
 import ConversorMonedas from './ejercicios/ConversorMonedas';
 import MostrarHora from './ejercicios/MostrarHora';
 import VisualizarImagen from './ejercicios/VisualizarImagen';
+import Temporizador from './ejercicios/Temporizador';
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
     <ConversorMonedas />
     <MostrarHora />
     <VisualizarImagen />
+    <Temporizador />
 
     </>
   )

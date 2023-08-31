@@ -13,16 +13,15 @@ const Temporizador = () => {
 
     const actualizarIntervalo = (valor) => {
         
-        let hora = valor / 3600;
+        let hora = Math.floor(valor / 3600);
 
-        let parteDecimalHoras = hora - Math.floor(hora);
+        let minutos = Math.floor((valor % 3600) / 60);
+
+        let segundos = valor % 60;
 
 
-        let minutos = valor + parteDecimalHoras / 60;
-
-
-        console.log(Math.floor(hora));
-        console.log(minutos);
+        console.log(`${hora}:${minutos}:${segundos}`);
+        
 
 
         setIntervalo(setInterval(() => {

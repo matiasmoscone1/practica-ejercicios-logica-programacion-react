@@ -11,22 +11,31 @@ const Temporizador = () => {
     const [tiempo, setTiempo] = useState(null);
     const [intervalo, setIntervalo] = useState(null);
 
+
+    const modificarFormato = (num) => {
+
+        if(num < 10){
+            return(`0${num}`);
+        }else{
+            return(num);
+        }
+    }
+
+
     const actualizarIntervalo = (valor) => {
-        
-        let hora = Math.floor(valor / 3600);
-
-        let minutos = Math.floor((valor % 3600) / 60);
-
-        let segundos = valor % 60;
-
-
-        console.log(`${hora}:${minutos}:${segundos}`);
-        
-
 
         setIntervalo(setInterval(() => {
             valor = valor - 1;
-            console.log(valor);
+
+            let hora = Math.floor(valor / 3600);
+            let minutos = Math.floor((valor % 3600) / 60);
+            let segundos = valor % 60;
+
+
+
+            console.log(`${modificarFormato(hora)}:${modificarFormato(minutos)}:${modificarFormato(segundos)}`);
+
+            //console.log(valor);
         }, 1000));
 
     }

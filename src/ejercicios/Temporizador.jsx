@@ -9,15 +9,19 @@ import { useState } from "react";
 const Temporizador = () => {
 
     const [tiempo, setTiempo] = useState(null);
-
+    const [intervalo, setIntervalo] = useState(null);
 
     const actualizarIntervalo = (valor) => {
-        let segundos;
-        setInterval(() => {
-            segundos = valor - 1;
-            console.log(segundos);
-        }, 1000);
+        
+        setIntervalo(setInterval(() => {
+            valor = valor - 1;
+            console.log(valor);
+        }, 1000));
 
+    }
+
+    const frenarIntervalo = () => {
+        clearInterval(intervalo);
     }
 
     return(<>
@@ -27,7 +31,7 @@ const Temporizador = () => {
         <br/>
         <input placeholder="Escribe los segundos" onChange={(e) => setTiempo(e.target.value)}/>
         <button onClick={() => {actualizarIntervalo(tiempo)}}>Empezar</button>
-        <button>Ocultar</button>
+        <button onClick={() => {frenarIntervalo(intervalo)}}>Ocultar</button>
 
 
     </div>

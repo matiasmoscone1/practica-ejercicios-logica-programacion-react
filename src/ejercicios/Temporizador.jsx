@@ -11,10 +11,10 @@ const Temporizador = () => {
 
     const [tiempo, setTiempo] = useState(null);
     const [intervalo, setIntervalo] = useState(null);
-    const [hora, setHora] = useState(0);
-    const [minutos, setMinutos] = useState(0);
-    const [segundos, setSegundos] = useState(0);
-
+    const [hora, setHora] = useState("");
+    const [minutos, setMinutos] = useState("");
+    const [segundos, setSegundos] = useState("");
+    const [flag, setFlag] = useState(true);
 
     const modificarFormato = (num) => {
 
@@ -28,15 +28,18 @@ const Temporizador = () => {
     useEffect(() => {
         if(hora === 0 && minutos === 0 && segundos === 0){
             clearInterval(intervalo);
-            console.log("Cuenta regresiva finalizada");
+            setFlag(false);
+            //console.log("Cuenta regresiva finalizada");
         }
 
-    }, hora, minutos, segundos, intervalo);
+    }, [hora, minutos, segundos, intervalo]);
 
     const actualizarIntervalo = (valor) => {
 
         setIntervalo(setInterval(() => {
             valor = valor - 1;
+
+            setFlag(true);
 
             let nuevaHora = Math.floor(valor / 3600);
             let nuevosMinutos = Math.floor((valor % 3600) / 60);
@@ -57,6 +60,12 @@ const Temporizador = () => {
         clearInterval(intervalo);
     }
 
+    const funcionRetornadora = () => {
+        if(!flag){
+            return(<div>Cuenta regresiva ha finalizado!!!</div>);
+        }
+    }
+
     return(<>
     <div>
         <h2>9. Temporizador regresivo</h2>
@@ -66,6 +75,7 @@ const Temporizador = () => {
         <button onClick={() => {actualizarIntervalo(tiempo)}}>Empezar</button>
         <button onClick={() => {frenarIntervalo(intervalo)}}>Ocultar</button>
         <div>{`${modificarFormato(hora)}:${modificarFormato(minutos)}:${modificarFormato(segundos)}`}</div>
+        {funcionRetornadora()}
 
     </div>
     </>)

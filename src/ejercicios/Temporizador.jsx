@@ -10,6 +10,9 @@ const Temporizador = () => {
 
     const [tiempo, setTiempo] = useState(null);
     const [intervalo, setIntervalo] = useState(null);
+    const [hora, setHora] = useState("");
+    const [minutos, setMinutos] = useState("");
+    const [segundos, setSegundos] = useState("");
 
 
     const modificarFormato = (num) => {
@@ -21,20 +24,20 @@ const Temporizador = () => {
         }
     }
 
-
     const actualizarIntervalo = (valor) => {
 
         setIntervalo(setInterval(() => {
             valor = valor - 1;
 
-            let hora = Math.floor(valor / 3600);
-            let minutos = Math.floor((valor % 3600) / 60);
-            let segundos = valor % 60;
+            let nuevaHora = Math.floor(valor / 3600);
+            let nuevosMinutos = Math.floor((valor % 3600) / 60);
+            let nuevosSegundos = valor % 60;
 
-
-
-            console.log(`${modificarFormato(hora)}:${modificarFormato(minutos)}:${modificarFormato(segundos)}`);
-
+            setHora(nuevaHora);
+            setMinutos(nuevosMinutos);
+            setSegundos(nuevosSegundos);
+            //console.log(`${modificarFormato(hora)}:${modificarFormato(minutos)}:${modificarFormato(segundos)}`);
+            
             //console.log(valor);
         }, 1000));
 
@@ -52,7 +55,7 @@ const Temporizador = () => {
         <input placeholder="Escribe los segundos" onChange={(e) => setTiempo(e.target.value)}/>
         <button onClick={() => {actualizarIntervalo(tiempo)}}>Empezar</button>
         <button onClick={() => {frenarIntervalo(intervalo)}}>Ocultar</button>
-
+        <div>{`${modificarFormato(hora)}:${modificarFormato(minutos)}:${modificarFormato(segundos)}`}</div>
 
     </div>
     </>)

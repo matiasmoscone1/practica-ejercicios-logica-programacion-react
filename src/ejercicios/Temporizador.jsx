@@ -2,6 +2,7 @@
 //9. Temporizador: Crea un componente de React que muestre un temporizador que 
 //pueda ser configurado para contar hacia abajo desde un valor dado.
 
+import { useEffect } from "react";
 import { useState } from "react";
 
 
@@ -10,9 +11,9 @@ const Temporizador = () => {
 
     const [tiempo, setTiempo] = useState(null);
     const [intervalo, setIntervalo] = useState(null);
-    const [hora, setHora] = useState("");
-    const [minutos, setMinutos] = useState("");
-    const [segundos, setSegundos] = useState("");
+    const [hora, setHora] = useState(0);
+    const [minutos, setMinutos] = useState(0);
+    const [segundos, setSegundos] = useState(0);
 
 
     const modificarFormato = (num) => {
@@ -23,6 +24,14 @@ const Temporizador = () => {
             return(num);
         }
     }
+
+    useEffect(() => {
+        if(hora === 0 && minutos === 0 && segundos === 0){
+            clearInterval(intervalo);
+            console.log("Cuenta regresiva finalizada");
+        }
+
+    }, hora, minutos, segundos, intervalo);
 
     const actualizarIntervalo = (valor) => {
 
@@ -36,6 +45,7 @@ const Temporizador = () => {
             setHora(nuevaHora);
             setMinutos(nuevosMinutos);
             setSegundos(nuevosSegundos);
+
             //console.log(`${modificarFormato(hora)}:${modificarFormato(minutos)}:${modificarFormato(segundos)}`);
             
             //console.log(valor);

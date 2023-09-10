@@ -6,9 +6,10 @@ import { useEffect } from "react";
 import { useState } from "react";
 
 
-
+//creando componente
 const Temporizador = () => {
 
+    //creando estados del componente
     const [tiempo, setTiempo] = useState(null);
     const [intervalo, setIntervalo] = useState(null);
     const [hora, setHora] = useState("");
@@ -16,14 +17,16 @@ const Temporizador = () => {
     const [segundos, setSegundos] = useState("");
     const [flag, setFlag] = useState(true);
 
+    //funcion que modifica el formato del numero, recibe un numero por parametro
+    //si es meneor a 10, se le agrega un 0 adelante, si no, devuelve el numero
     const modificarFormato = (num) => {
-
         if(num < 10){
             return(`0${num}`);
         }else{
             return(num);
         }
     }
+
 
     useEffect(() => {
         if(hora === 0 && minutos === 0 && segundos === 0){

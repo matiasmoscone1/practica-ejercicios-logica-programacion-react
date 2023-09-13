@@ -28,8 +28,8 @@ const ListaDinamica = () => {
     }];
 
 
-    const eliminarJugador = () => {
-
+    const eliminarJugador = (apellido) => {
+        
     }
 
 
@@ -38,8 +38,8 @@ const ListaDinamica = () => {
         <h2>10. Lista dinamica de elementos</h2>
 
         <div>{arrayJugadores.map((jugador) => {
-            return(<li>{`Nombre: ${jugador.nombre}  Apellido: ${jugador.apellido} 
-            Edad: ${jugador.edad} `}<button onClick={eliminarJugador}>Eliminar</button></li>);
+            return(<li key={jugador.apellido}>{`Nombre: ${jugador.nombre}  Apellido: ${jugador.apellido} 
+            Edad: ${jugador.edad} `}<button onClick={eliminarJugador(jugador.apellido)}>Eliminar</button></li>);
         })}</div>
 
 

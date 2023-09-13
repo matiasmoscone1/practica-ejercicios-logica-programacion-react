@@ -8,6 +8,7 @@ import ConversorMonedas from './ejercicios/ConversorMonedas';
 import MostrarHora from './ejercicios/MostrarHora';
 import VisualizarImagen from './ejercicios/VisualizarImagen';
 import Temporizador from './ejercicios/Temporizador';
+import ListaDinamica from './ejercicios/ListaDinamica';
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
     <MostrarHora />
     <VisualizarImagen />
     <Temporizador />
+    <ListaDinamica />
 
     </>
   )

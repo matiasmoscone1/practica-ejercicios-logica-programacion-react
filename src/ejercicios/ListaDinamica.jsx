@@ -1,3 +1,4 @@
+import { useState } from "react";
 
 
 //10. Lista de Elementos Dinámica: Crea un componente que reciba una matriz de elementos 
@@ -6,7 +7,7 @@
 
 const ListaDinamica = () => {
 
-    const arrayJugadores = [{
+    const jugadores = [{
         nombre: "Matias",
         apellido: "Moscone",
         edad: 27
@@ -27,9 +28,12 @@ const ListaDinamica = () => {
         edad: 31
     }];
 
+    const [arrayJugadores, setArrayJugadores] = useState(jugadores);
+
 
     const eliminarJugador = (apellido) => {
-        
+        setArrayJugadores(arrayJugadores.filter((jug) => jug.apellido !== apellido));
+        console.log(arrayJugadores);
     }
 
 
@@ -39,7 +43,7 @@ const ListaDinamica = () => {
 
         <div>{arrayJugadores.map((jugador) => {
             return(<li key={jugador.apellido}>{`Nombre: ${jugador.nombre}  Apellido: ${jugador.apellido} 
-            Edad: ${jugador.edad} `}<button onClick={eliminarJugador(jugador.apellido)}>Eliminar</button></li>);
+            Edad: ${jugador.edad} `}<button onClick={() => eliminarJugador(jugador.apellido)}>Eliminar</button></li>);
         })}</div>
 
 

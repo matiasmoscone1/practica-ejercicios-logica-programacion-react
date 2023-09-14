@@ -1,4 +1,4 @@
-
+import { useState } from "react";
 //11. Filtro de Lista de Tareas: Crea una lista de tareas con un filtro que permita 
 //a los usuarios mostrar solo tareas completadas, incompletas o todas.
 
@@ -48,9 +48,17 @@ const FiltroDeTareas = () => {
         id: 9,
         actividad: "Tarea 9",
         check: false
-    }
-    ];
+    }];
 
+    const [nuevasTareas, setNuevasTareas] = useState(tareas);
+
+    const filtrarCompletas = () => {
+        setNuevasTareas(nuevasTareas.filter((tarea) => {
+            if(tarea.check === true){            
+                return(<li>{`${tarea.id} - ${tarea.actividad}`}</li>)
+            }
+        }));
+    }
 
 
 
@@ -59,9 +67,9 @@ const FiltroDeTareas = () => {
     <div>
         <h2>11. Filtro lista de tareas</h2>
         <button>Todas</button>{" "}
-        <button>Completadas</button>{" "}
+        <button onClick={() => filtrarCompletas}>Completadas</button>{" "}
         <button>Incompletas</button><br/><br/>
-        <div>{tareas.map((tar) => {
+        <div>{nuevasTareas.map((tar) => {
             return(<li key={tar.id}>{`${tar.id} - ${tar.actividad}`}</li>);
         })}</div>
 

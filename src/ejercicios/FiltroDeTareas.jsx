@@ -56,6 +56,9 @@ const FiltroDeTareas = () => {
         setNuevasTareas(nuevasTareas.filter((tarea) => tarea.check === true));
     }
 
+    const filtrarIncompletas = () => {
+        setNuevasTareas(nuevasTareas.filter((tarea) => tarea.check !== false));
+    }
 
 
 
@@ -64,7 +67,7 @@ const FiltroDeTareas = () => {
         <h2>11. Filtro lista de tareas</h2>
         <button>Todas</button>{" "}
         <button onClick={() => filtrarCompletas()}>Completadas</button>{" "}
-        <button>Incompletas</button><br/><br/>
+        <button onClick={() => filtrarIncompletas()}>Incompletas</button><br/><br/>
         <div>{nuevasTareas.map((tar) => {
             return(<li key={tar.id}>{`${tar.id} - ${tar.actividad}`}</li>);
         })}</div>

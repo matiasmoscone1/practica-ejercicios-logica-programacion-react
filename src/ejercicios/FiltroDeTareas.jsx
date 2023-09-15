@@ -6,47 +6,47 @@ const FiltroDeTareas = () => {
 
     const tareas = [{
         id: 1,
-        actividad: "Tarea 1",
+        actividad: "Tarea 1 - Completa",
         check: true
     },
     {
         id: 2,
-        actividad: "Tarea 2",
+        actividad: "Tarea 2 - Completa",
         check: true
     },
     {
         id: 3,
-        actividad: "Tarea 3",
+        actividad: "Tarea 3 - Incompleta",
         check: false
     },
     {
         id: 4,
-        actividad: "Tarea 4",
+        actividad: "Tarea 4 - Completa",
         check: true
     },
     {
         id: 5,
-        actividad: "Tarea 5",
+        actividad: "Tarea 5 - Incompleta",
         check: false
     },
     {
         id: 6,
-        actividad: "Tarea 6",
+        actividad: "Tarea 6 - Incompleta",
         check: false
     },
     {
         id: 7,
-        actividad: "Tarea 7",
+        actividad: "Tarea 7 - Completa",
         check: true
     },
     {
         id: 8,
-        actividad: "Tarea 8",
+        actividad: "Tarea 8 - Completa",
         check: true
     },
     {
         id: 9,
-        actividad: "Tarea 9",
+        actividad: "Tarea 9 - Incompleta",
         check: false
     }];
 

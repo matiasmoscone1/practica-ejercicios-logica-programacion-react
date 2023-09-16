@@ -13,7 +13,7 @@ const ValidarFormulario = () => {
     const [email, setEmail] = useState("");
 
     const validaUsuario = /^[a-zA-Z0-9]{8,15}$/;
-    const validaContra = /^[a-zA-Z0-9\s!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]*{8,15}$/
+    const validaContra = /^[a-zA-Z0-9\s!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]{8,15}$/
     //const validaEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
 
 
@@ -23,13 +23,14 @@ const ValidarFormulario = () => {
     }
 
     const checkContra = (con) => {
-        validaContra.test(usu) ? console.log("Contraseña validado con exito!!!")
-        : console.log("Contraseña no validado... (debe contener letras, numeros o simbolos y un ragno entre 8 y 15 caracteres");   
+        validaContra.test(con) ? console.log("Contraseña validada con exito!!!")
+        : console.log("Contraseña no validada... (debe contener letras, numeros o simbolos y un ragno entre 8 y 15 caracteres");   
     }
 
     const validarCompleto = (e) => {
         e.preventDefault();
-        checkUsuario(usuario);    
+        checkUsuario(usuario); 
+        checkContra(contrasena);   
     }
 
     return(<>

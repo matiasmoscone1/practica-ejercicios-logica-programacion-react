@@ -64,12 +64,15 @@ const FiltroDeTareas = () => {
         setNuevasTareas(nuevasTareas.filter((tarea) => tarea.check === false));
     }
 
+    const filtrarTodas = () => {
+        setNuevasTareas(viejasTareas.map((tarea) => tarea));
+    }
 
 
     return(<>
     <div>
         <h2>11. Filtro lista de tareas</h2>
-        <button>Todas</button>{" "}
+        <button onClick={() => filtrarTodas()}>Todas</button>{" "}
         <button onClick={() => filtrarCompletas()}>Completadas</button>{" "}
         <button onClick={() => filtrarIncompletas()}>Incompletas</button><br/><br/>
         <div>{nuevasTareas.map((tar) => {

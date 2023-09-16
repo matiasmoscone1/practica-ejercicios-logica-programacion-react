@@ -10,6 +10,7 @@ import VisualizarImagen from './ejercicios/VisualizarImagen';
 import Temporizador from './ejercicios/Temporizador';
 import ListaDinamica from './ejercicios/ListaDinamica';
 import FiltroDeTareas from './ejercicios/FiltroDeTareas';
+import ValidarFormulario from './ejercicios/ValidarFormulario';
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
     <Temporizador />
     <ListaDinamica />
     <FiltroDeTareas />
+    <ValidarFormulario />
 
     </>
   )

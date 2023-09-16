@@ -51,22 +51,21 @@ const FiltroDeTareas = () => {
     }];
 
     const [nuevasTareas, setNuevasTareas] = useState(tareas);
-    const [viejasTareas, setViejasTareas] = useState(tareas);
-    const [flag, setFlag] = useState(false);
-
+  
     const filtrarCompletas = () => {
-        setFlag(true);
-        setNuevasTareas(nuevasTareas.filter((tarea) => tarea.check === true));
+        
+        setNuevasTareas(tareas.filter((tarea) => tarea.check === true));
     }
 
     const filtrarIncompletas = () => {
-        setFlag(true);
-        setNuevasTareas(nuevasTareas.filter((tarea) => tarea.check === false));
+        
+        setNuevasTareas(tareas.filter((tarea) => tarea.check === false));
     }
 
     const filtrarTodas = () => {
-        setNuevasTareas(viejasTareas.map((tarea) => tarea));
+        setNuevasTareas(tareas.map((tarea) => tarea));
     }
+
 
 
     return(<>

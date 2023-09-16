@@ -1,3 +1,4 @@
+import e from "cors";
 import { useState } from "react";
 
 //12. Validación de Formulario: Crea un formulario de registro que incluya campos para 
@@ -11,23 +12,37 @@ const ValidarFormulario = () => {
     const [contrasena, setContrasena] = useState("");
     const [email, setEmail] = useState("");
 
-    const validaUsuario = /^a-zA-Z0-9{8,15}$/;
-    const validaContra = /^[a-zA-Z0-9\s!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]*{8,15}$/
-    const validaEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+    const validaUsuario = /^[a-zA-Z0-9]{8,15}$/;
+    //const validaContra = /^[a-zA-Z0-9\s!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]*{8,15}$/
+    //const validaEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
 
 
+    const checkUsuario = (usu) => {
+        if(validaUsuario.test(usu)){        
+            console.log("Usuario validado con exito!");
+        }else{
+            console.log("Usuario no validado!");
+        }        
+        console.log(usu);
+    }
+
+
+    const validarCompleto = (e) => {
+        e.preventDefault();
+        checkUsuario(usuario);    
+    }
 
     return(<>
     <div>
         <h2>12. Validar formulario </h2>
         <form>
             <label>Usuario </label>
-            <input /><br/><br/>
+            <input onChange={(e) => setUsuario(e.target.value)}/><br/><br/>
             <label>Contraseña </label>
             <input /><br/><br/>
             <label>Email </label>
             <input />{" "}
-            <button>Enviar</button>
+            <button onClick={(e) => validarCompleto(e)}>Enviar</button>
         </form>
     </div>
     </>)

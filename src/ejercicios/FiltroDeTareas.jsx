@@ -2,8 +2,10 @@ import { useState } from "react";
 //11. Filtro de Lista de Tareas: Crea una lista de tareas con un filtro que permita 
 //a los usuarios mostrar solo tareas completadas, incompletas o todas.
 
+//creando componente
 const FiltroDeTareas = () => {
 
+    //creando array de tareas
     const tareas = [{
         id: 1,
         actividad: "Tarea 1 - Completa",
@@ -50,18 +52,20 @@ const FiltroDeTareas = () => {
         check: false
     }];
 
+    //creando el estado de nuevasTareas para que sea renderizado en el DOM
     const [nuevasTareas, setNuevasTareas] = useState(tareas);
   
+    //funcion que filtra la lista de tareas que estan completas
     const filtrarCompletas = () => {
-        
         setNuevasTareas(tareas.filter((tarea) => tarea.check === true));
     }
 
+    //funcion que filtra la lista de tareas que estan incompletas
     const filtrarIncompletas = () => {
-        
         setNuevasTareas(tareas.filter((tarea) => tarea.check === false));
     }
 
+    //funcion que filtra todas las tareas
     const filtrarTodas = () => {
         setNuevasTareas(tareas.map((tarea) => tarea));
     }
@@ -71,9 +75,11 @@ const FiltroDeTareas = () => {
     return(<>
     <div>
         <h2>11. Filtro lista de tareas</h2>
+        {/* Por cada boton llama a la funcion que se requiera*/}
         <button onClick={() => filtrarTodas()}>Todas</button>{" "}
         <button onClick={() => filtrarCompletas()}>Completadas</button>{" "}
         <button onClick={() => filtrarIncompletas()}>Incompletas</button><br/><br/>
+        {/* Rendeeriza las tareas en el DOM */}
         <div>{nuevasTareas.map((tar) => {
             return(<li key={tar.id}>{`${tar.id} - ${tar.actividad}`}</li>);
         })}</div>
@@ -82,6 +88,6 @@ const FiltroDeTareas = () => {
     </>);
 
 }
-
+//exporta el componente FiltroDeTareas
 export default FiltroDeTareas;
 

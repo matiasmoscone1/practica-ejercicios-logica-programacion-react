@@ -11,9 +11,9 @@ const ValidarFormulario = () => {
     const [contrasena, setContrasena] = useState("");
     const [email, setEmail] = useState("");
 
-    const validaUsuario = /a-zA-Z0-9/;
-    
-
+    const validaUsuario = /^a-zA-Z0-9{8,15}$/;
+    const validaContra = /^[a-zA-Z0-9\s!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]*{8,15}$/
+    const validaEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
 
 
 

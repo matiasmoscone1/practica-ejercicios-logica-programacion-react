@@ -18,12 +18,9 @@ const ValidarFormulario = () => {
 
 
     const checkUsuario = (usu) => {
-        if(validaUsuario.test(usu)){        
-            console.log("Usuario validado con exito!");
-        }else{
-            console.log("Usuario no validado!");
-        }        
-        console.log(usu);
+        validaUsuario.test(usu) ? console.log("Usuario validado con exito!!!")
+                                : console.log("Usuario no validado... (debe contener letras o numeros y un ragno entre 8 y 15 caracteres");   
+ 
     }
 
 

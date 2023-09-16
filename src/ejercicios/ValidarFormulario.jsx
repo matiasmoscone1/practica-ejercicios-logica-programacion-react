@@ -7,6 +7,14 @@ import { useState } from "react";
 
 const ValidarFormulario = () => {
 
+    const [usuario, setUsuario] = useState("");
+    const [contrasena, setContrasena] = useState("");
+    const [email, setEmail] = useState("");
+
+    const validaUsuario = /a-zA-Z0-9/;
+    
+
+
 
 
     return(<>

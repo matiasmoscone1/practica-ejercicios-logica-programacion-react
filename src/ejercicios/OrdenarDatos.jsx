@@ -42,12 +42,15 @@ const OrdenarDatos = () => {
         setNuevosJugadores(jugadoresOrdenadosNombre);
     };
 
+    const ordenarEdad = () => {
+        setNuevosJugadores(nuevosJugadores.sort(a,b) = a.edad - b.edad);
+    }
 
     return(<>
     <div>
         <h2>13. Ordenamiento de datos </h2>
         <button onClick={() => ordenarNombre()}>Nombre</button>{" "}
-        <button>Edad</button>{" "}
+        <button onClick={() => ordenarEdad()}>Edad</button>{" "}
         <button>Fecha</button><br/><br/>
         <div>
             {nuevosJugadores.map((jugador) => {

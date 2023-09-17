@@ -32,8 +32,10 @@ const ValidarFormulario = () => {
     }
 
     const checkEmail = (ema) => {
-        validaEmail.test(ema) ? console.log("Email validado con exito!!!")
-        : console.log("Email no validado... (debe tener formato asd@asd.asd"); 
+        validaEmail.test(ema) ? document.querySelector(".resultado-email").textContent = " Email validado con exito!!!"
+                                //console.log("Email validado con exito!!!")
+                              : document.querySelector(".resultado-email").textContent = " Email no validado... (debe tener formato asd@asd.asd";
+                                //console.log("Email no validado... (debe tener formato asd@asd.asd"); 
        
     }
 
@@ -48,6 +50,7 @@ const ValidarFormulario = () => {
     <div>
         <h2>12. Validar formulario </h2>
         <form>
+            <button onClick={(e) => validarCompleto(e)}>Enviar</button><br/><br/>
             <label>Usuario </label>
             <input onChange={(e) => setUsuario(e.target.value)}/>
             <span className="resultado-usuario"></span><br/><br/>
@@ -55,8 +58,8 @@ const ValidarFormulario = () => {
             <input onChange={(e) => setContrasena(e.target.value)}/>
             <span className="resultado-contrasena"></span><br/><br/>
             <label>Email </label>
-            <input onChange={(e) => setEmail(e.target.value)}/>{" "}
-            <button onClick={(e) => validarCompleto(e)}>Enviar</button>
+            <input onChange={(e) => setEmail(e.target.value)}/>
+            <span className="resultado-email"></span>{" "}        
         </form>
     </div>
     </>)

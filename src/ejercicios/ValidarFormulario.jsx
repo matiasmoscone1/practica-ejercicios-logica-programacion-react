@@ -1,4 +1,4 @@
-import e from "cors";
+
 import { useState } from "react";
 
 //12. Validación de Formulario: Crea un formulario de registro que incluya campos para 
@@ -14,7 +14,7 @@ const ValidarFormulario = () => {
 
     const validaUsuario = /^[a-zA-Z0-9]{8,15}$/;
     const validaContra = /^[a-zA-Z0-9\s!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]{8,15}$/
-    //const validaEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+    const validaEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
 
 
     const checkUsuario = (usu) => {
@@ -27,10 +27,16 @@ const ValidarFormulario = () => {
         : console.log("Contraseña no validada... (debe contener letras, numeros o simbolos y un ragno entre 8 y 15 caracteres");   
     }
 
+    const checkEmail = (ema) => {
+        validaEmail.test(ema) ? console.log("Email validado con exito!!!")
+        : console.log("Email no validado... (debe tener formato asd@asd.asd");   
+    }
+
     const validarCompleto = (e) => {
         e.preventDefault();
         checkUsuario(usuario); 
         checkContra(contrasena);   
+        checkEmail(email);
     }
 
     return(<>
@@ -42,7 +48,7 @@ const ValidarFormulario = () => {
             <label>Contraseña </label>
             <input onChange={(e) => setContrasena(e.target.value)}/><br/><br/>
             <label>Email </label>
-            <input />{" "}
+            <input onChange={(e) => setEmail(e.target.value)}/>{" "}
             <button onClick={(e) => validarCompleto(e)}>Enviar</button>
         </form>
     </div>

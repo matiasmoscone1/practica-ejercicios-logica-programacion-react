@@ -11,6 +11,7 @@ import Temporizador from './ejercicios/Temporizador';
 import ListaDinamica from './ejercicios/ListaDinamica';
 import FiltroDeTareas from './ejercicios/FiltroDeTareas';
 import ValidarFormulario from './ejercicios/ValidarFormulario';
+import OrdenarDatos from './ejercicios/OrdenarDatos';
 
 function App() {
 
@@ -32,6 +33,7 @@ function App() {
     <ListaDinamica />
     <FiltroDeTareas />
     <ValidarFormulario />
+    <OrdenarDatos />
 
     </>
   )

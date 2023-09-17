@@ -18,18 +18,23 @@ const ValidarFormulario = () => {
 
 
     const checkUsuario = (usu) => {
-        validaUsuario.test(usu) ? console.log("Usuario validado con exito!!!")
-                                : console.log("Usuario no validado... (debe contener letras o numeros y un ragno entre 8 y 15 caracteres");   
+        validaUsuario.test(usu) ? document.querySelector(".resultado-usuario").textContent = " Usuario validado con exito!!!"
+                                    //console.log("Usuario validado con exito!!!")
+                                : document.querySelector(".resultado-usuario").textContent = " Usuario no validado... (debe contener letras o numeros y un ragno entre 8 y 15 caracteres";
+                                    //console.log("Usuario no validado... (debe contener letras o numeros y un ragno entre 8 y 15 caracteres");   
     }
 
     const checkContra = (con) => {
-        validaContra.test(con) ? console.log("Contraseña validada con exito!!!")
-        : console.log("Contraseña no validada... (debe contener letras, numeros o simbolos y un ragno entre 8 y 15 caracteres");   
+        validaContra.test(con) ? document.querySelector(".resultado-contrasena").textContent = " Contraseña validada con exito!!!" 
+                                //console.log("Contraseña validada con exito!!!")
+                               :  document.querySelector(".resultado-contrasena").textContent = " Contraseña no validada... (debe contener letras, numeros o simbolos y un ragno entre 8 y 15 caracteres";
+                                //console.log("Contraseña no validada... (debe contener letras, numeros o simbolos y un ragno entre 8 y 15 caracteres");   
     }
 
     const checkEmail = (ema) => {
         validaEmail.test(ema) ? console.log("Email validado con exito!!!")
-        : console.log("Email no validado... (debe tener formato asd@asd.asd");   
+        : console.log("Email no validado... (debe tener formato asd@asd.asd"); 
+       
     }
 
     const validarCompleto = (e) => {
@@ -44,9 +49,11 @@ const ValidarFormulario = () => {
         <h2>12. Validar formulario </h2>
         <form>
             <label>Usuario </label>
-            <input onChange={(e) => setUsuario(e.target.value)}/><br/><br/>
+            <input onChange={(e) => setUsuario(e.target.value)}/>
+            <span className="resultado-usuario"></span><br/><br/>
             <label>Contraseña </label>
-            <input onChange={(e) => setContrasena(e.target.value)}/><br/><br/>
+            <input onChange={(e) => setContrasena(e.target.value)}/>
+            <span className="resultado-contrasena"></span><br/><br/>
             <label>Email </label>
             <input onChange={(e) => setEmail(e.target.value)}/>{" "}
             <button onClick={(e) => validarCompleto(e)}>Enviar</button>

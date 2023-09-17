@@ -4,6 +4,8 @@
 //permita al usuario ordenarla por diferentes propiedades (por ejemplo, nombre, edad, fecha). 
 //Utiliza funciones de orden superior para realizar el ordenamiento.
 
+import { useState } from "react";
+
 const OrdenarDatos = () => {
 
     const datos = [{
@@ -27,18 +29,28 @@ const OrdenarDatos = () => {
         fecha: "27/04/1998"
     }];
 
+    const [nuevosJugadores, setNuevosJugadores] = useState(datos);
 
+    const funcOrdenSuperior = (funcion) => {
+        
 
+    };
+
+    const ordenarNombre = () => {
+        const jugadoresOrdenadosNombre = [...nuevosJugadores];
+        jugadoresOrdenadosNombre.sort((a, b) => a.nombre.localeCompare(b.nombre));
+        setNuevosJugadores(jugadoresOrdenadosNombre);
+    };
 
 
     return(<>
     <div>
         <h2>13. Ordenamiento de datos </h2>
-        <button>Nombre</button>{" "}
+        <button onClick={() => ordenarNombre()}>Nombre</button>{" "}
         <button>Edad</button>{" "}
         <button>Fecha</button><br/><br/>
         <div>
-            {datos.map((jugador) => {
+            {nuevosJugadores.map((jugador) => {
                 return(<li key={jugador.nombre}>{` Nombre: ${jugador.nombre} Edad: ${jugador.edad} Fecha: ${jugador.fecha}`}</li>)
             })}
         </div>

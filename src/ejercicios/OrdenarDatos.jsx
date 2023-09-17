@@ -43,8 +43,11 @@ const OrdenarDatos = () => {
     };
 
     const ordenarEdad = () => {
-        setNuevosJugadores(nuevosJugadores.sort(a,b) = a.edad - b.edad);
+        const jugadoresOrdenadosEdad = [...nuevosJugadores];
+        jugadoresOrdenadosEdad.sort((a,b) => a.edad - b.edad);
+        setNuevosJugadores(jugadoresOrdenadosEdad);
     }
+
 
     return(<>
     <div>

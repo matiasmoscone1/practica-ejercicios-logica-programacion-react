@@ -50,10 +50,11 @@ const OrdenarDatos = () => {
 
     const ordenarFecha = () => {
         const jugadoresOrdenadosFecha = [...nuevosJugadores];
-        const fechaHoy = new Date().getFullYear;
+        const fechaHoy = new Date().getFullYear() * 3600;
         console.log(fechaHoy);
         jugadoresOrdenadosFecha.forEach((jugador) => {
-            let tiempo = jugador.fecha
+            let tiempo = jugador.fecha.getFullYear();
+            console.log(tiempo);
         })
     }
 

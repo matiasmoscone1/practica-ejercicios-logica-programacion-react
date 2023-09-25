@@ -48,14 +48,22 @@ const OrdenarDatos = () => {
         setNuevosJugadores(jugadoresOrdenadosEdad);
     }
 
+    const ordenarFecha = () => {
+        const jugadoresOrdenadosFecha = [...nuevosJugadores];
+        const fechaHoy = new Date().getFullYear;
+        console.log(fechaHoy);
+        jugadoresOrdenadosFecha.forEach((jugador) => {
+            let tiempo = jugador.fecha
+        })
+    }
 
     return(<>
     <div>
         <h2>13. Ordenamiento de datos </h2>
         <button onClick={() => ordenarNombre()}>Nombre</button>{" "}
         <button onClick={() => ordenarEdad()}>Edad</button>{" "}
-        <button>Fecha</button><br/><br/>
-        <div>
+        <button onClick={() => ordenarFecha()}>Fecha</button><br/><br/>
+        <div> 
             {nuevosJugadores.map((jugador) => {
                 return(<li key={jugador.nombre}>{` Nombre: ${jugador.nombre} Edad: ${jugador.edad} Fecha: ${jugador.fecha}`}</li>)
             })}

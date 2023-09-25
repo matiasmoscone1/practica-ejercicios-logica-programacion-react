@@ -11,22 +11,22 @@ const OrdenarDatos = () => {
     const datos = [{
         nombre: "Matias",
         edad: 27,
-        fecha: "16/05/1996"
+        fecha: new Date("1996-05-16")
     },
     {
         nombre: "Messi",
         edad: 36,
-        fecha: "24/06/1987"
+        fecha: new Date("1987-06-24")
     },
     {
         nombre: "Dibu",
         edad: 31,
-        fecha: "02/09/1992"
+        fecha: new Date("1992-09-02")
     },
     {
         nombre: "Cuti",
         edad: 25,
-        fecha: "27/04/1998"
+        fecha: new Date("1998-04-27")
     }];
 
     const [nuevosJugadores, setNuevosJugadores] = useState(datos);
@@ -50,12 +50,15 @@ const OrdenarDatos = () => {
 
     const ordenarFecha = () => {
         const jugadoresOrdenadosFecha = [...nuevosJugadores];
-        const fechaHoy = new Date().getFullYear() * 3600;
-        console.log(fechaHoy);
+        //const fechaHoy = new Date().getFullYear() * 3600;
+        //console.log(fechaHoy);
         jugadoresOrdenadosFecha.forEach((jugador) => {
-            let tiempo = jugador.fecha.getFullYear();
+            let tiempo = jugador.fecha.getFullYear() * 3600;
             console.log(tiempo);
+            jugadoresOrdenadosFecha.sort((a,b) => a.tiempo - b.tiempo);
         })
+        
+        setNuevosJugadores(jugadoresOrdenadosFecha);
     }
 
     return(<>

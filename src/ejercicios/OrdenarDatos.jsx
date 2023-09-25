@@ -6,8 +6,10 @@
 
 import { useState } from "react";
 
+//creando componente OrdenarDatos
 const OrdenarDatos = () => {
 
+    //creando array donde se almacena cada jugador como un objeto con sus respectivas propiedades
     const datos = [{
         nombre: "Matias",
         edad: 27,
@@ -29,16 +31,16 @@ const OrdenarDatos = () => {
         fecha: new Date("1998-04-27")
     }];
 
+    //creando variable de estado del array nuevo
     const [nuevosJugadores, setNuevosJugadores] = useState(datos);
 
-    const funcOrdenSuperior = (funcion) => {
-        
-
-    };
-
+   //creando funcion ordenar por nombre
     const ordenarNombre = () => {
+        //se clona el array en un nuevo array para poder trabajar
         const jugadoresOrdenadosNombre = [...nuevosJugadores];
+        //ordena el array nuevo comparando el nombre
         jugadoresOrdenadosNombre.sort((a, b) => a.nombre.localeCompare(b.nombre));
+        //setea la variable de estado de array con el nuevo array ordenado
         setNuevosJugadores(jugadoresOrdenadosNombre);
     };
 

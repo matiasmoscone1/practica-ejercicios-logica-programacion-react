@@ -44,30 +44,39 @@ const OrdenarDatos = () => {
         setNuevosJugadores(jugadoresOrdenadosNombre);
     };
 
+    //funcion que ordena el array por edad
     const ordenarEdad = () => {
+        //realiza el mismo procedimiento que la funcion anterior pero comparando la edad
         const jugadoresOrdenadosEdad = [...nuevosJugadores];
         jugadoresOrdenadosEdad.sort((a,b) => a.edad - b.edad);
         setNuevosJugadores(jugadoresOrdenadosEdad);
     }
 
+    //funcion que ordena el array por fecha
     const ordenarFecha = () => {
         const jugadoresOrdenadosFecha = [...nuevosJugadores];
     
+        //se compara el array mediante el valor de getTime() que da el valor desde un año especifico
+        //hasta el dia de hoy, en segundos
         jugadoresOrdenadosFecha.sort((a, b) => {
             console.log(a.fecha.getTime());
+            //retorna el resultado
             return a.fecha.getTime() - b.fecha.getTime();  
         });
 
+        //setea nuevamente el array con los valores determinados
         setNuevosJugadores(jugadoresOrdenadosFecha);
     }
 
     return(<>
     <div>
         <h2>13. Ordenamiento de datos </h2>
+        {/* Se le agrega a cada boton la funcion correspondiente*/}
         <button onClick={() => ordenarNombre()}>Nombre</button>{" "}
         <button onClick={() => ordenarEdad()}>Edad</button>{" "}
         <button onClick={() => ordenarFecha()}>Fecha</button><br/><br/>
         <div> 
+            {/* Recorre el array completo y renderiza en el dom ordenadamente */}
             {nuevosJugadores.map((jugador) => {
                 return(<li key={jugador.nombre}>{` Nombre: ${jugador.nombre} Edad: ${jugador.edad} Fecha: ${jugador.fecha}`}</li>)
             })}

@@ -7,23 +7,34 @@ import { useState } from "react";
 
 const TarjetaInteractiva = () => {
 
+    const [toggle, setToggle] = useState(false);
 
     const cambiarTarjeta = () => {
+        if(!toggle){
+            setToggle(true);
+        }else{
+            setToggle(false);
+        }          
 
     }
 
     return(<>
     <div>
         <h2>14. Tarjeta Interactiva </h2>
-        <p style={{color:"red"}}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae quaerat aperiam
-        corrupti, beatae ad esse! Atque ea ab sapiente nemo aliquam assumenda, ut esse alias? 
-        Nemo cupiditate numquam aspernatur ipsum!</p>
-        <br/>
-        <button >Toggle</button>
+        
+        <button onClick={() => { cambiarTarjeta();
+            if(toggle){
+                return(<p style={{color:"red"}}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae quaerat aperiam
+                corrupti, beatae ad esse! Atque ea ab sapiente nemo aliquam assumenda, ut esse alias? 
+                Nemo cupiditate numquam aspernatur ipsum!</p>
+                )
+            }else{
+                <p style={{color:"green"}}>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+            }
+        }}>Toggle</button>
 
-        <p style={{color:"green"}}>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
         
     </div>    
     </>)

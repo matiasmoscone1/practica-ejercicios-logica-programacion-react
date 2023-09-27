@@ -18,22 +18,24 @@ const TarjetaInteractiva = () => {
 
     }
 
+    const Tarjeta = () => {
+        if(toggle){
+            return(<p style={{color:"red"}}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae quaerat aperiam
+            corrupti, beatae ad esse! Atque ea ab sapiente nemo aliquam assumenda, ut esse alias? 
+            Nemo cupiditate numquam aspernatur ipsum!</p>)
+        }else{
+            return( 
+                <p style={{color:"green"}}>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>)
+    }}
+
     return(<>
     <div>
         <h2>14. Tarjeta Interactiva </h2>
         
-        <button onClick={() => { cambiarTarjeta();
-            if(toggle){
-                return(<p style={{color:"red"}}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae quaerat aperiam
-                corrupti, beatae ad esse! Atque ea ab sapiente nemo aliquam assumenda, ut esse alias? 
-                Nemo cupiditate numquam aspernatur ipsum!</p>
-                )
-            }else{
-                <p style={{color:"green"}}>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
-            }
-        }}>Toggle</button>
+        <Tarjeta />
+        <button onClick={() => { cambiarTarjeta()}}>Toggle</button>
 
         
     </div>    

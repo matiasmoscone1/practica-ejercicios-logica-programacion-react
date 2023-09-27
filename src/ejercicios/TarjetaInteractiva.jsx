@@ -9,14 +9,6 @@ const TarjetaInteractiva = () => {
 
     const [toggle, setToggle] = useState(false);
 
-    const cambiarTarjeta = () => {
-        if(!toggle){
-            setToggle(true);
-        }else{
-            setToggle(false);
-        }          
-
-    }
 
     const Tarjeta = () => {
         if(toggle){
@@ -35,7 +27,7 @@ const TarjetaInteractiva = () => {
         <h2>14. Tarjeta Interactiva </h2>
         
         <Tarjeta />
-        <button onClick={() => { cambiarTarjeta()}}>Toggle</button>
+        <button onClick={() => { setToggle(!toggle)}}>Toggle</button>
 
         
     </div>    

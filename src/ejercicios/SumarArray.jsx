@@ -10,17 +10,21 @@ const SumarArray = () => {
 
     const suma = (arr) => {
         const nuevoArray = [...array];
+        let resultado = 0;
         nuevoArray.map((num) => {
-            let resultado = acumulador + num;
+            resultado += num;
+            //console.log(resultado);
             setAcumulador(resultado);
         }) 
+        
     }
 
     return(<>
     <div>
         <h2>15. Summa de array completo</h2>
         <p>{`[${array.join(",")}]`}</p>
-        <button onClick={suma}>Sumar</button>
+        <button onClick={suma}>Sumar</button><button>Limpiar</button>
+        <br/>
         <span>{acumulador}</span>
     </div>
     </>)

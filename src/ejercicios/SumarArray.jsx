@@ -23,7 +23,8 @@ const SumarArray = () => {
     <div>
         <h2>15. Summa de array completo</h2>
         <p>{`[${array.join(",")}]`}</p>
-        <button onClick={suma}>Sumar</button><button>Limpiar</button>
+        <button onClick={suma}>Sumar</button>
+        <button onClick={() => setAcumulador(0)}>Limpiar</button>
         <br/>
         <span>{acumulador}</span>
     </div>

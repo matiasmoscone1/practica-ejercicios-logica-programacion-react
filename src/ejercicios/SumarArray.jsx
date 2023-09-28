@@ -6,12 +6,13 @@ import { useState } from "react";
 const SumarArray = () => {
 
     const array = [1,53,23,26,74,11,87];
-    const [acumulador, setAcumulador] = (0);
+    const [acumulador, setAcumulador] = useState(0);
 
     const suma = (arr) => {
-        arr.map((num) => {
-            
-            setAcumulador(acumulador += num);
+        const nuevoArray = [...array];
+        nuevoArray.map((num) => {
+            let resultado = acumulador + num;
+            setAcumulador(resultado);
         }) 
     }
 

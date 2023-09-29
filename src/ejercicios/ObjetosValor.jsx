@@ -4,6 +4,7 @@
 //(por ejemplo, mostrar solo los elementos con un precio superior a $50).
 //con un input para determinar el precio a calcular
 
+import { useEffect } from "react";
 import { useState } from "react";
 const ObjetosValor = () => {
 
@@ -72,12 +73,13 @@ const ObjetosValor = () => {
     //console.log(valorInput);
 
     const filtrarPrecio = (val) => {
-        const nuevoArray = [...arrayObjetos];
-        const objetosFiltrados = nuevoArray.filter((art) => art.precio < val);
+        const objetosFiltrados = arrayObjetos.filter((art) => art.precio < val);
         setArrayObjetos(objetosFiltrados);
-        //console.log(val);
     }
 
+    useEffect(() => {
+        <TablaRenderizada />
+    }, [valorInput]);
 
 
     const TablaRenderizada = () => {
@@ -112,6 +114,7 @@ const ObjetosValor = () => {
             <label>Precio(max): </label>
             <input type="text" placeholder="Escriba el precio" onChange={(e) => { setValorInput(e.target.value) }} />{" "}
             <button onClick={() => filtrarPrecio(valorInput)}>Filtrar</button>
+            <button onClick={() => setValorInput(0)}>Todos</button>
             <br /><br />
 
             <TablaRenderizada />

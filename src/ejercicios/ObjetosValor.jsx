@@ -26,7 +26,7 @@ const ObjetosValor = () => {
         articulo: "Celular",
         marca: "Huawei",
         color: "Negro",
-        precio: 150
+        precio: 1250
     },
     {
         id: 4,
@@ -47,21 +47,21 @@ const ObjetosValor = () => {
         articulo: "Mouse",
         marca: "Logitech",
         color: "Gris",
-        precio: 170
+        precio: 670
     },
     {
         id: 7,
         articulo: "Teclado",
         marca: "Aorus",
         color: "Blanco",
-        precio: 180
+        precio: 580
     },
     {
         id: 8,
         articulo: "Microfono",
         marca: "Aorus",
         color: "Negro",
-        precio: 110
+        precio: 1100
     }
     ]
 
@@ -69,7 +69,11 @@ const ObjetosValor = () => {
     return (<>
         <div>
             <h2>16. Objetos con un valor mayor a precio especifico</h2>
-            <br/>
+          
+            <label>Precio(max): </label>
+            <input placeholder="Escriba el precio"/>{" "}
+            <button>Filtrar</button>
+            <br/><br/>
 
             <table border={1}>
                 <thead>
@@ -89,9 +93,6 @@ const ObjetosValor = () => {
                             <td>{art.precio}</td>
                         </tr>)
                     })}
-                    <tr>
-                        
-                    </tr>
                 </tbody>
             </table>
 

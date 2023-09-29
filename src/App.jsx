@@ -14,6 +14,7 @@ import ValidarFormulario from './ejercicios/ValidarFormulario';
 import OrdenarDatos from './ejercicios/OrdenarDatos';
 import TarjetaInteractiva from './ejercicios/TarjetaInteractiva';
 import SumarArray from './ejercicios/SumarArray';
+import ObjetosValor from './ejercicios/ObjetosValor';
 
 function App() {
 
@@ -38,6 +39,7 @@ function App() {
     <OrdenarDatos />
     <TarjetaInteractiva />
     <SumarArray />
+    <ObjetosValor />
     </>
   )
 }

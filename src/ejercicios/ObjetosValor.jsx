@@ -4,10 +4,8 @@
 //(por ejemplo, mostrar solo los elementos con un precio superior a $50).
 //con un input para determinar el precio a calcular
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 const ObjetosValor = () => {
-
-    const [valorInput, setValorInput] = useState(0);
 
 
     const objetos = [{
@@ -68,42 +66,58 @@ const ObjetosValor = () => {
     }
     ]
 
+    const [valorInput, setValorInput] = useState(0);
+    const [arrayObjetos, setArrayObjetos] = useState(objetos);
+
     //console.log(valorInput);
 
-    const filtrarPrecio = () => {
-        
+    const filtrarPrecio = (val) => {
+        const nuevoArray = [...arrayObjetos];
+        nuevoArray.filter((art) => art.precio < val);
+        setArrayObjetos(nuevoArray);
+        //console.log(val);
     }
 
+    useEffect(() => {
+        <TablaRenderizada/>
+    }, [valorInput]);
 
-    return (<>
-        <div>
-            <h2>16. Objetos con un valor mayor a precio especifico</h2>
-          
-            <label>Precio(max): </label>
-            <input type="text" placeholder="Escriba el precio" onChange={(e) => {setValorInput(e.target.value)}}/>{" "}
-            <button>Filtrar</button>
-            <br/><br/>
 
-            <table border={1}>
-                <thead>
+    const TablaRenderizada = () => {
+        return(
+        <table border={1}>
+            <thead>
                 <tr>
                     <th>Articulo</th>
                     <th>Marca</th>
                     <th>Color</th>
                     <th>Precio</th>
                 </tr>
-                </thead>
-                <tbody>
-                    {objetos.map((art) => {
-                        return(<tr key={art.id}>
-                            <td>{art.articulo}</td>
-                            <td>{art.marca}</td>
-                            <td>{art.color}</td>
-                            <td>{art.precio}</td>
-                        </tr>)
-                    })}
-                </tbody>
-            </table>
+            </thead>
+            <tbody>
+                {arrayObjetos.map((art) => {
+                    return (<tr key={art.id}>
+                        <td>{art.articulo}</td>
+                        <td>{art.marca}</td>
+                        <td>{art.color}</td>
+                        <td>{art.precio}</td>
+                    </tr>)
+                })}
+            </tbody>
+        </table>
+        )
+    }
+
+    return (<>
+        <div>
+            <h2>16. Objetos con un valor mayor a precio especifico</h2>
+
+            <label>Precio(max): </label>
+            <input type="text" placeholder="Escriba el precio" onChange={(e) => { setValorInput(e.target.value) }} />{" "}
+            <button onClick={() => filtrarPrecio(valorInput)}>Filtrar</button>
+            <br /><br />
+
+            <TablaRenderizada />
 
         </div>
 

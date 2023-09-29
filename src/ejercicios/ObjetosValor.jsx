@@ -7,6 +7,9 @@
 import { useState } from "react";
 const ObjetosValor = () => {
 
+    const [valorInput, setValorInput] = useState(0);
+
+
     const objetos = [{
         id: 1,
         articulo: "Celular",
@@ -65,13 +68,19 @@ const ObjetosValor = () => {
     }
     ]
 
+    //console.log(valorInput);
+
+    const filtrarPrecio = () => {
+        
+    }
+
 
     return (<>
         <div>
             <h2>16. Objetos con un valor mayor a precio especifico</h2>
           
             <label>Precio(max): </label>
-            <input placeholder="Escriba el precio"/>{" "}
+            <input type="text" placeholder="Escriba el precio" onChange={(e) => {setValorInput(e.target.value)}}/>{" "}
             <button>Filtrar</button>
             <br/><br/>
 

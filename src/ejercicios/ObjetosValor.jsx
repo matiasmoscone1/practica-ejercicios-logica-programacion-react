@@ -114,7 +114,7 @@ const ObjetosValor = () => {
             <label>Precio(max): </label>
             <input type="text" placeholder="Escriba el precio" onChange={(e) => { setValorInput(e.target.value) }} />{" "}
             <button onClick={() => filtrarPrecio(valorInput)}>Filtrar</button>
-            <button onClick={() => setValorInput(0)}>Todos</button>
+            <button onClick={() => setArrayObjetos(objetos)}>Todos</button>
             <br /><br />
 
             <TablaRenderizada />

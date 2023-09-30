@@ -10,12 +10,17 @@ const MultiplicaPor2 = () => {
 
     const [resultado, setResultado] = useState(arrayNumeros);
 
+    const multiplicarArray = (valor) => {
+        const nuevoArray = resultado.map((num) => num * valor);
+        setResultado(nuevoArray);
+
+    }
 
     return(<>
     <div>
         <h2>17. Array multiplicado </h2>
 
-        <button>x2</button>{" "}
+        <button onClick={() => multiplicarArray(2)}>x2</button>{" "}
         <button>x5</button>{" "}
         <button>x10</button><br/><br/>
         <span>{`[${resultado}]`}</span>

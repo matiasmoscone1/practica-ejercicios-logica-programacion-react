@@ -21,8 +21,8 @@ const MultiplicaPor2 = () => {
         <h2>17. Array multiplicado </h2>
 
         <button onClick={() => multiplicarArray(2)}>x2</button>{" "}
-        <button>x5</button>{" "}
-        <button>x10</button><br/><br/>
+        <button onClick={() => multiplicarArray(5)}>x5</button>{" "}
+        <button onClick={() => multiplicarArray(10)}>x10</button><br/><br/>
         <span>{`[${resultado}]`}</span>
 
 

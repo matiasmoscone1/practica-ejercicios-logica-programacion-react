@@ -16,6 +16,7 @@ import TarjetaInteractiva from './ejercicios/TarjetaInteractiva';
 import SumarArray from './ejercicios/SumarArray';
 import ObjetosValor from './ejercicios/ObjetosValor';
 import MultiplicaPor2 from './ejercicios/MultiplicaPor2';
+import EliminarElementos from './ejercicios/EliminarElementos';
 
 function App() {
 
@@ -42,8 +43,8 @@ function App() {
     <SumarArray />
     <ObjetosValor />
     <MultiplicaPor2 />
+    <EliminarElementos />
 
-    
     </>
   )
 }

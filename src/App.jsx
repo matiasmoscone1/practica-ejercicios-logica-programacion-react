@@ -15,6 +15,7 @@ import OrdenarDatos from './ejercicios/OrdenarDatos';
 import TarjetaInteractiva from './ejercicios/TarjetaInteractiva';
 import SumarArray from './ejercicios/SumarArray';
 import ObjetosValor from './ejercicios/ObjetosValor';
+import MultiplicaPor2 from './ejercicios/MultiplicaPor2';
 
 function App() {
 
@@ -40,6 +41,9 @@ function App() {
     <TarjetaInteractiva />
     <SumarArray />
     <ObjetosValor />
+    <MultiplicaPor2 />
+
+    
     </>
   )
 }

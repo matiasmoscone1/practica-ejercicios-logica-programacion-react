@@ -6,9 +6,10 @@
 
 import { useState } from "react";
 
+//creando componente
 const ObjetosValor = () => {
 
-
+    //creando array de articulos, cada articulo es un objeto
     const objetos = [{
         id: 1,
         articulo: "Celular",
@@ -67,17 +68,24 @@ const ObjetosValor = () => {
     }
     ]
 
+    //creando variables de estado, el valorInput refleja el input escrito por el usuario
     const [valorInput, setValorInput] = useState(0);
+    //el arrayObjetos almacena el array de objetos
     const [arrayObjetos, setArrayObjetos] = useState(objetos);
 
     //console.log(valorInput);
 
+    //creando funcion donde filtra los precios dado un valor (precio) pasado por parametro
     const filtrarPrecio = (val) => {
+        //crea una constante de objetosFiltrados donde almacena el array filtrado con los objetos
+        //de menor precio al pasado por parametro
         const objetosFiltrados = arrayObjetos.filter((art) => art.precio < val);
+        //setea el array nuevo filtrado al valor de la variable de estado
         setArrayObjetos(objetosFiltrados);
     }
 
 
+    //componente que renderiza la tabla completa
     const TablaRenderizada = () => {
         return(
         <table border={1}>
@@ -90,6 +98,8 @@ const ObjetosValor = () => {
                 </tr>
             </thead>
             <tbody>
+                {/* Mapea (recorre) el array completo y por cada articulo, crea una fila en la tabla
+                con los respectivos datos */}
                 {arrayObjetos.map((art) => {
                     return (<tr key={art.id}>
                         <td>{art.articulo}</td>
@@ -108,11 +118,15 @@ const ObjetosValor = () => {
             <h2>16. Objetos con un valor mayor a precio especifico</h2>
 
             <label>Precio(max): </label>
+            {/* Input que queda con el valor mientras le va escribiendo encima el usuario,
+            los botones tienen sus respectivas funciones, el "Todos" setea nuevamente el array
+            original con todos los productos */}
             <input type="text" placeholder="Escriba el precio" onChange={(e) => { setValorInput(e.target.value) }} />{" "}
             <button onClick={() => filtrarPrecio(valorInput)}>Filtrar</button>
             <button onClick={() => setArrayObjetos(objetos)}>Todos</button>
             <br /><br />
 
+            {/* llama al componente para renderizar la tabla */}
             <TablaRenderizada />
 
         </div>

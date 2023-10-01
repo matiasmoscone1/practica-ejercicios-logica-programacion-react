@@ -64,6 +64,13 @@ const EliminarElementos = () => {
     }
     ]
 
+    const [lista, setLista] = useState(objetos);
+
+    const eliminarElementos = (id) => {
+        const nuevoArray = lista.filter((articulo) => articulo.id !== id);
+        setLista(nuevoArray);
+    }
+
 
     return(<>
     <div>
@@ -81,13 +88,14 @@ const EliminarElementos = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {objetos.map((art) => {
+                    {lista.map((art) => {
                         return(<tr key={art.id}>
                             <td>{art.id}</td>
                             <td>{art.articulo}</td>
                             <td>{art.marca}</td>
                             <td>{art.color}</td>
                             <td>{art.precio}</td>
+                            <td><button onClick={eliminarElementos(art.id)}>Eliminar</button></td>
                         </tr>)
                     })}
                 </tbody>

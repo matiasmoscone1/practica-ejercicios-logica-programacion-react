@@ -62,7 +62,7 @@ const EliminarElementos = () => {
         color: "Negro",
         precio: 1100
     }
-    ]
+    ];
 
     const [lista, setLista] = useState(objetos);
 
@@ -95,7 +95,7 @@ const EliminarElementos = () => {
                             <td>{art.marca}</td>
                             <td>{art.color}</td>
                             <td>{art.precio}</td>
-                            <td><button onClick={eliminarElementos(art.id)}>Eliminar</button></td>
+                            <td><button onClick={() => eliminarElementos(art.id)}>Eliminar</button></td>
                         </tr>)
                     })}
                 </tbody>

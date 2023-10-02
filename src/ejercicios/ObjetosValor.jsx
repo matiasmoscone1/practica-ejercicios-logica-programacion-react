@@ -122,7 +122,14 @@ const ObjetosValor = () => {
             los botones tienen sus respectivas funciones, el "Todos" setea nuevamente el array
             original con todos los productos */}
             <input type="text" placeholder="Escriba el precio" onChange={(e) => { setValorInput(e.target.value) }} />{" "}
-            <button onClick={() => filtrarPrecio(valorInput)}>Filtrar</button>
+            <br/><br/>
+            <label>Articulo: </label>
+            <input type="text" placeholder="Escriba el articulo" /><br/><br/>
+            <label>Marca: </label>
+            <input type="text" placeholder="Escriba la marca" /><br/><br/>
+            <label>Color: </label>
+            <input type="text" placeholder="Escriba el color" /><br/><br/>
+            <button onClick={() => filtrarPrecio(valorInput)}>Filtrar</button>{" "}
             <button onClick={() => setArrayObjetos(objetos)}>Todos</button>
             <br /><br />
 

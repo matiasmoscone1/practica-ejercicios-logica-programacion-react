@@ -87,9 +87,11 @@ const ObjetosValor = () => {
     }
 
     const filtrarProductos = (str) => {
+        
         const cadena = str.toLowerCase();
-        const productosFiltrados = arrayObjetos.filter((prod) => prod.articulo === cadena
-        || prod.color === cadena || prod.marca === cadena);
+        console.log(cadena);
+        const productosFiltrados = arrayObjetos.filter((prod) => prod.articulo.toLowerCase() === cadena);
+        /*|| prod.color === cadena || prod.marca === cadena)*/
         setArrayObjetos(productosFiltrados);
     }
 

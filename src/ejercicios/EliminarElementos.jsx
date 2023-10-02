@@ -6,6 +6,7 @@ import { useState } from "react";
 
 const EliminarElementos = () => { 
 
+    //creando array inicial de objetos
     const objetos = [{
         id: 1,
         articulo: "Celular",
@@ -64,10 +65,15 @@ const EliminarElementos = () => {
     }
     ];
 
+    //guardando array inicial en una variable de estado
     const [lista, setLista] = useState(objetos);
 
+    //funcion que elimina los elementos, se le pasa un parametro id para identificar el objeto
+    //a eliminar
     const eliminarElementos = (id) => {
+        //se hace un filtrado del array con los objetos que no coinciden con el id
         const nuevoArray = lista.filter((articulo) => articulo.id !== id);
+        //se setea nuevamente la variable de estado con el array filtrado
         setLista(nuevoArray);
     }
 
@@ -88,6 +94,7 @@ const EliminarElementos = () => {
                     </tr>
                 </thead>
                 <tbody>
+                    {/* se renderiza la tabla completa */}
                     {lista.map((art) => {
                         return(<tr key={art.id}>
                             <td>{art.id}</td>
@@ -95,6 +102,9 @@ const EliminarElementos = () => {
                             <td>{art.marca}</td>
                             <td>{art.color}</td>
                             <td>{art.precio}</td>
+                            {/* se agrega boton Eliminar al lado de cada producto, 
+                            se escucha un evento onClick y se crea una callback llamando a la
+                            funcion eliminarElementos pasandole por parametro el id del producto */}
                             <td><button onClick={() => eliminarElementos(art.id)}>Eliminar</button></td>
                         </tr>)
                     })}

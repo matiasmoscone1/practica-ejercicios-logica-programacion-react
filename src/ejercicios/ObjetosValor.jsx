@@ -83,11 +83,14 @@ const ObjetosValor = () => {
         const objetosFiltrados = arrayObjetos.filter((art) => art.precio < val);
         //setea el array nuevo filtrado al valor de la variable de estado
         setArrayObjetos(objetosFiltrados);
+
     }
 
     const filtrarProductos = (str) => {
         const cadena = str.toLowerCase();
-        switch()
+        const productosFiltrados = arrayObjetos.filter((prod) => prod.articulo === cadena
+        || prod.color === cadena || prod.marca === cadena);
+        setArrayObjetos(productosFiltrados);
     }
 
 
@@ -130,12 +133,13 @@ const ObjetosValor = () => {
             <input type="text" placeholder="Escriba el precio" onChange={(e) => { setValorInput(e.target.value) }} />{" "}
             <br/><br/>
             <label>Articulo: </label>
-            <input type="text" placeholder="Escriba el articulo" /><br/><br/>
+            <input type="text" placeholder="Escriba el articulo" onChange={(e) => { setValorInputText(e.target.value) }}/><br/><br/>
             <label>Marca: </label>
-            <input type="text" placeholder="Escriba la marca" /><br/><br/>
+            <input type="text" placeholder="Escriba la marca" onChange={(e) => { setValorInputText(e.target.value) }} /><br/><br/>
             <label>Color: </label>
-            <input type="text" placeholder="Escriba el color" /><br/><br/>
+            <input type="text" placeholder="Escriba el color" onChange={(e) => { setValorInputText(e.target.value) }} /><br/><br/>
             <button onClick={() => filtrarPrecio(valorInput)}>Filtrar</button>{" "}
+            <button onClick={() => filtrarProductos(valorInputText)}>Filtrar x str</button>{" "}
             <button onClick={() => setArrayObjetos(objetos)}>Todos</button>
             <br /><br />
 

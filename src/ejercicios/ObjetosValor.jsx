@@ -70,6 +70,7 @@ const ObjetosValor = () => {
 
     //creando variables de estado, el valorInput refleja el input escrito por el usuario
     const [valorInput, setValorInput] = useState(0);
+    const [valorInputText, setValorInputText] = useState("");
     //el arrayObjetos almacena el array de objetos
     const [arrayObjetos, setArrayObjetos] = useState(objetos);
 
@@ -82,6 +83,11 @@ const ObjetosValor = () => {
         const objetosFiltrados = arrayObjetos.filter((art) => art.precio < val);
         //setea el array nuevo filtrado al valor de la variable de estado
         setArrayObjetos(objetosFiltrados);
+    }
+
+    const filtrarProductos = (str) => {
+        const cadena = str.toLowerCase();
+        switch()
     }
 
 

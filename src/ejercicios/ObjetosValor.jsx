@@ -90,8 +90,8 @@ const ObjetosValor = () => {
         
         const cadena = str.toLowerCase();
         console.log(cadena);
-        const productosFiltrados = arrayObjetos.filter((prod) => prod.articulo.toLowerCase() === cadena);
-        /*|| prod.color === cadena || prod.marca === cadena)*/
+        const productosFiltrados = arrayObjetos.filter((prod) => prod.articulo.toLowerCase() === cadena
+        || prod.color.toLowerCase() === cadena || prod.marca.toLowerCase() === cadena);
         setArrayObjetos(productosFiltrados);
     }
 

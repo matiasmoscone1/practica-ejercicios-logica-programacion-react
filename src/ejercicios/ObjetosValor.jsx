@@ -69,7 +69,7 @@ const ObjetosValor = () => {
     ]
 
     //creando variables de estado, el valorInput refleja el input escrito por el usuario
-    const [valorInput, setValorInput] = useState(0);
+    const [valorInput, setValorInput] = useState(null);
     const [valorInputText, setValorInputText] = useState("");
     //el arrayObjetos almacena el array de objetos
     const [arrayObjetos, setArrayObjetos] = useState(objetos);
@@ -80,13 +80,17 @@ const ObjetosValor = () => {
     const filtrarPrecio = (val) => {
         //crea una constante de objetosFiltrados donde almacena el array filtrado con los objetos
         //de menor precio al pasado por parametro
-        if(val !== Number){
+        if(typeof val !== "number"){
             filtrarProductos(val);
-        }else{        
+            //console.log(typeof val);
+        }
+        if(typeof val === "number"){
+            
             console.log(typeof val);
             const objetosFiltrados = arrayObjetos.filter((art) => art.precio < val);
             //setea el array nuevo filtrado al valor de la variable de estado
             setArrayObjetos(objetosFiltrados);
+    
         }
 
     }
@@ -137,7 +141,7 @@ const ObjetosValor = () => {
             {/* Input que queda con el valor mientras le va escribiendo encima el usuario,
             los botones tienen sus respectivas funciones, el "Todos" setea nuevamente el array
             original con todos los productos */}
-            <input type="text" placeholder="Escriba el precio" onChange={(e) => { setValorInput(e.target.value) }} />{" "}
+            <input type="number" placeholder="Escriba el precio" onChange={(e) => { setValorInput(e.target.value) }} />{" "}
             <br/><br/>
             <label>Articulo: </label>
             <input type="text" placeholder="Escriba el articulo" onChange={(e) => { setValorInput(e.target.value) }}/><br/><br/>

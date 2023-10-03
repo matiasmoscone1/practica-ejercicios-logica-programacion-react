@@ -81,31 +81,26 @@ const ObjetosValor = () => {
         //crea una constante de objetosFiltrados donde almacena el array filtrado con los objetos
         //de menor precio al pasado por parametro
     
+        //si el usuario escribe el input del precio, ejecuta el codigo
         if(valorInput !== ""){
             //console.log(typeof val);
             const objetosFiltrados = arrayObjetos.filter((art) => art.precio < valorInput);
             //setea el array nuevo filtrado al valor de la variable de estado
             setArrayObjetos(objetosFiltrados);
-    
         }
+        //si el usuario escribe cualquier input, articulo, color o marca
         if(valorInputText !== ""){
+            //toma el valor del input y lo convierte a minuscula
             const cadena = valorInputText.toLowerCase();
-            console.log(cadena);
+            //console.log(cadena);
+            //filtra el array de objetos dependiendo el input escrito y compara con el articulo
+            //o con el color o con la marca correspondientemente a ver si existe
             const productosFiltrados = arrayObjetos.filter((prod) => prod.articulo.toLowerCase() === cadena
             || prod.color.toLowerCase() === cadena || prod.marca.toLowerCase() === cadena);
+            //setea nuevamente el array filtrado con los productos filtrados
             setArrayObjetos(productosFiltrados);
         }
     }
-
-
-    //creando funcion que filtra por una cadena de texto
-   /* const filtrarProductos = (str) => {
-        const cadena = str.toLowerCase();
-        console.log(cadena);
-        const productosFiltrados = arrayObjetos.filter((prod) => prod.articulo.toLowerCase() === cadena
-        || prod.color.toLowerCase() === cadena || prod.marca.toLowerCase() === cadena);
-        setArrayObjetos(productosFiltrados);
-    }*/
 
 
     //componente que renderiza la tabla completa

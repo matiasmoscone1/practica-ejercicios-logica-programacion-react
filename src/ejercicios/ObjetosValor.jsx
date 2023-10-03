@@ -66,10 +66,10 @@ const ObjetosValor = () => {
         color: "Negro",
         precio: 1100
     }
-    ]
+    ];
 
     //creando variables de estado, el valorInput refleja el input escrito por el usuario
-    const [valorInput, setValorInput] = useState(null);
+    const [valorInput, setValorInput] = useState(0);
     const [valorInputText, setValorInputText] = useState("");
     //el arrayObjetos almacena el array de objetos
     const [arrayObjetos, setArrayObjetos] = useState(objetos);
@@ -87,9 +87,10 @@ const ObjetosValor = () => {
             //setea el array nuevo filtrado al valor de la variable de estado
             setArrayObjetos(objetosFiltrados);
     
-        }else if(valorInputText !== ""){
+        }
+        if(valorInputText !== ""){
             const cadena = valorInputText.toLowerCase();
-            //console.log(cadena);
+            console.log(cadena);
             const productosFiltrados = arrayObjetos.filter((prod) => prod.articulo.toLowerCase() === cadena
             || prod.color.toLowerCase() === cadena || prod.marca.toLowerCase() === cadena);
             setArrayObjetos(productosFiltrados);

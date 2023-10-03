@@ -77,32 +77,34 @@ const ObjetosValor = () => {
     //console.log(valorInput);
 
     //creando funcion donde filtra los precios dado un valor (precio) pasado por parametro
-    const filtrarPrecio = (val) => {
+    const filtrar = () => {
         //crea una constante de objetosFiltrados donde almacena el array filtrado con los objetos
         //de menor precio al pasado por parametro
-        if(typeof val !== "number"){
-            filtrarProductos(val);
+    
+        if(valorInput !== ""){
             //console.log(typeof val);
-        }
-        if(typeof val === "number"){
-            
-            console.log(typeof val);
-            const objetosFiltrados = arrayObjetos.filter((art) => art.precio < val);
+            const objetosFiltrados = arrayObjetos.filter((art) => art.precio < valorInput);
             //setea el array nuevo filtrado al valor de la variable de estado
             setArrayObjetos(objetosFiltrados);
     
+        }else if(valorInputText !== ""){
+            const cadena = valorInputText.toLowerCase();
+            //console.log(cadena);
+            const productosFiltrados = arrayObjetos.filter((prod) => prod.articulo.toLowerCase() === cadena
+            || prod.color.toLowerCase() === cadena || prod.marca.toLowerCase() === cadena);
+            setArrayObjetos(productosFiltrados);
         }
-
     }
 
+
     //creando funcion que filtra por una cadena de texto
-    const filtrarProductos = (str) => {
+   /* const filtrarProductos = (str) => {
         const cadena = str.toLowerCase();
         console.log(cadena);
         const productosFiltrados = arrayObjetos.filter((prod) => prod.articulo.toLowerCase() === cadena
         || prod.color.toLowerCase() === cadena || prod.marca.toLowerCase() === cadena);
         setArrayObjetos(productosFiltrados);
-    }
+    }*/
 
 
     //componente que renderiza la tabla completa
@@ -144,12 +146,12 @@ const ObjetosValor = () => {
             <input type="number" placeholder="Escriba el precio" onChange={(e) => { setValorInput(e.target.value) }} />{" "}
             <br/><br/>
             <label>Articulo: </label>
-            <input type="text" placeholder="Escriba el articulo" onChange={(e) => { setValorInput(e.target.value) }}/><br/><br/>
+            <input type="text" placeholder="Escriba el articulo" onChange={(e) => { setValorInputText(e.target.value) }}/><br/><br/>
             <label>Marca: </label>
-            <input type="text" placeholder="Escriba la marca" onChange={(e) => { setValorInput(e.target.value) }} /><br/><br/>
+            <input type="text" placeholder="Escriba la marca" onChange={(e) => { setValorInputText(e.target.value) }} /><br/><br/>
             <label>Color: </label>
-            <input type="text" placeholder="Escriba el color" onChange={(e) => { setValorInput(e.target.value) }} /><br/><br/>
-            <button onClick={() => filtrarPrecio(valorInput)}>Filtrar</button>{" "}
+            <input type="text" placeholder="Escriba el color" onChange={(e) => { setValorInputText(e.target.value) }} /><br/><br/>
+            <button onClick={() => filtrar()}>Filtrar</button>{" "}
             {/*<button onClick={() => filtrarProductos(valorInputText)}>Filtrar x str</button>{" "}*/}
             <button onClick={() => setArrayObjetos(objetos)}>Todos</button>
             <br /><br />

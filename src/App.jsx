@@ -17,6 +17,7 @@ import SumarArray from './ejercicios/SumarArray';
 import ObjetosValor from './ejercicios/ObjetosValor';
 import MultiplicaPor2 from './ejercicios/MultiplicaPor2';
 import EliminarElementos from './ejercicios/EliminarElementos';
+import LongitudPalabras from './ejercicios/LongitudPalabras';
 
 function App() {
 
@@ -44,6 +45,7 @@ function App() {
     <ObjetosValor />
     <MultiplicaPor2 />
     <EliminarElementos />
+    <LongitudPalabras />
 
     </>
   )

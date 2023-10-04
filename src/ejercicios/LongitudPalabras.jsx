@@ -11,12 +11,13 @@ const LongitudPalabras = () => {
     const [arrayPalabras, setArrayPalabras] = useState("");
 
 
+    console.log(arrayPalabras);
 
     return(<>
     <div>
         <h2>19. Determina longitud de palabras </h2>
 
-        <input />
+        <textarea placeholder="Escribe el texto" onChange={(e) => setArrayPalabras(e.target.value)}/>
 
 
     </div>

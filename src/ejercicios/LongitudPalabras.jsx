@@ -9,20 +9,18 @@ import { useState } from "react";
 const LongitudPalabras = () => {
 
     const [arrayPalabras, setArrayPalabras] = useState("");
-
+    const [arrayLongitud, setArrayLongitud] = useState([]);
     
     const longitud = (texto) => {
         const nuevoArray = texto.split(" ");
-        console.log(nuevoArray);
-        const arrayLongitud = [];
-        nuevoArray.map((palabra) => {
-            arrayLongitud.push(palabra.length);
-        });
-        console.log(arrayLongitud);
+        const longitudes = nuevoArray.map((palabra) => palabra.length);
+        setArrayLongitud(longitudes);     
+        //console.log(arrayLongitud);
     }
 
     //console.log(arrayPalabras.split(" "));
 
+    console.log(arrayLongitud);
 
     return(<>
     <div>
@@ -31,6 +29,7 @@ const LongitudPalabras = () => {
         <textarea cols={40} rows={6} placeholder="Escribe el texto" onChange={(e) => setArrayPalabras(e.target.value)}/>
         <br/>
         <button onClick={() => longitud(arrayPalabras)}>Calcular</button>
+        <p>{`[${arrayLongitud.join(",")}]`}</p>
        
 
     </div>

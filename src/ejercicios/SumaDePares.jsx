@@ -11,6 +11,9 @@ const SumaDePares = () => {
     const array = [20,13,6,23,2,7,15,12,9,5,4];
 
 
+    const sumaPares = () => {
+        
+    }
 
 
     return(<>

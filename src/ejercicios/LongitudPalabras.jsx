@@ -11,9 +11,12 @@ const LongitudPalabras = () => {
     const [arrayPalabras, setArrayPalabras] = useState("");
 
     
+    const longitud = (texto) => {
+        const nuevoArray = texto.split(" ");
+        console.log(nuevoArray);
+    }
 
-
-    console.log(arrayPalabras.split(" "));
+    //console.log(arrayPalabras.split(" "));
 
 
     return(<>
@@ -22,7 +25,8 @@ const LongitudPalabras = () => {
 
         <textarea cols={40} rows={6} placeholder="Escribe el texto" onChange={(e) => setArrayPalabras(e.target.value)}/>
         <br/>
-        {}
+        <button onClick={() => longitud(arrayPalabras)}>Calcular</button>
+       
 
     </div>
 

@@ -14,6 +14,11 @@ const LongitudPalabras = () => {
     const longitud = (texto) => {
         const nuevoArray = texto.split(" ");
         console.log(nuevoArray);
+        const arrayLongitud = [];
+        nuevoArray.map((palabra) => {
+            arrayLongitud.push(palabra.length);
+        });
+        console.log(arrayLongitud);
     }
 
     //console.log(arrayPalabras.split(" "));
@@ -21,7 +26,7 @@ const LongitudPalabras = () => {
 
     return(<>
     <div>
-        <h2>19. Determina longitud de palabras </h2>
+        <h2>19. Determina longitud de palabras en array</h2>
 
         <textarea cols={40} rows={6} placeholder="Escribe el texto" onChange={(e) => setArrayPalabras(e.target.value)}/>
         <br/>

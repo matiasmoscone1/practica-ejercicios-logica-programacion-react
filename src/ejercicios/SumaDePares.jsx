@@ -12,24 +12,29 @@ const SumaDePares = () => {
 
 
     const sumaPares = () => {
-        const arrayPar = array.filter((num) => {
-            if(num % 2 === 0){
-                num;
+        let acumulador = 0;
+
+        for(let i = 0; i <= array.length; i++){
+            if(array[i] % 2 === 0){
+                acumulador += array[i];
             }
-        });
-        console.log(arrayPar);
+
+        }
+
+        console.log(acumulador);
+        
 
     }
 
 
 
-    
+
     return(<>
     <div>
         <h2>20. Suma de numeros pares dentro de un array</h2>
         {`[${array.join(",")}]`}
         <br/><br/>
-        <button onClick={sumaPares}>Calcular</button>
+        <button onClick={() => sumaPares()}>Calcular</button>
 
     </div>
     </>)

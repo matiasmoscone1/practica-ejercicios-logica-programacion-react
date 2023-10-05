@@ -19,6 +19,7 @@ import MultiplicaPor2 from './ejercicios/MultiplicaPor2';
 import EliminarElementos from './ejercicios/EliminarElementos';
 import LongitudPalabras from './ejercicios/LongitudPalabras';
 import SumaDePares from './ejercicios/SumaDePares';
+import EliminaDuplicados from './ejercicios/EliminaDuplicados';
 
 function App() {
 
@@ -48,6 +49,8 @@ function App() {
     <EliminarElementos />
     <LongitudPalabras />
     <SumaDePares />
+    <EliminaDuplicados />
+    
 
     </>
   )

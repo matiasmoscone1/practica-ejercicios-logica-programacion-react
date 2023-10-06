@@ -13,7 +13,11 @@ const ConteoElementos = () => {
     const [contador, setContador] = useState(0);
 
     const contarElemento = (val) => {
-        
+        array.map((valor) => {
+            if(valor === val){
+                setContador(contador + 1);
+            }
+        })
 
     }
 
@@ -25,8 +29,8 @@ const ConteoElementos = () => {
         <br/><br/>
         <input onChange={(e) => setValueInput(e.target.value)}/>
         <br/><br/>
-        <button onClick={() => contarElemento()}>Contar</button>
-    
+        <button onClick={() => contarElemento(valueInput)}>Contar</button>
+        {contador}
     
     </div>
     </>)

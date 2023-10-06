@@ -7,7 +7,7 @@ import { useState } from "react";
 const ConteoElementos = () => {
 
     const array = ["asd", 1, {nombre: "matias", apellido: "moscone"}, "asd", 34, false, 22,
-    "asd", "55", true, "holabuenosdias", 1 ,"asd", 1];
+    "asd", "55", true, "holabuenosdias", 1 ,"asd", 1, "55", 55];
 
     const [valueInput, setValueInput] = useState(null);
     const [contador, setContador] = useState(0);
@@ -16,15 +16,13 @@ const ConteoElementos = () => {
         console.log(typeof val);
         let cont = 0;
         array.map((valor) => {
-            if(valor === val){
+            if(typeof valor === typeof val && valor === val){
                 cont += 1;
             }
         });        
         setContador(cont);
-
-  
-
     }
+
 
     return(<>
     <div>

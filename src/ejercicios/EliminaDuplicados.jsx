@@ -9,8 +9,12 @@ const EliminaDuplicados = () => {
 
 
     const eliminaDuplicados = () => {
-        const resultado = array.filter((num) => num === num);
-        console.log(resultado);
+        //Rehacer funcion, no da resultado esperado
+        const numeros = new Set();
+        array.filter((num) => {
+            numeros.add(num);
+        });
+        console.log(numeros);
     }
 
 

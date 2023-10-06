@@ -13,11 +13,16 @@ const ConteoElementos = () => {
     const [contador, setContador] = useState(0);
 
     const contarElemento = (val) => {
+        console.log(typeof val);
+        let cont = 0;
         array.map((valor) => {
             if(valor === val){
-                setContador(contador + 1);
+                cont += 1;
             }
-        })
+        });        
+        setContador(cont);
+
+  
 
     }
 

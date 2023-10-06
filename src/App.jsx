@@ -20,6 +20,7 @@ import EliminarElementos from './ejercicios/EliminarElementos';
 import LongitudPalabras from './ejercicios/LongitudPalabras';
 import SumaDePares from './ejercicios/SumaDePares';
 import EliminaDuplicados from './ejercicios/EliminaDuplicados';
+import ConteoElementos from './ejercicios/ConteoElementos';
 
 function App() {
 
@@ -50,6 +51,7 @@ function App() {
     <LongitudPalabras />
     <SumaDePares />
     <EliminaDuplicados />
+    <ConteoElementos />
     
 
     </>

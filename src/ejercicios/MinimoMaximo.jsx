@@ -11,13 +11,18 @@ const MinimoMaximo = () => {
     const [resultado, setResultado] = useState(0);
 
 
+    const obtenerMaximo = (arr) => {
+        const max = arr.reduce((a,b) => Math.max(a, b), arr[0]);
+        setResultado(max);        
+        console.log(resultado);
+    }
 
     return(<>
     <div>
         <h2>23. Busca el minimo o maximo del array</h2>
         {`[${array.join(",")}]`}
         <br/><br/>
-        <button>Maximo</button>{" "}
+        <button onClick={() => obtenerMaximo(array)}>Maximo</button>{" "}
         <button>Minimo</button>{" "}
         {resultado}
 

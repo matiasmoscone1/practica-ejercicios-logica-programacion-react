@@ -14,7 +14,13 @@ const MinimoMaximo = () => {
     const obtenerMaximo = (arr) => {
         const max = arr.reduce((a,b) => Math.max(a, b), arr[0]);
         setResultado(max);        
-        console.log(resultado);
+        //console.log(resultado);
+    }
+
+    const obtenerMinimo = (arr) => {
+        const min = arr.reduce((a,b) => Math.min(a,b), arr[0]);
+        setResultado(min);
+        //console.log(resultado);
     }
 
     return(<>
@@ -23,7 +29,7 @@ const MinimoMaximo = () => {
         {`[${array.join(",")}]`}
         <br/><br/>
         <button onClick={() => obtenerMaximo(array)}>Maximo</button>{" "}
-        <button>Minimo</button>{" "}
+        <button onClick={() => obtenerMinimo(array)}>Minimo</button>{" "}
         {resultado}
 
     </div>

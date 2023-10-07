@@ -21,6 +21,7 @@ import LongitudPalabras from './ejercicios/LongitudPalabras';
 import SumaDePares from './ejercicios/SumaDePares';
 import EliminaDuplicados from './ejercicios/EliminaDuplicados';
 import ConteoElementos from './ejercicios/ConteoElementos';
+import MinimoMaximo from './ejercicios/MinimoMaximo';
 
 function App() {
 
@@ -52,6 +53,7 @@ function App() {
     <SumaDePares />
     <EliminaDuplicados />
     <ConteoElementos />
+    <MinimoMaximo />
     
 
     </>

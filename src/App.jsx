@@ -22,6 +22,7 @@ import SumaDePares from './ejercicios/SumaDePares';
 import EliminaDuplicados from './ejercicios/EliminaDuplicados';
 import ConteoElementos from './ejercicios/ConteoElementos';
 import MinimoMaximo from './ejercicios/MinimoMaximo';
+import SumaDeArrays from './ejercicios/SumaDeArrays';
 
 function App() {
 
@@ -54,7 +55,7 @@ function App() {
     <EliminaDuplicados />
     <ConteoElementos />
     <MinimoMaximo />
-    
+    <SumaDeArrays />
 
     </>
   )

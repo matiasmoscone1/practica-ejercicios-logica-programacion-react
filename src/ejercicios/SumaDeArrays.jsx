@@ -12,17 +12,14 @@ const SumaDeArrays = () => {
     const [resultado, setResultado] = useState([]);
 
     const sumarMatrices = (mat1, mat2) => {
-        let nuevoArray = [...mat1];
-        let pos = 0;
-        mat2.map((num) => {
-            nuevoArray.push(nuevoArray[pos] + num);
-            pos++;            
-        })
+            const nuevoArray = mat1.map((valor, indice) => valor + mat2[indice]);
+            console.log(nuevoArray);
+        }
 
-        console.log(nuevoArray);
+        //console.log(nuevoArray);
 
 
-    }
+    
 
 
     return(<>

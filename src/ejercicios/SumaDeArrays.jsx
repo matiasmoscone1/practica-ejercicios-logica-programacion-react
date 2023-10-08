@@ -9,11 +9,19 @@ const SumaDeArrays = () => {
 
     const matriz1 = [2,6,10,20];
     const matriz2 = [4,8,5,30];
-
+    const [resultado, setResultado] = useState([]);
 
     const sumarMatrices = (mat1, mat2) => {
+        let nuevoArray = [...mat1];
+        let pos = 0;
+        mat2.map((num) => {
+            nuevoArray.push(nuevoArray[pos] + num);
+            pos++;            
+        })
 
-        
+        console.log(nuevoArray);
+
+
     }
 
 

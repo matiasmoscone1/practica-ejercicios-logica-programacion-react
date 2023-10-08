@@ -10,11 +10,20 @@ const SumaDeArrays = () => {
     const matriz1 = [2,6,10,20];
     const matriz2 = [4,8,5,30];
 
-    
+
+    const sumarMatrices = (mat1, mat2) => {
+
+        
+    }
+
 
     return(<>
     <div>
         <h2>24. Suma de matrices (arrays) </h2>
+        Matriz 1: {`[${matriz1.join(",")}]`}<br/>
+        Matriz 2: {`[${matriz2.join(",")}]`}<br/><br/>
+
+        <button onClick={() => sumarMatrices(matriz1, matriz2)}>Sumar</button>
 
 
     </div>

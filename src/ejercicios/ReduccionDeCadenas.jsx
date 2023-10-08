@@ -8,7 +8,7 @@ import { useState } from "react";
 const ReduccionDeCadenas = () => {
 
     const [arrayCadenas, setArrayCadenas] = useState(null);
-    const [resultado, setResultado] = useState(null);
+    const [resultado, setResultado] = useState("");
 
     console.log(arrayCadenas);
 
@@ -29,7 +29,7 @@ const ReduccionDeCadenas = () => {
         <textarea cols={50} rows={6} onChange={(e) => {setArrayCadenas(e.target.value)}}/>
         <br/><br/>
         <button onClick={() => reduceCadenas(arrayCadenas)}>Reducir</button><br/><br/>
-        {resultado}
+        {`El array reducido es: ${resultado}`}
     </div>
     </>)
 

@@ -28,7 +28,6 @@ const SumaDeArrays = () => {
                 //si no tienen la misma longitud lanza este error
                 console.error("La longitud de las matrices debe ser igual");
             }
-
         }
 
         

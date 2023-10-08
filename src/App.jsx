@@ -23,6 +23,7 @@ import EliminaDuplicados from './ejercicios/EliminaDuplicados';
 import ConteoElementos from './ejercicios/ConteoElementos';
 import MinimoMaximo from './ejercicios/MinimoMaximo';
 import SumaDeArrays from './ejercicios/SumaDeArrays';
+import ReduccionDeCadenas from './ejercicios/ReduccionDeCadenas';
 
 function App() {
 
@@ -56,6 +57,7 @@ function App() {
     <ConteoElementos />
     <MinimoMaximo />
     <SumaDeArrays />
+    <ReduccionDeCadenas />
 
     </>
   )

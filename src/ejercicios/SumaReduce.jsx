@@ -11,9 +11,9 @@ const SumaReduce = () => {
 
     const [resultado, setResultado] = useState(0);
 
-    const sumaReduciendo = () => {
-
-
+    const sumaReduciendo = (arr) => {
+        const arrayReducido = arr.reduce((a, b) => a + b);
+        setResultado(arrayReducido);
     }
 
     
@@ -23,7 +23,7 @@ const SumaReduce = () => {
         <h2>26. Suma de array utilizando reduce</h2>
         {`[${arrayNumeros.join(",")}]`}
         <br/><br/>
-        <button onClick={() => sumaReduciendo()}>Sumar Reduciendo</button>
+        <button onClick={() => sumaReduciendo(arrayNumeros)}>Sumar Reduciendo</button>
         {resultado ? resultado : ""}
     </div>
     </>)

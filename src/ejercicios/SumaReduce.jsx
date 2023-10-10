@@ -26,10 +26,15 @@ const SumaReduce = () => {
     return(<>
     <div>
         <h2>26. Suma de array utilizando reduce</h2>
+        {/* muestra array inicial en pantalla */}
         {`[${arrayNumeros.join(",")}]`}
         <br/><br/>
+        {/* boton de suma, escucha el evento click y llama a la funcion sumadora y le 
+        pasa por parametro el array inicial. Boton limpiar setea nuevamente a 0 el valor de 
+        la variable de estado */}
         <button onClick={() => sumaReduciendo(arrayNumeros)}>Sumar Reduciendo</button>{" "}
         <button onClick={() => setResultado(0)}>Limpiar</button>{" "}
+        {/* operador ternario donde si existe resultado lo muestra en pantalla sino una cadena vacia */}
         {resultado ? resultado : ""}
     </div>
     </>)

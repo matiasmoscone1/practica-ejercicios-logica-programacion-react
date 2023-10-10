@@ -25,6 +25,7 @@ import MinimoMaximo from './ejercicios/MinimoMaximo';
 import SumaDeArrays from './ejercicios/SumaDeArrays';
 import ReduccionDeCadenas from './ejercicios/ReduccionDeCadenas';
 import SumaReduce from './ejercicios/SumaReduce';
+import CuentaElementos from './ejercicios/CuentaElementos';
 
 function App() {
 
@@ -60,6 +61,7 @@ function App() {
     <SumaDeArrays />
     <ReduccionDeCadenas />
     <SumaReduce />
+    <CuentaElementos />
 
     </>
   )

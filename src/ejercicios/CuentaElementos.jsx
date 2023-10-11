@@ -12,6 +12,7 @@ const CuentaElementos = () => {
     const array = ["hola", 3, 6, "hola", false, 70, true, "hola", 6, "6", "asdasd", "true",
     true, true, 6, "hola", {asd: "asd", num: 2}, ["gg", "gg", "gg"]];
 
+    const [valor, setValor] = useState(null);
     const [resultado, setResultado] = useState(null);
     
 
@@ -20,6 +21,10 @@ const CuentaElementos = () => {
     return(<>
     <div>
         <h2>27. Cuenta elementos de un array </h2>
+        <input onChange={(e) => setValor(e.target.value)}/><br/><br/>
+        <button>Contar Elemento</button>
+
+
     </div>
     </>)
 

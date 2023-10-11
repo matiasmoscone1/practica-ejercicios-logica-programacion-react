@@ -16,13 +16,16 @@ const CuentaElementos = () => {
     const [resultado, setResultado] = useState(null);
     
 
+    const cuentaElementosRepetidos = (val) => {
+        
+    }
 
 
     return(<>
     <div>
         <h2>27. Cuenta elementos de un array </h2>
         <input onChange={(e) => setValor(e.target.value)}/><br/><br/>
-        <button>Contar Elemento</button>
+        <button onClick={() => cuentaElementosRepetidos(valor)}>Contar Elemento</button>
 
 
     </div>

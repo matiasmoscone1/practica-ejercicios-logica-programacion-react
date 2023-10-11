@@ -16,16 +16,26 @@ const CuentaElementos = () => {
     const [resultado, setResultado] = useState(null);
     
 
-    const cuentaElementosRepetidos = (val) => {
-        
+    const cuentaElementosRepetidos = (val, arr) => {
+        console.log(typeof val, val);
+        console.log(arr);
+        let acumulador = 0;
+        // IMPLEMENTAR MEJOR LOGICA, FALLA RESULTADO PORQUE COMPARA VALOR CON VALOR SIGUIENTE
+        const arrayReducido = arr.reduce((acc, valorActual) => {
+            if(acc === valorActual){
+                acumulador++;
+            }
+        });
+        console.log(acumulador);
+
     }
 
 
     return(<>
     <div>
         <h2>27. Cuenta elementos de un array </h2>
-        <input onChange={(e) => setValor(e.target.value)}/><br/><br/>
-        <button onClick={() => cuentaElementosRepetidos(valor)}>Contar Elemento</button>
+        <input onChange={(e) => setValor(e.target.value)}/>{" "}
+        <button onClick={() => cuentaElementosRepetidos(valor, array)}>Contar Elemento</button>
 
 
     </div>

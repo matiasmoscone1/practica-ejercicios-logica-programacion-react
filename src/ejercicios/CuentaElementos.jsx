@@ -22,9 +22,11 @@ const CuentaElementos = () => {
         let acumulador = 0;
         // IMPLEMENTAR MEJOR LOGICA, FALLA RESULTADO PORQUE COMPARA VALOR CON VALOR SIGUIENTE
         const arrayReducido = arr.reduce((acc, valorActual) => {
-            if(acc === valorActual){
-                acumulador++;
-            }
+            const cadena = JSON.stringify(valorActual);
+            //console.log(typeof cadena);
+
+            acc[cadena] = (acc[cadena] || 0) + 1;
+            console.log(acc);
         });
         console.log(acumulador);
 

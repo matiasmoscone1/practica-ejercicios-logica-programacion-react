@@ -17,19 +17,24 @@ const CuentaElementos = () => {
     
 
     const cuentaElementosRepetidos = (val, arr) => {
-        console.log(typeof val, val);
-        console.log(arr);
-        let acumulador = 0;
+        //console.log(typeof val, val);
+        //console.log(arr);
         // IMPLEMENTAR MEJOR LOGICA, FALLA RESULTADO PORQUE COMPARA VALOR CON VALOR SIGUIENTE
         const arrayReducido = arr.reduce((acc, valorActual) => {
             const cadena = JSON.stringify(valorActual);
+            const cadenaValor = JSON.stringify(val);
             //console.log(typeof cadena);
 
-            acc[cadena] = (acc[cadena] || 0) + 1;
-            console.log(acc);
+            if(cadena === cadenaValor){
+                acc++;
+            }
+    
+            return acc;
         });
-        console.log(acumulador);
+        console.log(arrayReducido);
 
+        setResultado(arrayReducido);
+        console.log(resultado);
     }
 
 

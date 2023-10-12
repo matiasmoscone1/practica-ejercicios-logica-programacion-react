@@ -2,6 +2,7 @@
 
 //27. Cuenta de elementos en un arreglo: Dado un arreglo, utiliza reduce para contar 
 //cuántas veces aparece un valor específico en el arreglo. (utilizando reduce)
+//SOLO COMPARA CON CADENA DE TEXTO
 
 import { useState } from "react";
 
@@ -19,13 +20,12 @@ const CuentaElementos = () => {
     const cuentaElementosRepetidos = (val, arr) => {
         //console.log(typeof val, val);
         //console.log(arr);
-        // IMPLEMENTAR MEJOR LOGICA, FALLA RESULTADO PORQUE COMPARA VALOR CON VALOR SIGUIENTE
         const arrayReducido = arr.reduce((acc, valorActual) => {
             const cadena = JSON.stringify(valorActual);
             const cadenaValor = JSON.stringify(val);
             //console.log(typeof cadena);
-
-            if(typeof cadena === typeof cadenaValor){
+            //console.log(typeof cadenaValor);
+            if(typeof cadena === typeof cadenaValor && cadena === cadenaValor){
                 acc++;
             }
     
@@ -33,10 +33,10 @@ const CuentaElementos = () => {
             //ese 0  que se le pasa como segundo parametro a la funcion reduce 
             //es el valor incial del acumulador
         }, 0);
-        console.log(arrayReducido);
+        //console.log(arrayReducido);
 
         setResultado(arrayReducido);
-        console.log(resultado);
+        //console.log(resultado);
     }
 
 
@@ -44,8 +44,8 @@ const CuentaElementos = () => {
     <div>
         <h2>27. Cuenta elementos de un array </h2>
         <input onChange={(e) => setValor(e.target.value)}/>{" "}
-        <button onClick={() => cuentaElementosRepetidos(valor, array)}>Contar Elemento</button>
-
+        <button onClick={() => cuentaElementosRepetidos(valor, array)}>Contar Elemento</button>{" "}
+        {resultado}
 
     </div>
     </>)

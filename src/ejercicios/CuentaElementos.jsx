@@ -30,7 +30,7 @@ const CuentaElementos = () => {
             }
     
             return acc;
-        });
+        }, 0);
         console.log(arrayReducido);
 
         setResultado(arrayReducido);

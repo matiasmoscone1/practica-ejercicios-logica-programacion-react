@@ -25,11 +25,13 @@ const CuentaElementos = () => {
             const cadenaValor = JSON.stringify(val);
             //console.log(typeof cadena);
 
-            if(cadena === cadenaValor){
+            if(typeof cadena === typeof cadenaValor){
                 acc++;
             }
     
             return acc;
+            //ese 0  que se le pasa como segundo parametro a la funcion reduce 
+            //es el valor incial del acumulador
         }, 0);
         console.log(arrayReducido);
 

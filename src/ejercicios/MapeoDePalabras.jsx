@@ -24,13 +24,13 @@ const MapeoDePalabras = () => {
         const arrayNuevo = [];
 
         for(let i = 0; i <= arrayLongitud.length - 1; i++){
-            arrayNuevo.push(`Longitud: ${arrayLongitud[i]}`);
+            arrayNuevo.push(`Longitud cadena "${i + 1}": ${arrayLongitud[i]} - `);
         }
 
 
-        console.log(arrayNuevo);
+        //console.log(arrayNuevo);
 
-        setResultado(arrayLongitud);
+        setResultado(arrayNuevo);
     }
 
 

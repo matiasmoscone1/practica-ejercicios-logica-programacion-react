@@ -48,8 +48,11 @@ const CuentaElementos = () => {
     return(<>
     <div>
         <h2>27. Cuenta elementos de un array (solo cadenas de texto) </h2>
+        {/* input que almacena el valor que se le pasa por parametro a la funcion contadora 
+        y boton que escucha el evento click y llama a la funcion con los parametros adecuados*/}
         <input onChange={(e) => setValor(e.target.value)}/>{" "}
         <button onClick={() => cuentaElementosRepetidos(valor, array)}>Contar Elemento</button>{" "}
+        {/* muestra el resultado en pantalla */}
         {resultado}
 
     </div>

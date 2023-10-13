@@ -13,11 +13,11 @@ const SumaNumerosPares = () => {
 
         const arrayReducido = arr.reduce((acc, val) => {
             val % 2 === 0 ? acc++ : acc;
-
+ 
             return acc;
-        }, arr[0]);
+        }, 0);
         
-        console.log(arrayReducido);
+      console.log(arrayReducido);
 
         }
     
@@ -28,7 +28,7 @@ const SumaNumerosPares = () => {
     return(<>
     <div>
         <h2>29. Suma los numeros pares de un array</h2>
-        {`[${arrayNumeros.join(",")}]`}
+        {`[${arrayNumeros.join(",")}]`}{" "}
         <button onClick={() => cuentaPares(arrayNumeros)}>Cuenta Pares</button>
 
     </div>

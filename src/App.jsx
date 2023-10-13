@@ -27,6 +27,7 @@ import ReduccionDeCadenas from './ejercicios/ReduccionDeCadenas';
 import SumaReduce from './ejercicios/SumaReduce';
 import CuentaElementos from './ejercicios/CuentaElementos';
 import MapeoDePalabras from './ejercicios/MapeoDePalabras';
+import SumaNumerosPares from './ejercicios/SumaNumerosPares';
 
 function App() {
 
@@ -64,7 +65,8 @@ function App() {
     <SumaReduce />
     <CuentaElementos />
     <MapeoDePalabras />
-
+    <SumaNumerosPares />
+    
 
     </>
   )

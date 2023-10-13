@@ -21,7 +21,7 @@ const MapeoDePalabras = () => {
             console.log(arrayLongitud);
         }, arrayLongitud[0]);
         
-        const arrayNuevo = [...arrayLongitud];
+        const arrayNuevo = [];
 
         for(let i = 0; i <= arrayLongitud.length - 1; i++){
             arrayNuevo.push(`Longitud: ${arrayLongitud[i]}`);

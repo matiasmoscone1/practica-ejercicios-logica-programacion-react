@@ -11,9 +11,17 @@ const SumaNumerosPares = () => {
 
     const cuentaPares = (arr) => {
 
-        
+        const arrayReducido = arr.reduce((acc, val) => {
+            val % 2 === 0 ? acc++ : acc;
 
-    }
+            return acc;
+        }, arr[0]);
+        
+        console.log(arrayReducido);
+
+        }
+    
+  
 
 
 

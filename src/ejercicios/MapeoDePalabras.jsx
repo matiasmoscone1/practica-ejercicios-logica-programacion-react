@@ -7,7 +7,7 @@ import { useState } from "react";
 
 const MapeoDePalabras = () => {
 
-    const [resultado, setResultado] = useState(null);
+    const [resultado, setResultado] = useState([]);
     const [arrayPalabras, setArrayPalabras] = useState([]);
 
 
@@ -20,8 +20,9 @@ const MapeoDePalabras = () => {
         
             console.log(arrayLongitud);
         }, arrayLongitud[0]);
-        return(arrayReducido);
+        
 
+        setResultado(arrayReducido);
     }
 
 

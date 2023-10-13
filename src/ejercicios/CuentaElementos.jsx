@@ -18,26 +18,30 @@ const CuentaElementos = () => {
     const [resultado, setResultado] = useState(null);
     
 
+    //funcion que cuenta elementos repetidos, se le pasa como parametro el valor que se quiere
+    //contar y el array de elementos
     const cuentaElementosRepetidos = (val, arr) => {
-        //console.log(typeof val, val);
-        //console.log(arr);
+
+        //se utiliza reduce, el acc acumula cada vez que se encuentre el elemento en el array
+        //el valor actual es el que va "iterando"
         const arrayReducido = arr.reduce((acc, valorActual) => {
+            //Tanto al valor actual y al valor pasado por parametro, se los convierte en string
             const cadena = JSON.stringify(valorActual);
             const cadenaValor = JSON.stringify(val);
-            //console.log(typeof cadena);
-            //console.log(typeof cadenaValor);
+       
+            //compara el valor pasado por parametro en la funcion con el valor actual, si
+            //"matchea" se suma 1 al acumulador.
             if(typeof cadena === typeof cadenaValor && cadena === cadenaValor){
                 acc++;
             }
-    
+            //devuelve el acumulador
             return acc;
             //ese 0  que se le pasa como segundo parametro a la funcion reduce 
             //es el valor incial del acumulador
         }, 0);
-        //console.log(arrayReducido);
 
+        //setea el resultado con el array nuevo reducido, que devuelve el num del acumulador
         setResultado(arrayReducido);
-        //console.log(resultado);
     }
 
 

@@ -15,14 +15,22 @@ const MapeoDePalabras = () => {
         //console.log(arr);
 
         const arrayLongitud = [];
-        const arrayReducido = arr.split(" ").reduce((res, val) => {
+        arr.split(" ").reduce((res, val) => {
             arrayLongitud.push(val.length);
         
             console.log(arrayLongitud);
         }, arrayLongitud[0]);
         
+        const arrayNuevo = [...arrayLongitud];
 
-        setResultado(arrayReducido);
+        for(let i = 0; i <= arrayLongitud.length - 1; i++){
+            arrayNuevo.push(`Longitud: ${arrayLongitud[i]}`);
+        }
+
+
+        console.log(arrayNuevo);
+
+        setResultado(arrayLongitud);
     }
 
 
@@ -33,7 +41,7 @@ const MapeoDePalabras = () => {
         <h2>28. Longitud de palabras de un array con reduce</h2>
         <textarea onChange={(e) => setArrayPalabras(e.target.value)} cols={40} rows={6}/><br/><br/>
         <button onClick={() => determinaLongitud(arrayPalabras)}>Contar longitud</button>{" "}
-        {resultado}
+        {`[${resultado.join(",")}]`}
 
 
 

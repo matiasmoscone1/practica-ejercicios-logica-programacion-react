@@ -7,13 +7,22 @@ import { useState } from "react";
 
 const CuentaElementoReduce = () => {
 
-    const arrayNumeros = [2, 53, 43, 2, 58, 2, 53, 33, 16, 2, 53, 10, 2, 53, 43, 5, 5, 53];
+    const arrayNumeros = [2, 43, 2, 58, 2, 53, 33, 16, 2, 53, 10, 2, 53, 43, 5, 5, 53];
     const [numero, setNumero] = useState(0);
     const [resultado, setResultado] = useState(null);
 
 
-    const cuentaElementosRepetidos = () => {
-        setResultado(34);
+    const cuentaElementosRepetidos = (arr, num) => {
+
+        const arrayReducido = arr.reduce((cont, val) => {
+            if(val == num){
+                cont += 1;
+            }
+            return cont;
+        }, 0);
+
+        setResultado(arrayReducido);
+
     }
 
 
@@ -23,7 +32,7 @@ const CuentaElementoReduce = () => {
         
         {`[${arrayNumeros.join(",")}]`}<br/><br/>
         <input type="number" placeholder={"Escribe el numero"} onChange={(e) => setNumero(e.target.value)}/>{" "}    
-        <button onClick={() => cuentaElementosRepetidos()}>Contar</button>{" "}
+        <button onClick={() => cuentaElementosRepetidos(arrayNumeros, numero)}>Contar</button>{" "}
         <button onClick={() => setResultado(null)}>Limpiar</button>
         <br/><br/>
         {resultado}

@@ -11,12 +11,23 @@ const CuentaElementoReduce = () => {
     const [numero, setNumero] = useState(0);
     const [resultado, setResultado] = useState(null);
 
-    
+
+    const cuentaElementosRepetidos = () => {
+        setResultado(34);
+    }
+
+
     return(<>
     <div>
         <h2>31. Cuenta elemento repetido con reduce</h2>
-        <input type={number} placeholder={"Escribe el numero"} onChange={(e) => setNumero(e.target.value)}/>    
-
+        
+        {`[${arrayNumeros.join(",")}]`}<br/><br/>
+        <input type="number" placeholder={"Escribe el numero"} onChange={(e) => setNumero(e.target.value)}/>{" "}    
+        <button onClick={() => cuentaElementosRepetidos()}>Contar</button>{" "}
+        <button onClick={() => setResultado(null)}>Limpiar</button>
+        <br/><br/>
+        {resultado}
+        
 
     </div>
     </>)

@@ -28,6 +28,7 @@ import SumaReduce from './ejercicios/SumaReduce';
 import CuentaElementos from './ejercicios/CuentaElementos';
 import MapeoDePalabras from './ejercicios/MapeoDePalabras';
 import SumaNumerosPares from './ejercicios/SumaNumerosPares';
+import DuplicadosReduce from './ejercicios/DuplicadosReduce';
 
 function App() {
 
@@ -66,6 +67,8 @@ function App() {
     <CuentaElementos />
     <MapeoDePalabras />
     <SumaNumerosPares />
+    <DuplicadosReduce />
+    
     
 
     </>

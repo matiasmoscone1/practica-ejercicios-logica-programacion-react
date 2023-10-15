@@ -5,7 +5,8 @@
 
 const SumaMatricesReduce = () => {
 
-    
+    const array1 = [2, 4, 35, 22, 13, 22];
+    const array2 = [3, 10, 22, 42, 15, 28];
 
     return(<>
     <div>

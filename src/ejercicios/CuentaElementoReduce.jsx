@@ -31,7 +31,6 @@ const CuentaElementoReduce = () => {
 
         //setea el resultado con el valor del array reducido
         setResultado(arrayReducido);
-
     }
 
 

@@ -30,6 +30,7 @@ import MapeoDePalabras from './ejercicios/MapeoDePalabras';
 import SumaNumerosPares from './ejercicios/SumaNumerosPares';
 import DuplicadosReduce from './ejercicios/DuplicadosReduce';
 import CuentaElementoReduce from './ejercicios/CuentaElementoReduce';
+import SumaMatricesReduce from './ejercicios/SumaMatricesReduce';
 
 function App() {
 
@@ -70,7 +71,7 @@ function App() {
     <SumaNumerosPares />
     <DuplicadosReduce />
     <CuentaElementoReduce />
-    
+    <SumaMatricesReduce />
 
 
     </>

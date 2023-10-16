@@ -14,11 +14,16 @@ const SumaMatricesReduce = () => {
 
     const sumarMatrices = (arr1, arr2) => {
         //console.log(arr1, arr2);
-        const arrayCompleto = [...array1, ...array2];
-
-        console.log(arrayCompleto);
+     
+        arr1.reduce((arrSum, val) => {
+            arr2.map((valor) => {
+                arrSum = val + valor; 
+            });
 
         
+            console.log(arrSum)
+        }, []);
+
 
     }
 

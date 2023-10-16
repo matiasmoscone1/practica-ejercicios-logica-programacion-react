@@ -13,8 +13,12 @@ const SumaMatricesReduce = () => {
     const [resultado, setResultado] = useState([]);
 
     const sumarMatrices = (arr1, arr2) => {
+        //console.log(arr1, arr2);
+        const arrayCompleto = [...array1, ...array2];
 
-        console.log(arr1, arr2);
+        console.log(arrayCompleto);
+
+        
 
     }
 

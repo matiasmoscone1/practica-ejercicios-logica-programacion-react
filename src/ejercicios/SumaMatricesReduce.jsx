@@ -15,14 +15,12 @@ const SumaMatricesReduce = () => {
     const sumarMatrices = (arr1, arr2) => {
         //console.log(arr1, arr2);
      
-        arr1.reduce((arrSum, val) => {
-            arr2.map((valor) => {
-                arrSum = val + valor; 
-            });
-
+        arr1.reduce((arrSum, val, i = 0) => {
+            arrSum = val + arr2[i]
+            i++;            
         
             console.log(arrSum)
-        }, []);
+        });
 
 
     }

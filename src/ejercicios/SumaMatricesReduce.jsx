@@ -20,7 +20,7 @@ const SumaMatricesReduce = () => {
             i++;            
         
             console.log(arrSum)
-        });
+        }, 0);
 
 
     }

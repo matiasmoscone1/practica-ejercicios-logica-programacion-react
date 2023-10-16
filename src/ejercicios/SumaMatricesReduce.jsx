@@ -7,7 +7,7 @@ import { useState } from "react";
 
 const SumaMatricesReduce = () => {
 
-    const array1 = [2, 4, 35, 22, 13, 22, 7];
+    const array1 = [2, 4, 35, 22, 7];
     const array2 = [3, 10, 22, 42, 15, 28];
 
     const [resultado, setResultado] = useState([]);
@@ -15,16 +15,19 @@ const SumaMatricesReduce = () => {
     const sumarMatrices = (arr1, arr2) => {
         //console.log(arr1, arr2);
         
-            arr1.reduce((arrSum, val, i = 0) => {
-                       
-                arrSum = (val || 0) + (arr2[i] || 0);
-                i++;          
-                         
-    
-                console.log(arrSum)
-            }, 0);
-        
-
+            if(arr1.length > arr2.length){                
+                arr1.reduce((arrSum, val, i = 0) => {
+                    arrSum = (val || 0) + (arr2[i] || 0);
+                    i++;          
+                    console.log(arrSum)
+                }, 0);
+            }else{                
+                arr2.reduce((arrSum, val, i = 0) => {
+                    arrSum = (val || 0) + (arr1[i] || 0);
+                    i++;          
+                    console.log(arrSum)
+                }, 0);
+            }
     }
 
 

@@ -14,20 +14,23 @@ const SumaMatricesReduce = () => {
 
     const sumarMatrices = (arr1, arr2) => {
         //console.log(arr1, arr2);
-        
+            const nuevoArray = [];        
             if(arr1.length > arr2.length){                
                 arr1.reduce((arrSum, val, i = 0) => {
                     arrSum = (val || 0) + (arr2[i] || 0);
                     i++;          
-                    console.log(arrSum)
+                    console.log(arrSum);
+                    nuevoArray.push(arrSum);
                 }, 0);
             }else{                
                 arr2.reduce((arrSum, val, i = 0) => {
                     arrSum = (val || 0) + (arr1[i] || 0);
                     i++;          
-                    console.log(arrSum)
+                    console.log(arrSum);
+                    nuevoArray.push(arrSum);
                 }, 0);
             }
+        setResultado(nuevoArray);
     }
 
 

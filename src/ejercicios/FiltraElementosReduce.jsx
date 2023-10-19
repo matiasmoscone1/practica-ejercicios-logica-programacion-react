@@ -5,17 +5,18 @@
 
 const FiltraElementosReduce = () => {
 
-    
+    const arrayNumeros = [2, 33, 15, 32, 64, 9, 12, 24, 7, 5, 19, 29, 22, 4, 43, 18, 1];
 
 
 
     return(<>
     <div>
         <h2>33. Filtrado de elementos con reduce</h2>
-        <button></button>
-        <button></button>
-        <button></button>
-        <button></button>
+        <p>{`[${arrayNumeros.join(",")}]`}</p>
+        <button>Nros Pares</button>{" "}
+        <button>Nros Impares</button>{" "}
+        <button>Nros Primos</button>{" "}
+        <button>Multiplo de 3</button>
     </div>
     </>)
 

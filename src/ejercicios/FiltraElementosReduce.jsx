@@ -12,12 +12,13 @@ const FiltraElementosReduce = () => {
     const [resultado, setResultado] = useState(null);
 
     const filtraPares = (arr) => {
-        const nuevoArray = [];
-        arr.reduce((acc, val) => {
+
+        const nuevoArray = arr.reduce((acc, val) => {
             if(val % 2 === 0){
-                acc = nuevoArray.push(val);
+                acc.push(val);
             }
-        }, 0);
+            return(acc);
+        }, []);
         setResultado(nuevoArray);
     }
 

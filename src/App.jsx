@@ -31,6 +31,7 @@ import SumaNumerosPares from './ejercicios/SumaNumerosPares';
 import DuplicadosReduce from './ejercicios/DuplicadosReduce';
 import CuentaElementoReduce from './ejercicios/CuentaElementoReduce';
 import SumaMatricesReduce from './ejercicios/SumaMatricesReduce';
+import FiltraElementosReduce from './ejercicios/FiltraElementosReduce';
 
 function App() {
 
@@ -72,7 +73,8 @@ function App() {
     <DuplicadosReduce />
     <CuentaElementoReduce />
     <SumaMatricesReduce />
-
+    <FiltraElementosReduce />
+    
 
     </>
   )

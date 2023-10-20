@@ -55,7 +55,7 @@ const FiltraElementosReduce = () => {
         <button onClick={() => filtraPares(arrayNumeros)}>Nros Pares</button>{" "}
         <button onClick={() => filtraImpares(arrayNumeros)}>Nros Impares</button>{" "}
         <button onClick={() => filtraRacional(arrayNumeros)}>Nros Racionales</button>{" "}
-        <button>Multiplo de 3</button>
+        <button onClick={() => filtraMultiplos(arrayNumeros)}>Multiplo de 3</button>
     </div>
     </>)
 

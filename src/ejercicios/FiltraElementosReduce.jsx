@@ -29,12 +29,14 @@ const FiltraElementosReduce = () => {
             }
             return acc;
         }, []);
-
         setResultado(arrayNuevo);
     }
 
-    const filtraPrimos = (arr) => {
-
+    const filtraRacional = (arr) => {
+        const arrayNuevo = arr.reduce((acc, val) => {
+      
+        }, []);
+        return acc;
     }
     const filtraMultiplos = (arr) => {
 
@@ -49,7 +51,7 @@ const FiltraElementosReduce = () => {
         <p>{`[${arrayNumeros.join(",")}]`}</p>
         <button onClick={() => filtraPares(arrayNumeros)}>Nros Pares</button>{" "}
         <button onClick={() => filtraImpares(arrayNumeros)}>Nros Impares</button>{" "}
-        <button>Nros Primos</button>{" "}
+        <button>Nros Racionales</button>{" "}
         <button>Multiplo de 3</button>
     </div>
     </>)

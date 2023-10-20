@@ -24,7 +24,7 @@ const FiltraElementosReduce = () => {
 
     const filtraImpares = (arr) => {
         const arrayNuevo = arr.reduce((acc, val) => {
-            if(!val % 2 === 0){
+            if(!(val % 2 === 0)){
                 acc.push(val);
             }
             return acc;
@@ -32,7 +32,7 @@ const FiltraElementosReduce = () => {
 
         setResultado(arrayNuevo);
     }
-    
+
     const filtraPrimos = (arr) => {
 
     }
@@ -48,7 +48,7 @@ const FiltraElementosReduce = () => {
         <h2>33. Filtrado de elementos con reduce</h2>
         <p>{`[${arrayNumeros.join(",")}]`}</p>
         <button onClick={() => filtraPares(arrayNumeros)}>Nros Pares</button>{" "}
-        <button>Nros Impares</button>{" "}
+        <button onClick={() => filtraImpares(arrayNumeros)}>Nros Impares</button>{" "}
         <button>Nros Primos</button>{" "}
         <button>Multiplo de 3</button>
     </div>

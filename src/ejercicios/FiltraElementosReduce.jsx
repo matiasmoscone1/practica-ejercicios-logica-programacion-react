@@ -63,6 +63,8 @@ const FiltraElementosReduce = () => {
         <button onClick={() => filtraImpares(arrayNumeros)}>Nros Impares</button>{" "}
         <button onClick={() => filtraRacional(arrayNumeros)}>Nros Racionales</button>{" "}
         <button onClick={() => filtraMultiplos(arrayNumeros)}>Multiplo de 3</button>
+        <p>{`[${resultado}]`}</p>
+
     </div>
     </>)
 

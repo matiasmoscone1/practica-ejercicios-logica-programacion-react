@@ -23,8 +23,16 @@ const FiltraElementosReduce = () => {
     }
 
     const filtraImpares = (arr) => {
+        const arrayNuevo = arr.reduce((acc, val) => {
+            if(!val % 2 === 0){
+                acc.push(val);
+            }
+            return acc;
+        }, []);
 
+        setResultado(arrayNuevo);
     }
+    
     const filtraPrimos = (arr) => {
 
     }

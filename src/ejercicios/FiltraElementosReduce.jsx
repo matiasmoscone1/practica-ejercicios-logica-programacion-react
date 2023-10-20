@@ -7,6 +7,7 @@ import { useState } from "react";
 
 const FiltraElementosReduce = () => {
 
+
     const arrayNumeros = [2, 33, 15, 32, 64, 9, 12, 24, 7, 5, 19, 29, 22, 4, 43, 18, 1];
 
     const [resultado, setResultado] = useState(null);
@@ -42,7 +43,13 @@ const FiltraElementosReduce = () => {
         setResultado(arrayNuevo);
     }
     const filtraMultiplos = (arr) => {
-
+        const arrayNuevo = arr.reduce((acc, val) => {
+            if(val % 3 === 0){
+                acc.push(val);
+            }
+            return(acc);
+        }, []);
+        setResultado(arrayNuevo);
     }
 
     console.log(resultado);

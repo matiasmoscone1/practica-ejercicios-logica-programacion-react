@@ -10,11 +10,16 @@ const CalcularPromedioReduce = () => {
 
     const [resultado, setResultado] = useState(null);
     
+    const calculaPromedio = (arr) => {
+        return(arr.reduce((res, val) => res += val, console.log(res) ))
+    }
+
+
     return(<>
     <div>
         <h2>34. Calcula el promedio de un array con reduce</h2>
         <p>{`[${arrayNumeros.join(",")}]`}</p>
-        <button>Calcular</button>
+        <button onClick={() => calculaPromedio(arrayNumeros)}>Calcular</button>{" "}
         <button>Limpiar</button>
         <p>{`Resultado: ${resultado}`}</p>
     </div>

@@ -12,11 +12,11 @@ const CalcularPromedioReduce = () => {
     
     const calculaPromedio = (arr) => {
         const arrayReducido = arr.reduce((res, val) => {
-            let sumaTotal = res + val;
-            res = sumaTotal / arr.length;
+            res += val / arr.length;
             return res;
         },0);
-        console.log(arrayReducido);
+        //console.log(arrayReducido);
+        setResultado(arrayReducido);
     }
 
 

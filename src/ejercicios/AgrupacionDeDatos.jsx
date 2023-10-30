@@ -2,11 +2,13 @@
 
 //35. Agrupación de datos: Dado un arreglo de objetos con propiedades, utiliza reduce para 
 //agrupar los objetos en categorías específicas.
-
+import { useState } from "react";
 
 const AgrupaDatos = () => {
 
-    const arrayObjetos = [{
+   
+
+    const objetos = [{
             id: 1,
             nombre: "auto",
             modelo: 94,
@@ -16,7 +18,7 @@ const AgrupaDatos = () => {
         {
             id: 2,
             nombre: "auto",
-            modelo: 07,
+            modelo: 7,
             color: "blanco",
             marca: "mclaren"
         },
@@ -37,7 +39,7 @@ const AgrupaDatos = () => {
         {
             id: 5,
             nombre: "auto",
-            modelo: 01,
+            modelo: 1,
             color: "rojo",
             marca: "chevrolet"
         },
@@ -50,8 +52,12 @@ const AgrupaDatos = () => {
         }
     ];
 
+    const [autos, setAutos] = useState(objetos);
+
+    console.log(autos);
+
     return(<>
-    <div>
+        <div>
         <h2>35. Agrupa los objetos en categorias especificas con reduce</h2>
 
         <div>
@@ -66,7 +72,7 @@ const AgrupaDatos = () => {
                     </tr>
                 </thead>
                 <tbody>
-                {arrayObjetos.map((producto) =>{
+                {autos.map((producto) =>{
                     return(<tr key={producto.id}>
                         <td>{producto.id}</td>
                         <td>{producto.nombre}</td>

@@ -17,8 +17,8 @@ const AgrupaDatos = () => {
             id: 2,
             nombre: "auto",
             modelo: 07,
-            color: "negro",
-            marca: "volskwagen"
+            color: "blanco",
+            marca: "mclaren"
         },
         {
             id: 3,
@@ -48,7 +48,7 @@ const AgrupaDatos = () => {
             color: "negro",
             marca: "Fiat"
         }
-    ]
+    ];
 
     return(<>
     <div>
@@ -68,6 +68,7 @@ const AgrupaDatos = () => {
                 <tbody>
                 {arrayObjetos.map((producto) =>{
                     return(<tr key={producto.id}>
+                        <td>{producto.id}</td>
                         <td>{producto.nombre}</td>
                         <td>{producto.modelo}</td>
                         <td>{producto.color}</td>

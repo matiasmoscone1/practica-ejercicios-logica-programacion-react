@@ -54,8 +54,18 @@ const AgrupaDatos = () => {
 
     const [autos, setAutos] = useState(objetos);
 
-    console.log(autos);
 
+    const agrupaObjetos = (arr, opc) => {
+         const nuevoArray = arr.reduce((acc, val) => {
+            if(val.nombre === opc || val.marca === opc || val.color === opc){
+                acc.push(val);
+            }
+            return acc;
+        }, []);
+        console.log(nuevoArray);
+        setAutos(nuevoArray);
+    }
+    
     return(<>
         <div>
         <h2>35. Agrupa los objetos en categorias especificas con reduce</h2>
@@ -84,6 +94,15 @@ const AgrupaDatos = () => {
 
                 </tbody>
             </table>
+        <br/>
+        
+        <button onClick={() => agrupaObjetos(autos, "rojo")}>Autos</button>{" "}
+        <button>Camionetas</button>{" "}
+        <button>Rojo</button>{" "}
+        <button>Blanco</button>{" "}
+        <button>Mclaren</button>{" "}
+        <button>Todos</button>{" "}
+        
         </div>
     
     </div>

@@ -96,8 +96,8 @@ const AgrupaDatos = () => {
             </table>
         <br/>
         
-        <button onClick={() => agrupaObjetos(autos, "autos")}>Autos</button>{" "}
-        <button onClick={() => agrupaObjetos(autos, "camionetas")}>Camionetas</button>{" "}
+        <button onClick={() => agrupaObjetos(autos, "auto")}>Autos</button>{" "}
+        <button onClick={() => agrupaObjetos(autos, "camioneta")}>Camionetas</button>{" "}
         <button onClick={() => agrupaObjetos(autos, "rojo")}>Rojo</button>{" "}
         <button onClick={() => agrupaObjetos(autos, "blanco")}>Blanco</button>{" "}
         <button onClick={() => agrupaObjetos(autos, "mclaren")}>Mclaren</button>{" "}

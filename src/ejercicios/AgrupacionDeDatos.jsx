@@ -7,7 +7,7 @@ import { useState } from "react";
 const AgrupaDatos = () => {
 
    
-
+    //creando array de objetos principal
     const objetos = [{
             id: 1,
             nombre: "auto",
@@ -52,24 +52,34 @@ const AgrupaDatos = () => {
         }
     ];
 
+    //creando variables de estado
     const [autos, setAutos] = useState(objetos);
 
 
+    //creando funcion agrupadora, que pasa por parametro un array de objetos y la palabra clave 
+    //por la que se quiere agrupar
     const agrupaObjetos = (arr, opc) => {
+        //se aplica un reduce al array pasado por parametro
          const nuevoArray = arr.reduce((acc, val) => {
+            //se compara las propiedades de los objetos con la palabra, si coincide
             if(val.nombre === opc || val.marca === opc || val.color === opc){
+                //se le agrega al acumulador el objeto
                 acc.push(val);
             }
+            //retorna el acumulador con todos los objetos agrupados (filtrados)
             return acc;
+        //se inicializa acumulador como array vacio
         }, []);
-        console.log(nuevoArray);
+        //console.log(nuevoArray);
+        
+        //se setea nuevamente la variable de estado con el array de objetos agrupados
         setAutos(nuevoArray);
     }
     
     return(<>
         <div>
         <h2>35. Agrupa los objetos en categorias especificas con reduce</h2>
-
+        {/* se renderiza tabla de objetos */}
         <div>
             <table border={1}>
                 <thead>
@@ -95,7 +105,7 @@ const AgrupaDatos = () => {
                 </tbody>
             </table>
         <br/>
-        
+        {/* para cada boton se le pasa la palabra clave del argumento especifico para q ejecute la logica */}
         <button onClick={() => agrupaObjetos(autos, "auto")}>Autos</button>{" "}
         <button onClick={() => agrupaObjetos(autos, "camioneta")}>Camionetas</button>{" "}
         <button onClick={() => agrupaObjetos(autos, "rojo")}>Rojo</button>{" "}

@@ -24,7 +24,7 @@ const AgrupaDatos = () => {
         },
         {
             id: 3,
-            nombre: "auto",
+            nombre: "camioneta",
             modelo: 22,
             color: "azul",
             marca: "ford"
@@ -38,14 +38,14 @@ const AgrupaDatos = () => {
         },
         {
             id: 5,
-            nombre: "auto",
+            nombre: "camioneta",
             modelo: 1,
             color: "rojo",
             marca: "chevrolet"
         },
         {
             id: 6,
-            nombre: "auto",
+            nombre: "camioneta",
             modelo: 16,
             color: "negro",
             marca: "Fiat"

@@ -9,7 +9,17 @@ const FlattenDeArreglos = () => {
     [{nombre: "matias", apellido: "moscone", edad: 27}], ["hola", 54, {objeto: "esto es un objeto"}]];
 
 
+    const reducirArreglo = (arr) => {
+        const nuevoArray = arr.reduce((acc, val) => {
+            acc.push(val);
+            return(acc);
+        }, []);
+        console.log(nuevoArray);
+    }
+
     console.log(arrayPrincipal);
+
+    reducirArreglo(arrayPrincipal);
 
     return(<>
     <div>

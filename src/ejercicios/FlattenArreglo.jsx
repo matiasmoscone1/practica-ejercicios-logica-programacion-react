@@ -5,13 +5,20 @@
 
 const FlattenDeArreglos = () => {
 
+    const arrayPrincipal = [[1,6,3,9,14], ["hola", "como", "andas"], [1, true, "hola", false],
+    [{nombre: "matias", apellido: "moscone", edad: 27}], ["hola", 54, {objeto: "esto es un objeto"}]];
+
+
+    console.log(arrayPrincipal);
 
     return(<>
     <div>
         <h2>36. Flatten de arreglos anidados con reduce</h2>
 
+        {`[${arrayPrincipal.join("-")}]`}
 
-        
+
+
     </div>
     </>)
 

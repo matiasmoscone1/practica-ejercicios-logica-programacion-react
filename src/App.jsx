@@ -34,6 +34,7 @@ import SumaMatricesReduce from './ejercicios/SumaMatricesReduce';
 import FiltraElementosReduce from './ejercicios/FiltraElementosReduce';
 import CalcularPromedioReduce from './ejercicios/CalculoPromedioReduce';
 import AgrupaDatos from './ejercicios/AgrupacionDeDatos';
+import FlattenDeArreglos from './ejercicios/FlattenArreglo';
 
 function App() {
 
@@ -78,6 +79,7 @@ function App() {
     <FiltraElementosReduce />
     <CalcularPromedioReduce />
     <AgrupaDatos />    
+    <FlattenDeArreglos />
 
 
     </>

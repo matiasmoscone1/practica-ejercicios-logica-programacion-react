@@ -14,7 +14,11 @@ const FlattenDeArreglos = () => {
 
     const reducirArreglo = (arr) => {
         const nuevoArray = arr.reduce((acc, val) => {
-            acc.push(val);
+            if(typeof val === "object" && val !== null){
+                acc = acc.concat(Object.values(val));
+            }else{            
+                acc.push(val);
+            }            
             return(acc);
         }, []);
         setResultado(nuevoArray);

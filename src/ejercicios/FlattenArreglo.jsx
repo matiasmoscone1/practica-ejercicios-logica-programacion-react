@@ -15,9 +15,9 @@ const FlattenDeArreglos = () => {
     const reducirArreglo = (arr) => {
         const nuevoArray = arr.reduce((acc, val) => {
             if(typeof val === "object" && val !== null){
-                acc = acc.concat(Object.values(JSON.stringify(val)));
+                acc.push(Object.values(JSON.stringify(val)));
             }else if(Array.isArray(val)){
-                acc = acc.concat(JSON.stringify(val));
+                acc.push(val);
             }else{            
                 acc.push(val);
             }            
@@ -42,9 +42,8 @@ const FlattenDeArreglos = () => {
         {`[${arrayPrincipal.join("][")}]`}<br/><br/>
         <button onClick={() => reducirArreglo(arrayPrincipal)}>Añidar</button>{" "}
         <button onClick={() => limpiar()}>Limpiar</button>
-        <br/>
-        {/*resultado ? resultado : ""*/}
-        {resultado}
+        <br/><br/>
+        {resultado ? resultado : ""}
     </div>
     </>)
 

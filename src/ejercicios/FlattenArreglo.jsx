@@ -23,17 +23,19 @@ const FlattenDeArreglos = () => {
 
     //console.log(arrayPrincipal);
 
-    
+    console.log(resultado);
 
 
     return(<>
     <div>
         <h2>36. Flatten de arreglos anidados con reduce</h2>
 
-        {`[${arrayPrincipal.join("][")}]`}
-        <button onClick={() => reducirArreglo(arrayPrincipal)}>Añidar</button> 
+        {`[${arrayPrincipal.join("][")}]`}<br/><br/>
+        <button onClick={() => reducirArreglo(arrayPrincipal)}>Añidar</button>{" "}
         <button onClick={() => limpiar()}>Limpiar</button>
-        {resultado ? resultado : ""}
+        <br/>
+        {/*resultado ? resultado : ""*/}
+        {resultado}
     </div>
     </>)
 

@@ -14,19 +14,21 @@ const FlattenDeArreglos = () => {
             acc.push(val);
             return(acc);
         }, []);
-        console.log(nuevoArray);
+        return nuevoArray;
+        //console.log(nuevoArray);
     }
 
-    console.log(arrayPrincipal);
+    //console.log(arrayPrincipal);
 
-    reducirArreglo(arrayPrincipal);
-
+    const juntarArreglos = () => {
+        reducirArreglo(arrayPrincipal);
+    }
     return(<>
     <div>
         <h2>36. Flatten de arreglos anidados con reduce</h2>
 
-        {`[${arrayPrincipal.join("-")}]`}
-
+        {`[${arrayPrincipal.join("][")}]`}
+        <button onClick={() => juntarArreglos()}>Añidar</button> 
 
 
     </div>

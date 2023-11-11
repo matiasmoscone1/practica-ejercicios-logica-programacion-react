@@ -29,6 +29,9 @@ const FlattenDeArreglos = () => {
 
     console.log(resultado);
 
+    const limpiar = () => {
+        setResultado(null);
+    }
 
     return(<>
     <div>

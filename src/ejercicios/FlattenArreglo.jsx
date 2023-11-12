@@ -30,9 +30,13 @@ const FlattenDeArreglos = () => {
 
     const redArray = (arr) => {
         const nuevoArreglo = arr.reduce((acc, val) => {
-        
                 val.map((valor) => {
-                    acc.push(valor);
+                    if(typeof valor === "object"){
+                        acc.push(Object.values(valor));
+                    }
+                    if(typeof valor !== "object"){
+                        acc.push(valor);
+                    }                    
                 })
             
             return acc;

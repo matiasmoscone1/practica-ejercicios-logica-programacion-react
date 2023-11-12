@@ -5,16 +5,21 @@
 
 import { useState } from "react";
 
+//creando componente 
 const FlattenDeArreglos = () => {
 
+    //creando array de arrays con distintos valores
     const arrayPrincipal = [[1,6,3,9,14], ["hola", "como", "andas"], [1, true, "hola", false],
     [{nombre: "matias", apellido: "moscone", edad: 27}], ["hola", 54, {objeto: "esto es un objeto"}]];
 
+    //creando variable de estado que almacenara el resultado
     const [resultado, setResultado] = useState(null);
 
     //console.log(arrayPrincipal);
     
+    //creando funcion reductora de array que contendra toda la logica, se pasa por parametro un array
     const redArray = (arr) => {
+        
         const nuevoArreglo = arr.reduce((acc, val) => {
                 val.map((valor) => {
                     if(typeof valor === "object"){

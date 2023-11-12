@@ -28,17 +28,20 @@ const FlattenDeArreglos = () => {
         //console.log(nuevoArray);
     }*/
 
+    console.log(arrayPrincipal);
     const redArray = (arr) => {
         const nuevoArreglo = arr.reduce((acc, val) => {
                 val.map((valor) => {
                     if(typeof valor === "object"){
-                        acc.push(Object.values(valor));
+                        for(let i in valor){
+                            acc.push(i.value);  
+                            console.log(i);  
+                        }
                     }
                     if(typeof valor !== "object"){
                         acc.push(valor);
                     }                    
                 })
-            
             return acc;
         }, []);
         setResultado(nuevoArreglo);

@@ -17,11 +17,11 @@ const FlattenDeArreglos = () => {
             if(typeof val === "object" && val !== null){
                 acc.push(Object.values(JSON.stringify(val)));
             }else if(Array.isArray(val)){
-                acc.push(val);
+                acc.push(reducirArreglo(val));
             }else{            
                 acc.push(val);
             }            
-            return(acc);
+            return acc;
         }, []);
         setResultado(nuevoArray);
         //console.log(nuevoArray);

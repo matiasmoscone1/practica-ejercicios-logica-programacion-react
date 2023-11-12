@@ -30,15 +30,11 @@ const FlattenDeArreglos = () => {
 
     const redArray = (arr) => {
         const nuevoArreglo = arr.reduce((acc, val) => {
-            if(typeof val === "array"){
+        
                 val.map((valor) => {
                     acc.push(valor);
                 })
-            }else if(typeof val === "object"){
-                acc.push(JSON.stringify(val));
-            }else{
-                acc.push(val);
-            }
+            
             return acc;
         }, []);
         setResultado(nuevoArreglo);

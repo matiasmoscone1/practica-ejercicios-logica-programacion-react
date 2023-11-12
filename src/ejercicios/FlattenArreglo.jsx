@@ -12,6 +12,7 @@ const FlattenDeArreglos = () => {
 
     const [resultado, setResultado] = useState(null);
 
+    /*
     const reducirArreglo = (arr) => {
         const nuevoArray = arr.reduce((acc, val) => {
             if(typeof val === "object" && val !== null){
@@ -25,7 +26,25 @@ const FlattenDeArreglos = () => {
         }, []);
         setResultado(nuevoArray);
         //console.log(nuevoArray);
+    }*/
+
+    const redArray = (arr) => {
+        const nuevoArreglo = arr.reduce((acc, val) => {
+            if(typeof val === "array"){
+                val.map((valor) => {
+                    acc.push(valor);
+                })
+            }else if(typeof val === "object"){
+                acc.push(JSON.stringify(val));
+            }else{
+                acc.push(val);
+            }
+            return acc;
+        }, []);
+        setResultado(nuevoArreglo);
     }
+
+
 
     //console.log(arrayPrincipal);
 
@@ -40,7 +59,7 @@ const FlattenDeArreglos = () => {
         <h2>36. Flatten de arreglos anidados con reduce</h2>
 
         {`[${arrayPrincipal.join("][")}]`}<br/><br/>
-        <button onClick={() => reducirArreglo(arrayPrincipal)}>Añidar</button>{" "}
+        <button onClick={() => redArray(arrayPrincipal)}>Añidar</button>{" "}
         <button onClick={() => limpiar()}>Limpiar</button>
         <br/><br/>
         {resultado ? resultado : ""}

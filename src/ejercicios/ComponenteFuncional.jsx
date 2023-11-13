@@ -23,10 +23,10 @@ const ComponenteFuncional = (arrayNum) => {
     return(<>
     <div>
         <h2>37. Componente funcional con props</h2>
-        {arrayNum.arr}
-        <button onClick={() => sumaArray(arrayNum)}>Calcular</button>
-        <button>Limpiar</button>
-        {resultado}
+        {`[${arrayNum.arr.join(",")}]`}<br/><br/>
+        <button onClick={() => sumaArray(arrayNum)}>Calcular</button>{" "}
+        <button>Limpiar</button><br/><br/>
+        {resultado ? resultado : ""}
     </div>
     </>)
 

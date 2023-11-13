@@ -39,11 +39,14 @@ import ComponenteFuncional from './ejercicios/ComponenteFuncional';
 
 function App() {
 
+  const arrayNumeros = [1, 2, 5, 7, 8];
+
   return (
     <>
     <div>
       <h1>Ejercicios practicos con React</h1>
     </div>
+
 
     <Contador />
     <ListaElementos/>
@@ -81,7 +84,7 @@ function App() {
     <CalcularPromedioReduce />
     <AgrupaDatos />    
     <FlattenDeArreglos />
-    <ComponenteFuncional />
+    <ComponenteFuncional arr={arrayNumeros}/>
 
 
     </>

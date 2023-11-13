@@ -3,15 +3,16 @@
 //array de números como propiedades y renderice la suma de esos números.
 
 
-const ComponenteFuncional = () => {
+const ComponenteFuncional = (arrayNum) => {
 
+    console.log(arrayNum);
 
     return(<>
     <div>
         <h2>37. Componente funcional con props</h2>
 
 
-        
+
     </div>
     </>)
 

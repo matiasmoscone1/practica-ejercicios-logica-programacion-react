@@ -12,17 +12,22 @@ const ComponenteFuncional = (arrayNum) => {
     const [resultado, setResultado] = useState(null);
 
     const sumaArray = (arr) => {
-        return arr.reduce((acc, val) => acc += val);
+        const nuevoArray = arr.reduce((acc, val) => {
+            acc += val
+            
+        }, 0);        
+        setResultado(nuevoArray);
     }
 
+    console.log(resultado);
 
     return(<>
     <div>
         <h2>37. Componente funcional con props</h2>
-        {arrayNum}
-        <button>Calcular</button>
+        {/*arrayNum*/}
+        <button onClick={() => sumaArray(arrayNum)}>Calcular</button>
         <button>Limpiar</button>
-        {}
+        {/*resultado*/}
     </div>
     </>)
 

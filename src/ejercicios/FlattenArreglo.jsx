@@ -22,7 +22,7 @@ const FlattenDeArreglos = () => {
         const nuevoArreglo = arr.reduce((acc, val) => {
                 //por cada valor que se itere en el array, se le hace una serie de verificaciones
                 val.map((valor) => {
-                    //si es un objeto, se extraen todos los valores del objeto
+                    //si es un objeto, se extraen todos los valores del objeto (se crea un array con los valores del objeto)
                     if(typeof valor === "object"){
                         const obj = Object.values(valor);
                         //console.log(obj);

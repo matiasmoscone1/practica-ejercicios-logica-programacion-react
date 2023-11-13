@@ -7,7 +7,7 @@ import { useState } from "react";
 
 const ComponenteFuncional = (arrayNum) => {
 
-    console.log(arrayNum);
+    //console.log(arrayNum);
 
     const [resultado, setResultado] = useState(null);
 
@@ -18,14 +18,18 @@ const ComponenteFuncional = (arrayNum) => {
         setResultado(acc);
     }
 
-    console.log(resultado);
+    //console.log(resultado);
+
+    const limpiaResultado = () => {
+        setResultado(null);
+    }
 
     return(<>
     <div>
         <h2>37. Componente funcional con props</h2>
         {`[${arrayNum.arr.join(",")}]`}<br/><br/>
         <button onClick={() => sumaArray(arrayNum)}>Calcular</button>{" "}
-        <button>Limpiar</button><br/><br/>
+        <button onClick={() => limpiaResultado()}>Limpiar</button><br/><br/>
         {resultado ? resultado : ""}
     </div>
     </>)

@@ -30,7 +30,7 @@ const ComponenteFuncional = (arrayNum) => {
         {`[${arrayNum.arr.join(",")}]`}<br/><br/>
         <button onClick={() => sumaArray(arrayNum)}>Calcular</button>{" "}
         <button onClick={() => limpiaResultado()}>Limpiar</button><br/><br/>
-        {resultado ? resultado : ""}
+        {resultado ? `El resultado es: ${resultado}` : ""}
     </div>
     </>)
 

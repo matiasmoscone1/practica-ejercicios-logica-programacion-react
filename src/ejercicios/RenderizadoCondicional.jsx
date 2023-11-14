@@ -12,7 +12,8 @@ const RenderizadoCondicional = () => {
     const [user, setUser] = useState(null);
     const [password, setPassword] = useState(null);
 
-    const VerificaLogeo = (flag) => {
+    //se pasa la prop como parametro al componente, y se destructura para poder usarla...
+    const VerificaLogeo = ({flag}) => {
         if(flag === true){
             console.log("USUARIO LOGEADO CON EXITO");
         }else{
@@ -20,12 +21,15 @@ const RenderizadoCondicional = () => {
         }
     }
 
-
+    console.log(estado);
 
     const sesion = (e) => {
         e.preventDefault();
         //console.log("USUARIO LOGEADO!!!");
+        
     }
+
+
 
 
     return(<>
@@ -41,7 +45,7 @@ const RenderizadoCondicional = () => {
             <button onClick={() => setEstado(true)}>Iniciar Sesion</button>{" "}
             <button onClick={() => setEstado(false)}>Cerrar Sesion</button>
         </form>
-        <VerificaLogeo estado={estado}/>
+        <VerificaLogeo flag={estado}/>
     </div>
     </>)
 

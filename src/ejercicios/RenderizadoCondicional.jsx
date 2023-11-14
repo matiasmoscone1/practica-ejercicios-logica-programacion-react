@@ -13,7 +13,7 @@ const RenderizadoCondicional = () => {
     const [password, setPassword] = useState(null);
 
     const VerificaLogeo = (flag) => {
-        if(flag){
+        if(flag === true){
             console.log("USUARIO LOGEADO CON EXITO");
         }else{
             console.log("USUARIO NO LOGEADO...");
@@ -24,23 +24,24 @@ const RenderizadoCondicional = () => {
 
     const sesion = (e) => {
         e.preventDefault();
-        console.log("USUARIO LOGEADO!!!");
+        //console.log("USUARIO LOGEADO!!!");
     }
 
 
     return(<>
     <div>
         <h2>38. Verifica si el usuario es logeado o no</h2>
-        <VerificaLogeo estado={estado}/>
-        <form onSubmit={() => sesion()}>
+        
+        <form onSubmit={(e) => sesion(e)}>
             <label>Usuario</label>{" "}
             <input type="text" onChange={(e) => setUser(e.target.value)}/>{" "}
             <label>Contraseña</label>{" "}
             <input type="text" onChange={(e) => setPassword(e.target.value)}/>{" "}
             <br/><br/>
-            <button>Iniciar Sesion</button>{" "}
-            <button>Cerrar Sesion</button>
+            <button onClick={() => setEstado(true)}>Iniciar Sesion</button>{" "}
+            <button onClick={() => setEstado(false)}>Cerrar Sesion</button>
         </form>
+        <VerificaLogeo estado={estado}/>
     </div>
     </>)
 

@@ -15,6 +15,14 @@ const VerificaLogeo = ({flag}) => {
     }
 }
 
+const ComponenteEstado = (flag) => {
+    if(flag){
+        return(<><p>asd</p></>);
+    }else{
+        return(<><p>Usuario o contraseña no validas...</p></>);
+    }
+}
+
 
 const RenderizadoCondicional = () => {
 
@@ -34,7 +42,9 @@ const RenderizadoCondicional = () => {
         const regExContrasenia = /^[a-zA-Z0-9\s!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]{8,16}$/
         //console.log(usuario, contrasenia);
 
-        regExUsuario.test(usuario) && regExContrasenia.test(contrasenia) ? setEstado(true) : console.log("Usuario o contraseña no validas");
+        
+        regExUsuario.test(usuario) && regExContrasenia.test(contrasenia) ? setEstado(true) : setEstado(false);
+        
     }
 
     
@@ -54,6 +64,8 @@ const RenderizadoCondicional = () => {
             <button onClick={() => setEstado(false)}>Cerrar Sesion</button>
         </form>
         <VerificaLogeo flag={estado}/>
+        <ComponenteEstado flag={estado}/>
+        
     </div>
     </>)
 

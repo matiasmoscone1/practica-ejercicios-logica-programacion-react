@@ -25,10 +25,14 @@ const RenderizadoCondicional = () => {
 
     const sesion = (e) => {
         e.preventDefault();
-        //console.log("USUARIO LOGEADO!!!");
-        
+   
     }
 
+    const verificarUsuario = (usuario, contrasenia) => {
+        const regEx = /^[a-zA-Z0-9]{4-16}$/;
+
+
+    }
 
 
 

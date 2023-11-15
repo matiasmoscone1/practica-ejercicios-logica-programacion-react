@@ -3,7 +3,7 @@
 //isLoggedIn. Si isLoggedIn es verdadero, renderiza un mensaje de bienvenida. 
 //De lo contrario, muestra un formulario de inicio de sesión.
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 
 const RenderizadoCondicional = () => {
@@ -34,12 +34,11 @@ const RenderizadoCondicional = () => {
         //console.log(usuario, contrasenia);
 
         regExUsuario.test(usuario) && regExContrasenia.test(contrasenia) ? setEstado(true) : console.log("Usuario o contraseña no validas");
-        
-
 
     }
 
-
+    
+    
 
     return(<>
     <div>

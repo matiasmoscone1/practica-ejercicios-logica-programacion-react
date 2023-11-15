@@ -3,7 +3,19 @@
 //isLoggedIn. Si isLoggedIn es verdadero, renderiza un mensaje de bienvenida. 
 //De lo contrario, muestra un formulario de inicio de sesión.
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { useState } from "react";
+
+ //se pasa la prop como parametro al componente, y se destructura para poder usarla...
+ const VerificaLogeo = ({flag}) => {
+    useEffect(() => {
+        if(flag === true){
+            console.log("USUARIO LOGEADO CON EXITO");
+        }else{
+            console.log("USUARIO NO LOGEADO...");
+        }
+    }, [flag]);
+}
 
 
 const RenderizadoCondicional = () => {
@@ -12,16 +24,8 @@ const RenderizadoCondicional = () => {
     const [user, setUser] = useState(null);
     const [password, setPassword] = useState(null);
 
-    //se pasa la prop como parametro al componente, y se destructura para poder usarla...
-    const VerificaLogeo = ({flag}) => {
-        if(flag === true){
-            console.log("USUARIO LOGEADO CON EXITO");
-        }else{
-            console.log("USUARIO NO LOGEADO...");
-        }
-    }
-
-    console.log(estado);
+   
+    //console.log(estado);
 
     const sesion = (e) => {
         e.preventDefault();

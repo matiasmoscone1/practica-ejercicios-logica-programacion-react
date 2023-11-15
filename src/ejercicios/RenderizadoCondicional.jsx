@@ -31,7 +31,8 @@ const RenderizadoCondicional = () => {
     const verificarUsuario = (usuario, contrasenia) => {
         const regEx = /^[a-zA-Z0-9]{4-16}$/;
 
-
+        regEx.test(usuario) ? console.log("Usuario valido!!!") : console.log("Usuario no valido...");
+        regEx.test(contrasenia) ? console.log("Contraseña valido!!!") : console.log("Contraseña no valido...");
     }
 
 

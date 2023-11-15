@@ -31,8 +31,10 @@ const RenderizadoCondicional = () => {
     const verificarUsuario = (usuario, contrasenia) => {
         const regEx = /^[a-zA-Z0-9]{4-16}$/;
 
-        regEx.test(usuario) ? console.log("Usuario valido!!!") : console.log("Usuario no valido...");
-        regEx.test(contrasenia) ? console.log("Contraseña valido!!!") : console.log("Contraseña no valido...");
+        regEx.test(usuario) ? setEstado(true) : console.log("Usuario no valido...");
+        regEx.test(contrasenia) ? setEstado(true) : console.log("Contraseña no valido...");
+    
+
     }
 
 
@@ -47,7 +49,7 @@ const RenderizadoCondicional = () => {
             <label>Contraseña</label>{" "}
             <input type="text" onChange={(e) => setPassword(e.target.value)}/>{" "}
             <br/><br/>
-            <button onClick={() => setEstado(true)}>Iniciar Sesion</button>{" "}
+            <button onClick={() => verificarUsuario(user, password)}>Iniciar Sesion</button>{" "}
             <button onClick={() => setEstado(false)}>Cerrar Sesion</button>
         </form>
         <VerificaLogeo flag={estado}/>

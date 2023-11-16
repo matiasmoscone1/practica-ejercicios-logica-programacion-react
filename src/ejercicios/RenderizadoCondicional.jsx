@@ -4,7 +4,7 @@
 //De lo contrario, muestra un formulario de inicio de sesión.
 
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
  //se pasa la prop como parametro al componente, y se destructura para poder usarla...
 const VerificaLogeo = ({flag}) => {
@@ -15,7 +15,7 @@ const VerificaLogeo = ({flag}) => {
     }
 }
 
-const ComponenteEstado = (flag) => {
+const ComponenteEstado = ({flag}) => {
     if(flag){
         return(<><p>asd</p></>);
     }else{
@@ -43,7 +43,7 @@ const RenderizadoCondicional = () => {
         //console.log(usuario, contrasenia);
 
         
-        regExUsuario.test(usuario) && regExContrasenia.test(contrasenia) ? setEstado(true) : <ComponenteEstado/>;
+        regExUsuario.test(usuario) && regExContrasenia.test(contrasenia) ? setEstado(true) : setEstado(false);
         
     }
 

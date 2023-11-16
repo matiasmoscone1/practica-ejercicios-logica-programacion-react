@@ -15,12 +15,8 @@ const VerificaLogeo = ({flag}) => {
     }
 }
 
-const ComponenteEstado = ({flag}) => {
-    if(flag){
-        return(<><p>asd</p></>);
-    }else{
-        return(<><p>Usuario o contraseña no validas...</p></>);
-    }
+const ComponenteEstado = () => {
+    return(<><p>Usuario o contraseña no validas...</p></>);
 }
 
 
@@ -29,7 +25,7 @@ const RenderizadoCondicional = () => {
     const [estado, setEstado] = useState(false);
     const [user, setUser] = useState(null);
     const [password, setPassword] = useState(null);
-
+    const [noValida, setNoValida] = useState(false);
    
     //console.log(estado);
 
@@ -43,11 +39,10 @@ const RenderizadoCondicional = () => {
         //console.log(usuario, contrasenia);
 
         
-        regExUsuario.test(usuario) && regExContrasenia.test(contrasenia) ? setEstado(true) : setEstado(false);
+        regExUsuario.test(usuario) && regExContrasenia.test(contrasenia) ? setEstado(true) : <ComponenteEstado />;
         
     }
 
-    
     
 
     return(<>
@@ -64,7 +59,7 @@ const RenderizadoCondicional = () => {
             <button onClick={() => setEstado(false)}>Cerrar Sesion</button>
         </form>
         <VerificaLogeo flag={estado}/>
-        <ComponenteEstado flag={estado}/>
+        
         
     </div>
     </>)

@@ -39,8 +39,15 @@ const RenderizadoCondicional = () => {
         //console.log(usuario, contrasenia);
 
         
-        regExUsuario.test(usuario) && regExContrasenia.test(contrasenia) ? setEstado(true) : <ComponenteEstado />;
         
+        if(regExUsuario.test(usuario) && regExContrasenia.test(contrasenia)){
+            setEstado(true);
+            setNoValida(false);
+        }else{
+            setEstado(false);
+            setNoValida(true);
+        }
+
     }
 
     
@@ -59,6 +66,7 @@ const RenderizadoCondicional = () => {
             <button onClick={() => setEstado(false)}>Cerrar Sesion</button>
         </form>
         <VerificaLogeo flag={estado}/>
+        {noValida && <ComponenteEstado />}
         
         
     </div>

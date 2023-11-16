@@ -43,7 +43,7 @@ const RenderizadoCondicional = () => {
         //console.log(usuario, contrasenia);
 
         
-        regExUsuario.test(usuario) && regExContrasenia.test(contrasenia) ? setEstado(true) : setEstado(false);
+        regExUsuario.test(usuario) && regExContrasenia.test(contrasenia) ? setEstado(true) : <ComponenteEstado/>;
         
     }
 

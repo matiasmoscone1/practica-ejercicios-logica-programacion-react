@@ -4,31 +4,37 @@
 //De lo contrario, muestra un formulario de inicio de sesión.
 
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
  //se pasa la prop como parametro al componente, y se destructura para poder usarla...
 const VerificaLogeo = ({flag}) => {
+    //si flag es true, el usuario queda logueado con exito
     if(flag){
         return(<><p>Usuario Logueado con exito!!!</p></>)
+        //sino no se loguea
     }else{
         return(<><p>Usuario no Logueado...</p></>)
     }
 }
 
+//componente que se llama cuando el usuario o contraseña es incorrecto (no pasa las verificaciones
+//de las expresiones regulares)
 const ComponenteEstado = () => {
     return(<><p>Usuario o contraseña no validas...</p></>);
 }
 
 
+//componente principal
 const RenderizadoCondicional = () => {
 
+    //creando las variables de estado
     const [estado, setEstado] = useState(false);
     const [user, setUser] = useState(null);
     const [password, setPassword] = useState(null);
     const [noValida, setNoValida] = useState(false);
    
-    //console.log(estado);
-
+  //creando funcion que se llama con el evento submit del formulario, para prevenir que se envien
+  //datos cada vez que pase algo en el form
     const sesion = (e) => {
         e.preventDefault();
     }
@@ -36,7 +42,7 @@ const RenderizadoCondicional = () => {
     const verificarUsuario = (usuario, contrasenia) => {
         const regExUsuario = /^[a-zA-Z0-9]{4,16}$/;
         const regExContrasenia = /^[a-zA-Z0-9\s!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]{8,16}$/
-        //console.log(usuario, contrasenia);
+       
 
         
         

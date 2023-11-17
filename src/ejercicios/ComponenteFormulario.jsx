@@ -14,24 +14,22 @@ const CompApellido = ({apellido, onApellidoChange}) => {
     return(<><label>Apellido</label>{" "}<input type="text" value={apellido} onChange={(e) => onApellidoChange(e.target.value)}/></>)
 }
 
-const CompEmail = () => {
-
-    return(<><label>Email</label>{" "}<input type="text" /></>)
+const CompEmail = ({email, onEmailChange}) => {
+    return(<><label>Email</label>{" "}<input type="text" value={email} onChange={(e) => onEmailChange(e.target.value)}/></>)
 }
 
-const CompTelefono = () => {
-
-    return(<><label>Telefono</label>{" "}<input type="number" /></>)
+const CompTelefono = ({telefono, onTelefonoChange}) => {
+    return(<><label>Telefono</label>{" "}<input type="number" value={telefono} onChange={(e) => onTelefonoChange(e.target.value)}/></>)
 }
 
 
 
 const ComponenteFormulario = () => {
 
-    const [nombre, setNombre] = useState(null);
-    const [apellido, setApellido] = useState(null);
-    const [email, setEmail] = useState(null);
-    const [telefono, setTelefono] = useState(null);
+    const [nombre, setNombre] = useState(undefined);
+    const [apellido, setApellido] = useState(undefined);
+    const [email, setEmail] = useState(undefined);
+    const [telefono, setTelefono] = useState(undefined);
 
 
     const previeneSubmit = (e) => {

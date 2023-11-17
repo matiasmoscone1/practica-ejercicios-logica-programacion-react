@@ -6,8 +6,8 @@
 
 import { useState } from "react"
 
-const CompNombre = (nombre) => {
-    return(<><label>Nombre</label>{" "}<input type="text" onChange={(e) => e.target.value = nombre}/></>)
+const CompNombre = ({nombre, onNombreChange}) => {
+    return(<><label>Nombre</label>{" "}<input type="text" value={nombre} onChange={(e) => onNombreChange(e.target.value)}/></>)
 }
 
 const CompApellido = () => {
@@ -34,7 +34,7 @@ const ComponenteFormulario = () => {
     const [email, setEmail] = useState(null);
     const [telefono, setTelefono] = useState(null);
 
-    
+
     const previeneSubmit = (e) => {
         e.preventDefault();
     }
@@ -43,11 +43,13 @@ const ComponenteFormulario = () => {
         return(<p>Usuario cargado</p>)
     }
 
+    console.log(nombre);
+
     return(<>
     <div>
         <h2>39. Formulario con composicion de componentes funcionales</h2>
         <form onSubmit={(e) => previeneSubmit(e)}>
-        <CompNombre /><br/><br/>
+        <CompNombre nombre={nombre} onNombreChange={setNombre}/><br/><br/>
         <CompApellido /><br/><br/>
         <CompEmail /><br/><br/>
         <CompTelefono /><br/><br/>

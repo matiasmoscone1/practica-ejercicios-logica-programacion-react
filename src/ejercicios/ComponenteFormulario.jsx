@@ -4,9 +4,10 @@
 //en componentes funcionales separados para el nombre de usuario, la dirección de correo 
 //electrónico y la contraseña. Estos componentes deben ser componibles y reutilizables.
 
-const CompNombre = () => {
+import { useState } from "react"
 
-    return(<><label>Nombre</label>{" "}<input type="text" /></>)
+const CompNombre = (nombre) => {
+    return(<><label>Nombre</label>{" "}<input type="text" onChange={(e) => e.target.value = nombre}/></>)
 }
 
 const CompApellido = () => {
@@ -28,6 +29,12 @@ const CompTelefono = () => {
 
 const ComponenteFormulario = () => {
 
+    const [nombre, setNombre] = useState(null);
+    const [apellido, setApellido] = useState(null);
+    const [email, setEmail] = useState(null);
+    const [telefono, setTelefono] = useState(null);
+
+    
     const previeneSubmit = (e) => {
         e.preventDefault();
     }

@@ -10,9 +10,8 @@ const CompNombre = ({nombre, onNombreChange}) => {
     return(<><label>Nombre</label>{" "}<input type="text" value={nombre} onChange={(e) => onNombreChange(e.target.value)}/></>)
 }
 
-const CompApellido = () => {
-
-    return(<><label>Apellido</label>{" "}<input type="text" /></>)
+const CompApellido = ({apellido, onApellidoChange}) => {
+    return(<><label>Apellido</label>{" "}<input type="text" value={apellido} onChange={(e) => onApellidoChange(e.target.value)}/></>)
 }
 
 const CompEmail = () => {
@@ -44,15 +43,19 @@ const ComponenteFormulario = () => {
     }
 
     console.log(nombre);
+    console.log(apellido);
+    console.log(telefono);
+    console.log(email);
+
 
     return(<>
     <div>
         <h2>39. Formulario con composicion de componentes funcionales</h2>
         <form onSubmit={(e) => previeneSubmit(e)}>
         <CompNombre nombre={nombre} onNombreChange={setNombre}/><br/><br/>
-        <CompApellido /><br/><br/>
-        <CompEmail /><br/><br/>
-        <CompTelefono /><br/><br/>
+        <CompApellido apellido={apellido} onApellidoChange={setApellido}/><br/><br/>
+        <CompEmail email={email} onEmailChange={setEmail}/><br/><br/>
+        <CompTelefono telefono={telefono} onTelefonoChange={setTelefono}/><br/><br/>
         <button onClick={() => envioUsuario()}>Enviar</button>
         
         </form>

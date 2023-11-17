@@ -6,15 +6,22 @@
 
 const CompNombre = () => {
 
+    return(<><label>Nombre</label>{" "}<input type="text" /></>)
 }
+
 const CompApellido = () => {
-    
+
+    return(<><label>Apellido</label>{" "}<input type="text" /></>)
 }
+
 const CompEmail = () => {
-    
+
+    return(<><label>Email</label>{" "}<input type="text" /></>)
 }
+
 const CompTelefono = () => {
-    
+
+    return(<><label>Telefono</label>{" "}<input type="number" /></>)
 }
 
 

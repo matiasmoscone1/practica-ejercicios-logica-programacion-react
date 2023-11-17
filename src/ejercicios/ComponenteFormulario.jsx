@@ -32,16 +32,20 @@ const ComponenteFormulario = () => {
         e.preventDefault();
     }
 
-
+    const envioUsuario = () => {
+        return(<p>Usuario cargado</p>)
+    }
 
     return(<>
     <div>
         <h2>39. Formulario con composicion de componentes funcionales</h2>
-        <form onSubmit={(e) => {previeneSubmit(e)}}>
-        <CompNombre />
-        <CompApellido />
-        <CompEmail />
-        <CompTelefono />
+        <form onSubmit={(e) => previeneSubmit(e)}>
+        <CompNombre /><br/><br/>
+        <CompApellido /><br/><br/>
+        <CompEmail /><br/><br/>
+        <CompTelefono /><br/><br/>
+        <button onClick={() => envioUsuario()}>Enviar</button>
+        
         </form>
     </div>
     </>)

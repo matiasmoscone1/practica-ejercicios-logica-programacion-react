@@ -37,6 +37,7 @@ import AgrupaDatos from './ejercicios/AgrupacionDeDatos';
 import FlattenDeArreglos from './ejercicios/FlattenArreglo';
 import ComponenteFuncional from './ejercicios/ComponenteFuncional';
 import RenderizadoCondicional from './ejercicios/RenderizadoCondicional';
+import ComponenteFormulario from './ejercicios/ComponenteFormulario';
 
 function App() {
 
@@ -87,6 +88,8 @@ function App() {
     <FlattenDeArreglos />
     <ComponenteFuncional arr={arrayNumeros}/>
     <RenderizadoCondicional />
+    <ComponenteFormulario />
+
 
     </>
   )

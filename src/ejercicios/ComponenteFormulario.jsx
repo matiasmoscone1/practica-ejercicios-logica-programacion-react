@@ -9,11 +9,18 @@ const ComponenteFormulario = () => {
 
 
 
+
+    const previeneSubmit = (e) => {
+        e.preventDefault();
+    }
+
     return(<>
     <div>
         <h2>39. Formulario con composicion de componentes funcionales</h2>
-    
-    
+        <form onSubmit={(e) => {previeneSubmit(e)}}>
+
+
+        </form>
     </div>
     </>)
 

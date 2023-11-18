@@ -60,7 +60,14 @@ const ComponenteFormulario = () => {
 
     //console.log(nombre, apellido, telefono, email);
 
-    const envioUsuario = () => {
+    const envioUsuario = (nom, ape, ema, tel) => {
+
+        return(<>
+        <CompNombre value={""}/>
+        <CompApellido value={""}/>
+        <CompEmail value={""}/>
+        <CompTelefono value={""}/>        
+        </>)
         
     }
 
@@ -72,7 +79,7 @@ const ComponenteFormulario = () => {
             <CompApellido apellido={apellido} onApellidoChange={setApellido}/><br/><br/>
             <CompEmail email={email} onEmailChange={setEmail}/><br/><br/>
             <CompTelefono telefono={telefono} onTelefonoChange={setTelefono}/><br/><br/>
-            <button type="submit">Enviar</button><br/><br/>
+            <button type="submit" onClick={() => envioUsuario(nombre, apellido, email, telefono)}>Enviar</button><br/><br/>
         </form>
         <RenderizaUsuarios nom={nombre} ape={apellido} ema={email} tel={telefono}/>
 

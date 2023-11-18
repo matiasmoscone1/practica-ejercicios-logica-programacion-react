@@ -24,7 +24,24 @@ const CompTelefono = ({telefono, onTelefonoChange}) => {
 
 const EnvioUsuario = ({nom, ape, ema, tel}) => {
     //console.log(nom,ape,ema,tel);
-    return(<p>ASDASD</p>);
+    return(<><table border={1}>
+            <thead>
+                <tr>
+                    <td>Nombre</td>
+                    <td>Apellido</td>
+                    <td>Email</td>
+                    <td>Telefono</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{nom}</td>
+                    <td>{ape}</td>
+                    <td>{ema}</td>
+                    <td>{tel}</td>
+                </tr>
+            </tbody>
+        </table></>);
 }
 
 

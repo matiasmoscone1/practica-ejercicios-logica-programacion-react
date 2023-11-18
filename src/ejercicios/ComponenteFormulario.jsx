@@ -22,7 +22,7 @@ const CompTelefono = ({telefono, onTelefonoChange}) => {
     return(<><label>Telefono</label>{" "}<input type="number" value={telefono} onChange={(e) => onTelefonoChange(e.target.value)}/></>)
 }
 
-const RenderizaUsuarios = ({nom, ape, ema, tel}) => {
+const RenderizaUsuarios = ({usuarios}) => {
     //console.log(nom,ape,ema,tel);
     return(<><table border={1}>
             <thead>
@@ -34,12 +34,16 @@ const RenderizaUsuarios = ({nom, ape, ema, tel}) => {
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>{nom}</td>
-                    <td>{ape}</td>
-                    <td>{ema}</td>
-                    <td>{tel}</td>
-                </tr>
+                {usuarios.map((usu) => {
+                    return(
+                        <tr key={usu.nom}>
+                            <td>{usu.nom}</td>
+                            <td>{usu.ape}</td>
+                            <td>{usu.ema}</td>
+                            <td>{usu.tel}</td>
+                        </tr>)
+                })
+                }
             </tbody>
         </table></>);
 }
@@ -51,12 +55,12 @@ const ComponenteFormulario = () => {
     const [apellido, setApellido] = useState(undefined);
     const [email, setEmail] = useState(undefined);
     const [telefono, setTelefono] = useState(undefined);
-    const [listaUsuarios, setListaUsuarios] = useState([]);
+    const [usuarios, setUsuarios] = useState([]);
 
     const previeneSubmit = (e) => {
         e.preventDefault();
 
-        setListaUsuarios([...listaUsuarios, {nom: nombre, ape: apellido, ema: email, tel: telefono}])
+        setUsuarios([...usuarios, {nom: nombre, ape: apellido, ema: email, tel: telefono}])
 
         setNombre("");
         setApellido("");
@@ -79,9 +83,9 @@ const ComponenteFormulario = () => {
             <CompApellido apellido={apellido} onApellidoChange={setApellido}/><br/><br/>
             <CompEmail email={email} onEmailChange={setEmail}/><br/><br/>
             <CompTelefono telefono={telefono} onTelefonoChange={setTelefono}/><br/><br/>
-            <button type="submit" onClick={() => envioUsuario(nombre, apellido, email, telefono)}>Enviar</button><br/><br/>
+            <button type="submit">Enviar</button><br/><br/>
         </form>
-        <RenderizaUsuarios nom={nombre} ape={apellido} ema={email} tel={telefono}/>
+        <RenderizaUsuarios usuarios={usuarios}/>
 
     </div>
     </>)

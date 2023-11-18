@@ -23,7 +23,7 @@ const CompTelefono = ({telefono, onTelefonoChange}) => {
 }
 
 const EnvioUsuario = ({nom, ape, ema, tel}) => {
-    console.log(nom,ape,ema,tel);
+    //console.log(nom,ape,ema,tel);
     return(<p>ASDASD</p>);
 }
 
@@ -39,15 +39,7 @@ const ComponenteFormulario = () => {
     const previeneSubmit = (e) => {
         e.preventDefault();
     }
-
     
-   
-    
-
-    const llamaEnvio = () => {
-        <EnvioUsuario nom={nombre} ape={apellido} ema={email} tel={telefono}/>;
-    }
-
 
     //console.log(nombre, apellido, telefono, email);
 
@@ -56,13 +48,14 @@ const ComponenteFormulario = () => {
     <div>
         <h2>39. Formulario con composicion de componentes funcionales</h2>
         <form onSubmit={(e) => previeneSubmit(e)}>
-        <CompNombre nombre={nombre} onNombreChange={setNombre}/><br/><br/>
-        <CompApellido apellido={apellido} onApellidoChange={setApellido}/><br/><br/>
-        <CompEmail email={email} onEmailChange={setEmail}/><br/><br/>
-        <CompTelefono telefono={telefono} onTelefonoChange={setTelefono}/><br/><br/>
-        <button onClick={() => llamaEnvio()}>Enviar</button>
-        
+            <CompNombre nombre={nombre} onNombreChange={setNombre}/><br/><br/>
+            <CompApellido apellido={apellido} onApellidoChange={setApellido}/><br/><br/>
+            <CompEmail email={email} onEmailChange={setEmail}/><br/><br/>
+            <CompTelefono telefono={telefono} onTelefonoChange={setTelefono}/><br/><br/>
+            <button type="submit">Enviar</button>
         </form>
+        <EnvioUsuario nom={nombre} ape={apellido} ema={email} tel={telefono}/>
+
     </div>
     </>)
 

@@ -22,7 +22,7 @@ const CompTelefono = ({telefono, onTelefonoChange}) => {
     return(<><label>Telefono</label>{" "}<input type="number" value={telefono} onChange={(e) => onTelefonoChange(e.target.value)}/></>)
 }
 
-const EnvioUsuario = ({nom, ape, ema, tel}) => {
+const RenderizaUsuarios = ({nom, ape, ema, tel}) => {
     //console.log(nom,ape,ema,tel);
     return(<><table border={1}>
             <thead>
@@ -60,6 +60,9 @@ const ComponenteFormulario = () => {
 
     //console.log(nombre, apellido, telefono, email);
 
+    const envioUsuario = () => {
+        
+    }
 
     return(<>
     <div>
@@ -69,9 +72,9 @@ const ComponenteFormulario = () => {
             <CompApellido apellido={apellido} onApellidoChange={setApellido}/><br/><br/>
             <CompEmail email={email} onEmailChange={setEmail}/><br/><br/>
             <CompTelefono telefono={telefono} onTelefonoChange={setTelefono}/><br/><br/>
-            <button type="submit">Enviar</button>
+            <button type="submit">Enviar</button><br/><br/>
         </form>
-        <EnvioUsuario nom={nombre} ape={apellido} ema={email} tel={telefono}/>
+        <RenderizaUsuarios nom={nombre} ape={apellido} ema={email} tel={telefono}/>
 
     </div>
     </>)

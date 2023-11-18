@@ -51,25 +51,25 @@ const ComponenteFormulario = () => {
     const [apellido, setApellido] = useState(undefined);
     const [email, setEmail] = useState(undefined);
     const [telefono, setTelefono] = useState(undefined);
-
+    const [listaUsuarios, setListaUsuarios] = useState([]);
 
     const previeneSubmit = (e) => {
         e.preventDefault();
+
+        setListaUsuarios([...listaUsuarios, {nom: nombre, ape: apellido, ema: email, tel: telefono}])
+
+        setNombre("");
+        setApellido("");
+        setEmail("");
+        setTelefono("");
     }
     
 
     //console.log(nombre, apellido, telefono, email);
 
-    const envioUsuario = (nom, ape, ema, tel) => {
 
-        return(<>
-        <CompNombre value={""}/>
-        <CompApellido value={""}/>
-        <CompEmail value={""}/>
-        <CompTelefono value={""}/>        
-        </>)
         
-    }
+
 
     return(<>
     <div>

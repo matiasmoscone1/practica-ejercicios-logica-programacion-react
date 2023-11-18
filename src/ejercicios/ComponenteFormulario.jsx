@@ -22,6 +22,10 @@ const CompTelefono = ({telefono, onTelefonoChange}) => {
     return(<><label>Telefono</label>{" "}<input type="number" value={telefono} onChange={(e) => onTelefonoChange(e.target.value)}/></>)
 }
 
+const EnvioUsuario = ({nom, ape, ema, tel}) => {
+    console.log(nom,ape,ema,tel);
+    return(<p>ASDASD</p>);
+}
 
 
 const ComponenteFormulario = () => {
@@ -33,17 +37,15 @@ const ComponenteFormulario = () => {
 
 
     const previeneSubmit = (e) => {
-        <EnvioUsuario nom={nombre} ape={apellido} ema={email} tel={telefono}/>;
         e.preventDefault();
     }
 
-    const EnvioUsuario = ({nom, ape, ema, tel}) => {
-        console.log(nom,ape,ema,tel);
-        
-    }
+    
+   
+    
 
     const llamaEnvio = () => {
-        
+        <EnvioUsuario nom={nombre} ape={apellido} ema={email} tel={telefono}/>;
     }
 
 

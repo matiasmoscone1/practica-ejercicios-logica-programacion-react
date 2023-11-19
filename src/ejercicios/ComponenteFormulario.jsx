@@ -64,6 +64,17 @@ const ComponenteFormulario = () => {
         e.preventDefault();
         
         setId(id + 1);
+
+        
+        const validaNombre = /^a-zA-Z{4,16}$/;
+
+        if(validaNombre.test(nombre)){
+            nombre = nombre;
+        }else{
+            console.log("Nombre incorrecto, deben ser solo letras (entre 4 y 16 caracteres)");
+        }
+
+
         setUsuarios([...usuarios, {id: id, nom: nombre, ape: apellido, ema: email, tel: telefono}])
 
         setNombre("");

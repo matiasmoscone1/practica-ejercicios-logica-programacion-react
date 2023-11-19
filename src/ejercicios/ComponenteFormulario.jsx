@@ -27,6 +27,7 @@ const RenderizaUsuarios = ({usuarios}) => {
     return(<><table border={1}>
             <thead>
                 <tr>
+                    <td>Id</td>
                     <td>Nombre</td>
                     <td>Apellido</td>
                     <td>Email</td>
@@ -37,6 +38,7 @@ const RenderizaUsuarios = ({usuarios}) => {
                 {usuarios.map((usu) => {
                     return(
                         <tr key={usu.nom}>
+                            <td>{usu.id}</td>
                             <td>{usu.nom}</td>
                             <td>{usu.ape}</td>
                             <td>{usu.ema}</td>
@@ -51,6 +53,7 @@ const RenderizaUsuarios = ({usuarios}) => {
 
 const ComponenteFormulario = () => {
 
+    const [id, setId] = useState(undefined);
     const [nombre, setNombre] = useState(undefined);
     const [apellido, setApellido] = useState(undefined);
     const [email, setEmail] = useState(undefined);
@@ -59,8 +62,9 @@ const ComponenteFormulario = () => {
 
     const previeneSubmit = (e) => {
         e.preventDefault();
+        
 
-        setUsuarios([...usuarios, {nom: nombre, ape: apellido, ema: email, tel: telefono}])
+        setUsuarios([...usuarios, {id: setId(id+1), nom: nombre, ape: apellido, ema: email, tel: telefono}])
 
         setNombre("");
         setApellido("");

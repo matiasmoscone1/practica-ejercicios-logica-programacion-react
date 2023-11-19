@@ -53,7 +53,7 @@ const RenderizaUsuarios = ({usuarios}) => {
 
 const ComponenteFormulario = () => {
 
-    const [id, setId] = useState(undefined);
+    const [id, setId] = useState(0);
     const [nombre, setNombre] = useState(undefined);
     const [apellido, setApellido] = useState(undefined);
     const [email, setEmail] = useState(undefined);
@@ -63,8 +63,8 @@ const ComponenteFormulario = () => {
     const previeneSubmit = (e) => {
         e.preventDefault();
         
-
-        setUsuarios([...usuarios, {id: setId(id+1), nom: nombre, ape: apellido, ema: email, tel: telefono}])
+        setId(id + 1);
+        setUsuarios([...usuarios, {id: id, nom: nombre, ape: apellido, ema: email, tel: telefono}])
 
         setNombre("");
         setApellido("");

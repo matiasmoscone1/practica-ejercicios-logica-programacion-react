@@ -66,7 +66,7 @@ const ComponenteFormulario = () => {
         setId(id + 1);
 
         
-        const validaNombre = /^a-zA-Z{4,16}$/;
+        const validaNombre = /^[a-zA-Z]{4,16}$/;
 
         if(validaNombre.test(nombre)){
             nombre = nombre;

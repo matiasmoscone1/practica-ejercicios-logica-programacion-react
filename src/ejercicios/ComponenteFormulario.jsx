@@ -64,7 +64,7 @@ const ComponenteFormulario = () => {
     const [email, setEmail] = useState(undefined);
     const [telefono, setTelefono] = useState(undefined);
     const [usuarios, setUsuarios] = useState([]);
-    const [valida, setValida] = useState(false);
+    const [valida, setValida] = useState(undefined);
 
     const previeneSubmit = (e) => {
         e.preventDefault();
@@ -80,7 +80,7 @@ const ComponenteFormulario = () => {
         validaEmail.test(email) && validaTelefono.test(telefono)){
             setValida(true);
         }else{
-            <NoValida/>
+            setValida(false);
         }
 
 
@@ -117,6 +117,8 @@ const ComponenteFormulario = () => {
             <button type="submit">Enviar</button><br/><br/>
         </form>
         <RenderizaUsuarios usuarios={usuarios}/>
+        {valida === false && <NoValida/>}
+        
 
     </div>
     </>)

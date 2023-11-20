@@ -78,14 +78,17 @@ const ComponenteFormulario = () => {
 
         if(valida){        
             setUsuarios([...usuarios, {id: id, nom: nombre, ape: apellido, ema: email, tel: telefono}])
+                    
+            setNombre("");
+            setApellido("");
+            setEmail("");
+            setTelefono("");
+        }else{
+            console.log("debugg");
         }
-        
 
 
-        setNombre("");
-        setApellido("");
-        setEmail("");
-        setTelefono("");
+
     }
     
 

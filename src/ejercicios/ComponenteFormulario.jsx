@@ -77,10 +77,9 @@ const ComponenteFormulario = () => {
         }
     }
     
-    /*useEffect(() => {            
+    useEffect(() => {            
         if(valida){        
             setUsuarios([...usuarios, {id: id, nom: nombre, ape: apellido, ema: email, tel: telefono}])
-                    
             setNombre("");
             setApellido("");
             setEmail("");
@@ -88,7 +87,8 @@ const ComponenteFormulario = () => {
         }else{
             console.log("debugg");
         }
-    }, [valida, id, nombre, apellido, email, telefono, usuarios]);*/
+        
+    }, [valida]);
 
     //console.log(nombre, apellido, telefono, email);
 

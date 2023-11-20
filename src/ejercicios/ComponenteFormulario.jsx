@@ -4,6 +4,7 @@
 //en componentes funcionales separados para el nombre de usuario, la dirección de correo 
 //electrónico y la contraseña. Estos componentes deben ser componibles y reutilizables.
 
+import { useEffect } from "react"
 import { useState } from "react"
 
 const CompNombre = ({nombre, onNombreChange}) => {
@@ -74,8 +75,9 @@ const ComponenteFormulario = () => {
         }else{
             console.log("Nombre incorrecto, deben ser solo letras (entre 4 y 16 caracteres)");
         }
-
-
+    }
+    
+    /*useEffect(() => {            
         if(valida){        
             setUsuarios([...usuarios, {id: id, nom: nombre, ape: apellido, ema: email, tel: telefono}])
                     
@@ -86,11 +88,7 @@ const ComponenteFormulario = () => {
         }else{
             console.log("debugg");
         }
-
-
-
-    }
-    
+    }, [valida, id, nombre, apellido, email, telefono, usuarios]);*/
 
     //console.log(nombre, apellido, telefono, email);
 

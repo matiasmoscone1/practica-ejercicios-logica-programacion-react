@@ -68,12 +68,12 @@ const ComponenteFormulario = () => {
         setId(id + 1);
 
         
-        const validaNombre = /^[a-zA-Z]{4,16}$/;
+        const validaNombreApellido = /^[a-zA-Z]{4,16}$/;
 
-        if(validaNombre.test(nombre)){
+        if(validaNombreApellido.test(nombre) && validaNombreApellido.test(apellido)){
             setValida(true);
         }else{
-            console.log("Nombre incorrecto, deben ser solo letras (entre 4 y 16 caracteres)");
+            console.log("Nombre o Apellido incorrecto, deben ser solo letras (entre 4 y 16 caracteres)");
         }
     }
     

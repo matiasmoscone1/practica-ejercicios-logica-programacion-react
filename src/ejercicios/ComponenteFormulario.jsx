@@ -71,14 +71,15 @@ const ComponenteFormulario = () => {
         const validaNombreApellido = /^[a-zA-Z]{4,16}$/;
         const validaEmail = /^[a-zA-Z0-9_-.]+[a-zA-Z0-9.-\.[a-zA-Z]{2,4}]$/;
 
-        if(validaNombreApellido.test(nombre) && validaNombreApellido.test(apellido)){
+        if(validaNombreApellido.test(nombre) && validaNombreApellido.test(apellido) && 
+        validaEmail.test(email)){
             setValida(true);
         }else{
-            console.log("Nombre o Apellido incorrecto, deben ser solo letras (entre 4 y 16 caracteres)");
+            console.log("Nombre, apellido, email o telefono incorrecto");
         }
 
 
-        
+
     }
     
     useEffect(() => {            

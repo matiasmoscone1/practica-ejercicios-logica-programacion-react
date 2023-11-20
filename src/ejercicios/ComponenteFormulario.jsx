@@ -23,6 +23,10 @@ const CompTelefono = ({telefono, onTelefonoChange}) => {
     return(<><label>Telefono</label>{" "}<input type="number" value={telefono} onChange={(e) => onTelefonoChange(e.target.value)}/> (10 numeros en total)</>)
 }
 
+const NoValida = () => {
+    return(<><p>Nombre, apellido, email o telefono incorrecto</p></>)
+}
+
 const RenderizaUsuarios = ({usuarios}) => {
     //console.log(nom,ape,ema,tel);
     return(<><table border={1}>
@@ -76,7 +80,7 @@ const ComponenteFormulario = () => {
         validaEmail.test(email) && validaTelefono.test(telefono)){
             setValida(true);
         }else{
-            console.log("Nombre, apellido, email o telefono incorrecto");
+            <NoValida/>
         }
 
 

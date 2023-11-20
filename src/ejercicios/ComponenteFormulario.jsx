@@ -8,19 +8,19 @@ import { useEffect } from "react"
 import { useState } from "react"
 
 const CompNombre = ({nombre, onNombreChange}) => {
-    return(<><label>Nombre</label>{" "}<input type="text" value={nombre} onChange={(e) => onNombreChange(e.target.value)}/></>)
+    return(<><label>Nombre</label>{" "}<input type="text" value={nombre} onChange={(e) => onNombreChange(e.target.value)}/> (entre 4 y 16 caracteres)</>)
 }
 
 const CompApellido = ({apellido, onApellidoChange}) => {
-    return(<><label>Apellido</label>{" "}<input type="text" value={apellido} onChange={(e) => onApellidoChange(e.target.value)}/></>)
+    return(<><label>Apellido</label>{" "}<input type="text" value={apellido} onChange={(e) => onApellidoChange(e.target.value)}/> (entre 4 y 16 caracteres)</>)
 }
 
 const CompEmail = ({email, onEmailChange}) => {
-    return(<><label>Email</label>{" "}<input type="text" value={email} onChange={(e) => onEmailChange(e.target.value)}/></>)
+    return(<><label>Email</label>{" "}<input type="text" value={email} onChange={(e) => onEmailChange(e.target.value)}/> (formato asdasd@asd.asd)</>)
 }
 
 const CompTelefono = ({telefono, onTelefonoChange}) => {
-    return(<><label>Telefono</label>{" "}<input type="number" value={telefono} onChange={(e) => onTelefonoChange(e.target.value)}/></>)
+    return(<><label>Telefono</label>{" "}<input type="number" value={telefono} onChange={(e) => onTelefonoChange(e.target.value)}/> (10 numeros en total)</>)
 }
 
 const RenderizaUsuarios = ({usuarios}) => {
@@ -69,10 +69,11 @@ const ComponenteFormulario = () => {
 
         
         const validaNombreApellido = /^[a-zA-Z]{4,16}$/;
-        const validaEmail = /^[a-zA-Z0-9_-.]+[a-zA-Z0-9.-\.[a-zA-Z]{2,4}]$/;
+        const validaEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+        const validaTelefono = /^[0-9]{10}$/;
 
         if(validaNombreApellido.test(nombre) && validaNombreApellido.test(apellido) && 
-        validaEmail.test(email)){
+        validaEmail.test(email) && validaTelefono.test(telefono)){
             setValida(true);
         }else{
             console.log("Nombre, apellido, email o telefono incorrecto");

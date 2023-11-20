@@ -59,6 +59,7 @@ const ComponenteFormulario = () => {
     const [email, setEmail] = useState(undefined);
     const [telefono, setTelefono] = useState(undefined);
     const [usuarios, setUsuarios] = useState([]);
+    const [valida, setValida] = useState(false);
 
     const previeneSubmit = (e) => {
         e.preventDefault();
@@ -69,13 +70,17 @@ const ComponenteFormulario = () => {
         const validaNombre = /^[a-zA-Z]{4,16}$/;
 
         if(validaNombre.test(nombre)){
-            nombre = nombre;
+            setValida(true);
         }else{
             console.log("Nombre incorrecto, deben ser solo letras (entre 4 y 16 caracteres)");
         }
 
 
-        setUsuarios([...usuarios, {id: id, nom: nombre, ape: apellido, ema: email, tel: telefono}])
+        if(valida){        
+            setUsuarios([...usuarios, {id: id, nom: nombre, ape: apellido, ema: email, tel: telefono}])
+        }
+        
+
 
         setNombre("");
         setApellido("");

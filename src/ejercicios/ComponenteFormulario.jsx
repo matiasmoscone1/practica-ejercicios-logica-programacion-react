@@ -122,13 +122,18 @@ const ComponenteFormulario = () => {
     <div>
         <h2>39. Formulario con composicion de componentes funcionales</h2>
         <form onSubmit={(e) => previeneSubmit(e)}>
+            {/* Llama a todos los componentes del formulario y se le pasa como prop la variable de estado
+            y su prop actualizadora  */}
             <CompNombre nombre={nombre} onNombreChange={setNombre}/><br/><br/>
             <CompApellido apellido={apellido} onApellidoChange={setApellido}/><br/><br/>
             <CompEmail email={email} onEmailChange={setEmail}/><br/><br/>
             <CompTelefono telefono={telefono} onTelefonoChange={setTelefono}/><br/><br/>
             <button type="submit">Enviar</button><br/><br/>
         </form>
+        {/* Llama al componente para renderizar usuarios y se le pasa como prop el listado de los usuarios */}
         <RenderizaUsuarios usuarios={usuarios}/>
+        {/* Si valida es false, se llama al componente NoValida para mostrar por pantalla que alguno de los
+        datos del formulario fallo */}
         {valida === false && <NoValida/>}
         
 

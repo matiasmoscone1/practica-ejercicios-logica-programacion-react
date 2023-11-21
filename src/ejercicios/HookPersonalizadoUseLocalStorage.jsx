@@ -6,8 +6,17 @@
 
 const HookPersonalizadoUseLocalStorage = () => {
 
+    console.log(localStorage);
 
 
+
+    return(<>
+    <div>
+        <h2>41. Hook personalizado almacenamiento local del navegador </h2>
+        <input />
+        
+    </div>
+    </>)
 
 }
 

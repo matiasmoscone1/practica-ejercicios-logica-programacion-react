@@ -107,7 +107,7 @@ const ComponenteFormulario = () => {
             setEmail("");
             setTelefono("");
         }else{
-            console.log("debugg");
+            //console.log("debugg");
         }
     //cada vez que valida cambie, se actualizara el useEffect
     }, [valida]);

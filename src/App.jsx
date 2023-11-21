@@ -39,6 +39,7 @@ import ComponenteFuncional from './ejercicios/ComponenteFuncional';
 import RenderizadoCondicional from './ejercicios/RenderizadoCondicional';
 import ComponenteFormulario from './ejercicios/ComponenteFormulario';
 import ContadorUseReducer from './ejercicios/ContadorUseReducer';
+import HookPersonalizadoUseLocalStorage from './ejercicios/HookPersonalizadoUseLocalStorage';
 
 function App() {
 
@@ -91,6 +92,7 @@ function App() {
     <RenderizadoCondicional />
     <ComponenteFormulario />
     <ContadorUseReducer />
+    <HookPersonalizadoUseLocalStorage />
     
 
     </>

@@ -4,9 +4,12 @@
 //en componentes funcionales separados para el nombre de usuario, la dirección de correo 
 //electrónico y la contraseña. Estos componentes deben ser componibles y reutilizables.
 
+//importando los hooks
 import { useEffect } from "react"
 import { useState } from "react"
 
+//creando componentes individuales que retornan estructura html, se le pasa por parametro el nombre (variable de estado)
+//y la variable que va actualizando el estado
 const CompNombre = ({nombre, onNombreChange}) => {
     return(<><label>Nombre</label>{" "}<input type="text" value={nombre} onChange={(e) => onNombreChange(e.target.value)}/> (entre 4 y 16 caracteres)</>)
 }
@@ -23,10 +26,13 @@ const CompTelefono = ({telefono, onTelefonoChange}) => {
     return(<><label>Telefono</label>{" "}<input type="number" value={telefono} onChange={(e) => onTelefonoChange(e.target.value)}/> (10 numeros en total)</>)
 }
 
+//Componente que retorna que alguno de los campos del formulario fallo
 const NoValida = () => {
     return(<><p>Nombre, apellido, email o telefono incorrecto</p></>)
 }
 
+//Componente que renderiza los usuarios en una tabla, se le pasa por parametro el listado 
+//de los usuarios y los renderiza
 const RenderizaUsuarios = ({usuarios}) => {
     //console.log(nom,ape,ema,tel);
     return(<><table border={1}>
@@ -56,8 +62,10 @@ const RenderizaUsuarios = ({usuarios}) => {
 }
 
 
+//Componente principal
 const ComponenteFormulario = () => {
 
+    //se crean todas las variables de esatdo 
     const [id, setId] = useState(0);
     const [nombre, setNombre] = useState(undefined);
     const [apellido, setApellido] = useState(undefined);
@@ -66,27 +74,31 @@ const ComponenteFormulario = () => {
     const [usuarios, setUsuarios] = useState([]);
     const [valida, setValida] = useState(undefined);
 
+    //funcion que se llama al enviar el formulario 
     const previeneSubmit = (e) => {
+        //previene el comportamiento por defecto del submit
         e.preventDefault();
         
+        //setea un nuevo id por cada vez que se envia el formulario
         setId(id + 1);
 
-        
+        //expresiones regulares para validar datos del formulario
         const validaNombreApellido = /^[a-zA-Z]{4,16}$/;
         const validaEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
         const validaTelefono = /^[0-9]{10}$/;
 
+        //Valida todo el formulario y si pasan correctamente todos los datos, setea la variable
+        //valida en true
         if(validaNombreApellido.test(nombre) && validaNombreApellido.test(apellido) && 
         validaEmail.test(email) && validaTelefono.test(telefono)){
             setValida(true);
         }else{
+            //sino setea la variable en false y llama al componente
             setValida(false);
         }
-
-
-
     }
     
+    //hook que setea las variables de estado dependiendo la variable de estado "valida"
     useEffect(() => {            
         if(valida){        
             setUsuarios([...usuarios, {id: id, nom: nombre, ape: apellido, ema: email, tel: telefono}])
@@ -97,7 +109,7 @@ const ComponenteFormulario = () => {
         }else{
             console.log("debugg");
         }
-        
+    //cada vez que valida cambie, se actualizara el useEffect
     }, [valida]);
 
     //console.log(nombre, apellido, telefono, email);

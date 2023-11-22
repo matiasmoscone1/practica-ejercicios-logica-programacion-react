@@ -32,9 +32,12 @@ const HookPersonalizadoUseLocalStorage = () => {
         switch(accion){
             case "agregar":
                 localStorage.setItem("Nombre", valor);
+                break;
             case "obtener":
-                localStorage.getItem(valor);
-        }   
+                return localStorage.getItem("Nombre");
+            default:
+                break;
+        }
 
     }
 
@@ -43,8 +46,13 @@ const HookPersonalizadoUseLocalStorage = () => {
 
         useLocalStorage(nombre, "agregar");
 
-        console.log(nombre);
         console.log(localStorage);
+        const nombreAlmacenado = useLocalStorage(null ,"obtener");
+        console.log("Nombre almacenado: ", nombreAlmacenado);
+
+        setNombre("");
+        //console.log(nombre);
+        //console.log(localStorage);
         
     }
 

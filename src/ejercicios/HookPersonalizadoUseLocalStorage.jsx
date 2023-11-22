@@ -9,8 +9,11 @@ const HookPersonalizadoUseLocalStorage = () => {
     console.log(localStorage);
 
     const myData = {key: "value"};
-    localStorage.setItem("myKey", JSON.stringify(myData));
+    localStorage.setItem("Valor", JSON.stringify(myData));
 
+    localStorage.removeItem("myKey");
+
+    
 
     return(<>
     <div>

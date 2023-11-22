@@ -26,26 +26,32 @@ const HookPersonalizadoUseLocalStorage = () => {
 
     const [nombre, setNombre] = useState(undefined);
 
-    const useLocalStorage = () => {
+    const useLocalStorage = (valor, accion) => {
 
+        if(accion === "agregar"){
+            localStorage.setItem("Nombre", valor);
+        }
 
     }
 
     const funcionEnviadora = (e) => {
         e.preventDefault()
+    
+        console.log(nombre);
+        
     }
 
 
-    console.log(nombre);
-
-
+    //useLocalStorage(nombre, "agregar");
+    
 
     return(<>
     <div>
         <h2>41. Hook personalizado almacenamiento local del navegador </h2>
         <form onSubmit={(e) => funcionEnviadora(e)}>
             <label>Nombre</label>{" "}
-            <input onChange={(e) => setNombre(e.target.value)}/>
+            <input onChange={(e) => setNombre(e.target.value)}/><br/><br/>
+            <button>Enviar</button>
         </form>
 
     </div>

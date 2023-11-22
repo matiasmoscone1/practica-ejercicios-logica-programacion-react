@@ -4,8 +4,11 @@
 //a los componentes almacenar y recuperar datos en el almacenamiento local del navegador 
 //de manera transparente.
 
-const HookPersonalizadoUseLocalStorage = () => {
+import e from "cors";
+import { useState } from "react";
 
+const HookPersonalizadoUseLocalStorage = () => {
+    /*
     console.log(localStorage);
 
     const myData = {key: "value"};
@@ -19,13 +22,32 @@ const HookPersonalizadoUseLocalStorage = () => {
     //console.log(localStorage.key(0));
     //localStorage.key()
 
-    console.log(localStorage.getItem("valor"));
+    console.log(localStorage.getItem("valor"));*/
+
+    const [nombre, setNombre] = useState(undefined);
+
+    const useLocalStorage = () => {
+
+
+    }
+
+    const funcionEnviadora = (e) => {
+        e.preventDefault()
+    }
+
+
+    console.log(nombre);
+
+
 
     return(<>
     <div>
         <h2>41. Hook personalizado almacenamiento local del navegador </h2>
-        <input />
-        
+        <form onSubmit={(e) => funcionEnviadora(e)}>
+            <label>Nombre</label>{" "}
+            <input onChange={(e) => setNombre(e.target.value)}/>
+        </form>
+
     </div>
     </>)
 

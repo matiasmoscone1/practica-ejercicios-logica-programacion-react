@@ -36,13 +36,16 @@ const HookPersonalizadoUseLocalStorage = () => {
 
     const funcionEnviadora = (e) => {
         e.preventDefault()
-    
+
+        useLocalStorage(nombre, "agregar");
+
         console.log(nombre);
+        console.log(localStorage);
         
     }
 
 
-    //useLocalStorage(nombre, "agregar");
+    
     
 
     return(<>

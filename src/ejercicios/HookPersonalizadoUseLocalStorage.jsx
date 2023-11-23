@@ -28,10 +28,12 @@ const HookPersonalizadoUseLocalStorage = () => {
 
     const useLocalStorage = (valor, accion) => {
 
-    
+        const lista = JSON.parse(localStorage.getItem("Nombre")) || [];
+
+        const nuevoNombre = [...lista, valor];
         switch(accion){
             case "agregar":
-                localStorage.setItem("Nombre", {valor});
+                localStorage.setItem("Nombre", nuevoNombre);
                 break;
             case "obtener":
                 return localStorage.getItem("Nombre");
@@ -41,6 +43,7 @@ const HookPersonalizadoUseLocalStorage = () => {
 
     }
 
+    
     const funcionEnviadora = (e) => {
         e.preventDefault()
 

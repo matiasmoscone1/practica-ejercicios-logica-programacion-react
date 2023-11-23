@@ -31,7 +31,7 @@ const HookPersonalizadoUseLocalStorage = () => {
     
         switch(accion){
             case "agregar":
-                localStorage.setItem("Nombre", valor);
+                localStorage.setItem("Nombre", {valor});
                 break;
             case "obtener":
                 return localStorage.getItem("Nombre");

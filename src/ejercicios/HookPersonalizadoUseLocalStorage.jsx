@@ -28,7 +28,7 @@ const HookPersonalizadoUseLocalStorage = () => {
 
     const useLocalStorage = (valor, accion) => {
 
-        let lista = JSON.parse(localStorage.getItem("Nombre")) || [];
+        let lista = localStorage.getItem("Nombre") || [];
 
         
         

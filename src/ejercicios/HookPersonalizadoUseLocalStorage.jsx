@@ -56,9 +56,8 @@ const HookPersonalizadoUseLocalStorage = () => {
         useLocalStorage(nombre, "agregar");
 
         console.log(localStorage);
-        const nombreAlmacenado = useLocalStorage(null ,"obtener");
-        console.log("Nombre almacenado: ", nombreAlmacenado);
-        <ComponenteNombres list={nombreAlmacenado}/>
+        
+        
 
         setNombre("");
         //console.log(nombre);
@@ -67,9 +66,13 @@ const HookPersonalizadoUseLocalStorage = () => {
     }
 
 
-    const ComponenteNombres = (list) => {
-        return(console.log("Aca esta el listado de nombres:", list))
-        
+    const ComponenteNombres = () => {
+ 
+        const nombreAlmacenado = useLocalStorage(null ,"obtener");
+        console.log("Nombre almacenado: ", nombreAlmacenado);
+ 
+        return(<p>{nombreAlmacenado}</p>);
+
     }
     
     
@@ -84,7 +87,7 @@ const HookPersonalizadoUseLocalStorage = () => {
             <input onChange={(e) => setNombre(e.target.value)}/><br/><br/>
             <button>Enviar</button>
         </form>
-        
+        <ComponenteNombres />
     </div>
     </>)
 

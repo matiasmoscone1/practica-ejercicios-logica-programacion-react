@@ -37,6 +37,7 @@ const HookPersonalizadoUseLocalStorage = () => {
                 const nuevosNombres = [...lista, valor];
                 console.log(nuevosNombres);
                 localStorage.setItem("Nombre", JSON.stringify(nuevosNombres));
+                <ComponenteNombres list={lista}/>
                 break;
             case "obtener":
                 return lista;
@@ -45,6 +46,7 @@ const HookPersonalizadoUseLocalStorage = () => {
         }
 
     }
+
 
     
     const funcionEnviadora = (e) => {
@@ -63,6 +65,9 @@ const HookPersonalizadoUseLocalStorage = () => {
     }
 
 
+    const ComponenteNombres = (list) => {
+        return(<p>Nombres: {list}</p>);
+    }
     
     
     //localStorage.clear()
@@ -76,7 +81,7 @@ const HookPersonalizadoUseLocalStorage = () => {
             <input onChange={(e) => setNombre(e.target.value)}/><br/><br/>
             <button>Enviar</button>
         </form>
-
+        
     </div>
     </>)
 

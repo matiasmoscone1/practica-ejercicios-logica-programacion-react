@@ -30,12 +30,12 @@ const HookPersonalizadoUseLocalStorage = () => {
 
         let lista = JSON.parse(localStorage.getItem("Nombre")) || [];
 
-        console.log(lista);
+        //console.log(lista);
         
         switch(accion){
             case "agregar":
                 const nuevosNombres = [...lista, valor];
-                console.log(nuevosNombres);
+                //console.log(nuevosNombres);
                 localStorage.setItem("Nombre", JSON.stringify(nuevosNombres));
                 break;
             case "obtener":
@@ -55,7 +55,7 @@ const HookPersonalizadoUseLocalStorage = () => {
 
         useLocalStorage(nombre, "agregar");
 
-        console.log(localStorage);
+        //console.log(localStorage);
         
         
 
@@ -69,9 +69,9 @@ const HookPersonalizadoUseLocalStorage = () => {
     const ComponenteNombres = () => {
  
         const nombreAlmacenado = useLocalStorage(null ,"obtener");
-        console.log("Nombre almacenado: ", nombreAlmacenado);
+        //console.log("Nombre almacenado: ", nombreAlmacenado);
  
-        return(<p>{nombreAlmacenado}</p>);
+        return(<p>Los nombres almacenados son: {nombreAlmacenado.join(", ")}</p>);
 
     }
     

@@ -40,6 +40,9 @@ const HookPersonalizadoUseLocalStorage = () => {
                 break;
             case "obtener":
                 return lista;
+            case "limpiar":
+                localStorage.clear();
+                break;
             default:
                 break;
         }
@@ -78,6 +81,10 @@ const HookPersonalizadoUseLocalStorage = () => {
     
     //localStorage.clear()
     
+    const limpiaStorage = () => {
+        useLocalStorage(null, "limpiar");
+    }
+
 
     return(<>
     <div>
@@ -86,6 +93,7 @@ const HookPersonalizadoUseLocalStorage = () => {
             <label>Nombre</label>{" "}
             <input onChange={(e) => setNombre(e.target.value)}/><br/><br/>
             <button>Enviar</button>
+            <button onClick={() => limpiaStorage()}>Limpiar</button>
         </form>
         <ComponenteNombres />
     </div>

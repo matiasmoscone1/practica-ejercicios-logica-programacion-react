@@ -8,7 +8,12 @@
 const ContadorUseReducer = () => {
 
     
+    return(<>
+    <div>
+        <h2>40. Contador con useReducer (hook useReducer)</h2>
 
+    </div>
+    </>)
 
 
 }

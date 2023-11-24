@@ -72,9 +72,10 @@ const HookPersonalizadoUseLocalStorage = () => {
     const ComponenteNombres = () => {
  
         const nombreAlmacenado = useLocalStorage(null ,"obtener");
-        //console.log("Nombre almacenado: ", nombreAlmacenado);
+        console.log("Nombre almacenado: ", nombreAlmacenado);
  
-        return(<p>Los nombres almacenados son: {nombreAlmacenado.join(", ")}</p>);
+        
+        return(<p>Los nombres almacenados son: {nombreAlmacenado ? nombreAlmacenado.join(", ") : nombreAlmacenado}</p>);
 
     }
     
@@ -92,7 +93,7 @@ const HookPersonalizadoUseLocalStorage = () => {
         <form onSubmit={(e) => funcionEnviadora(e)}>
             <label>Nombre</label>{" "}
             <input onChange={(e) => setNombre(e.target.value)}/><br/><br/>
-            <button>Enviar</button>
+            <button>Enviar</button>{" "}
             <button onClick={() => limpiaStorage()}>Limpiar</button>
         </form>
         <ComponenteNombres />

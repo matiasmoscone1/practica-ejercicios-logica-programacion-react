@@ -65,7 +65,7 @@ const HookPersonalizadoUseLocalStorage = () => {
 
     
     
-    localStorage.clear()
+    //localStorage.clear()
     
 
     return(<>

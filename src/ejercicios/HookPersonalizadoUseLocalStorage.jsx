@@ -28,13 +28,13 @@ const HookPersonalizadoUseLocalStorage = () => {
 
     const useLocalStorage = (valor, accion) => {
 
-        let lista = localStorage.getItem("Nombre") || [];
+        let lista = JSON.parse(localStorage.getItem("Nombre")) || [];
 
         console.log(lista);
         
         switch(accion){
             case "agregar":
-                let nuevosNombres = [...lista, valor];
+                const nuevosNombres = [...lista, valor];
                 console.log(nuevosNombres);
                 localStorage.setItem("Nombre", JSON.stringify(nuevosNombres));
                 break;
@@ -65,7 +65,7 @@ const HookPersonalizadoUseLocalStorage = () => {
 
     
     
-    //localStorage.clear()
+    localStorage.clear()
     
 
     return(<>

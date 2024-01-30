@@ -12,8 +12,8 @@ const ContadorUseReducer = () => {
         switch(action.type){
             case "INCREMENT":
                 return {contador: state.contador + action.value};
-            case "INCREMENT":
-                return {contador: initialState};    
+            case "RESET":
+                return initialState;    
             case "DECREMENT":
                 return {contador: state.contador - action.value};
             default:

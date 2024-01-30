@@ -6,9 +6,18 @@ import { useReducer } from "react";
 
 const ContadorUseReducer = () => {
 
-
     const initialState = {contador: 0};
-    
+
+    const reducer = (state, action) => {
+        switch(action.type){
+            case "INCREMENT":
+                return {contador: state.contador + 1};
+            case "DECREMENT":
+                return {contador: state.contador - 1};
+            default:
+                return state;
+        }
+    };
 
     const [state, dispatch] = useReducer(reducer, initialState)
     

@@ -21,7 +21,7 @@ const ContadorUseReducer = () => {
 
     const [state, dispatch] = useReducer(reducer, initialState);
     
-
+    const sumar = dispatch({value: 1}, "INCREMENT");
 
 
     return(<>
@@ -30,7 +30,7 @@ const ContadorUseReducer = () => {
         <button>+1</button>{" "}
         <button>0</button>{" "}
         <button>-1</button>{" "}
-        <p>Resultado: </p>
+        <p>Resultado: {state.contador}</p>
     </div>
     </>)
 

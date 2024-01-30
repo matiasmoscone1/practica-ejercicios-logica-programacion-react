@@ -19,16 +19,18 @@ const ContadorUseReducer = () => {
         }
     };
 
-    const [state, dispatch] = useReducer(reducer, initialState)
+    const [state, dispatch] = useReducer(reducer, initialState);
     
+
 
 
     return(<>
     <div>
         <h2>40. Contador con useReducer (hook useReducer)</h2>
-
-
-
+        <button>+1</button>{" "}
+        <button>0</button>{" "}
+        <button>-1</button>{" "}
+        <p>Resultado: </p>
     </div>
     </>)
 

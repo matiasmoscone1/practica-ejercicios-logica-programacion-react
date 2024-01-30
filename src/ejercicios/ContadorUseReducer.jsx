@@ -12,6 +12,8 @@ const ContadorUseReducer = () => {
         switch(action.type){
             case "INCREMENT":
                 return {contador: state.contador + action.value};
+            case "INCREMENT":
+                return {contador: initialState};    
             case "DECREMENT":
                 return {contador: state.contador - action.value};
             default:
@@ -22,13 +24,13 @@ const ContadorUseReducer = () => {
     const [state, dispatch] = useReducer(reducer, initialState);
     
     const sumar = () => {dispatch({type: "INCREMENT", value: 1})};
-
+    const reset = () => {dispatch({type: "RESET"})};
 
     return(<>
     <div>
         <h2>40. Contador con useReducer (hook useReducer)</h2>
         <button onClick={sumar}>+1</button>{" "}
-        <button>0</button>{" "}
+        <button onClick={reset}>0</button>{" "}
         <button>-1</button>{" "}
         <p>Resultado: {state.contador}</p>
     </div>

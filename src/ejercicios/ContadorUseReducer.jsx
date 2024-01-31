@@ -34,19 +34,25 @@ const ContadorUseReducer = () => {
     //reducer), con los parametros reducer (la funcion reducer y su estado inicial)
     const [state, dispatch] = useReducer(reducer, initialState);
     
-    
+    //funcion sumar, pasa el num x parametro y ejecuta un dispatch con el tipo de accion y el valor
+    //de la accion
     const sumar = (num) => {dispatch({type: "INCREMENT", value: num})};
+    //funcion reset, ejecuta un dispatch nomas con el tipo de accion "RESET"
     const reset = () => {dispatch({type: "RESET"})};
+    //funcion restar, pasa el num x parametro y ejecuta un dispatch con el tipo de accion y el valor
+    //de la accion
     const restar = (num) => {dispatch({type: "DECREMENT", value: num})};
 
     return(<>
     <div>
         <h2>40. Contador con useReducer (hook useReducer)</h2>
+        {/* Cada boton llama a la funcion correspondiente con su valor por paraemtro especifico */}
         <button onClick={() => sumar(5)}>+5</button>{" "}
         <button onClick={() => sumar(1)}>+1</button>{" "}
         <button onClick={reset}>0</button>{" "}
         <button onClick={() => restar(1)}>-1</button>{" "}
         <button onClick={() => restar(5)}>-5</button>{" "}
+        {/* Muestra el resultado en pantalla (DOM) */}
         <p>Resultado: {state.contador}</p>
     </div>
     </>)

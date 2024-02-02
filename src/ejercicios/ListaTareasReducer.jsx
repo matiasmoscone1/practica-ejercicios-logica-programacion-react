@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useState } from "react";
 import { useReducer } from "react";
 
@@ -29,8 +30,10 @@ const ListaTareasReducer = () => {
     const [state, dispatch] = useReducer(reducer, initialState);
 
    
+    useEffect(() => {
+        console.log(state);
+    }, [state]);
 
-    console.log(state);
 
     const agregar = (tarea) => {
         dispatch({type: "AGREGAR", value: tarea});

@@ -13,8 +13,18 @@ const ListaTareasReducer = () => {
 
     const [state, dispatch] = useReducer(reducer, initialState);
 
+    const reducer = (state, action) => {
 
-    
+        switch(action){
+            case "AGREGAR":
+                return state = state.push(action.value);
+            case "ELIMINAR":
+                return null; 
+            default:
+                return null;
+        }
+    }
+
     //console.log(state);
 
 

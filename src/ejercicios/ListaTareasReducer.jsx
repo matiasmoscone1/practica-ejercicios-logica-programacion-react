@@ -45,10 +45,10 @@ const ListaTareasReducer = () => {
     return(<>
     <div>
         <h2>42. Lista de tareas con reducer (useReducer)</h2>
-        <input type="text" onChange={(e) => {setTask(e.target.value)}}/>
+        <input type="text" onChange={(e) => {setTask(e.target.value)}}/>{" "}
 
         <button onClick={() => {agregar(task)}}>Agregar</button>
-
+        <p>Lista de tareas: {state}</p>
     </div>
     
     </>)

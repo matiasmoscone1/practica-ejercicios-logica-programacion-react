@@ -15,7 +15,7 @@ const ListaTareasReducer = () => {
 
     const reducer = (state, action) => {
 
-        switch(action){
+        switch(action.type){
             case "AGREGAR":
                 return state = state.push(action.value);
             case "ELIMINAR":
@@ -27,7 +27,9 @@ const ListaTareasReducer = () => {
 
     //console.log(state);
 
-
+    const agregar = (tarea) => {
+        dispatch({type: "AGREGAR", "Tarea 5"})
+    }
 
 
 
@@ -35,7 +37,7 @@ const ListaTareasReducer = () => {
     return(<>
     <div>
         <h2>42. Lista de tareas con reducer (useReducer)</h2>
-
+        <input />
 
 
     </div>

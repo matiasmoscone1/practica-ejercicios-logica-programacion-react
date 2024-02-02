@@ -40,6 +40,7 @@ import RenderizadoCondicional from './ejercicios/RenderizadoCondicional';
 import ComponenteFormulario from './ejercicios/ComponenteFormulario';
 import ContadorUseReducer from './ejercicios/ContadorUseReducer';
 import HookPersonalizadoUseLocalStorage from './ejercicios/HookPersonalizadoUseLocalStorage';
+import ListaTareasReducer from './ejercicios/ListaTareasReducer';
 
 function App() {
 
@@ -93,7 +94,7 @@ function App() {
     <ComponenteFormulario />
     <ContadorUseReducer />
     <HookPersonalizadoUseLocalStorage />
-    
+    <ListaTareasReducer />
 
     </>
   )

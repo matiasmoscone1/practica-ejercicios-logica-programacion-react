@@ -10,9 +10,7 @@ import { useReducer } from "react";
 const ListaTareasReducer = () => {
 
     const initialState = ["Tarea 1", "Tarea 2", "Tarea 3", "Tarea 4"];
-
-    const [state, dispatch] = useReducer(reducer, initialState);
-
+    
     const reducer = (state, action) => {
 
         switch(action.type){
@@ -25,10 +23,14 @@ const ListaTareasReducer = () => {
         }
     }
 
-    //console.log(state);
+    const [state, dispatch] = useReducer(reducer, initialState);
+
+   
+
+    console.log(state);
 
     const agregar = (tarea) => {
-        dispatch({type: "AGREGAR", "Tarea 5"})
+        dispatch({type: "AGREGAR", value: "Tarea 5"})
     }
 
 

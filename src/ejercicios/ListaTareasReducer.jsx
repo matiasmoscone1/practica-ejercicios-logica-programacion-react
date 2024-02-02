@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useReducer } from "react";
 
 
@@ -23,6 +24,8 @@ const ListaTareasReducer = () => {
         }
     }
 
+    const [task, setTask] = useState("");
+
     const [state, dispatch] = useReducer(reducer, initialState);
 
    
@@ -30,7 +33,7 @@ const ListaTareasReducer = () => {
     console.log(state);
 
     const agregar = (tarea) => {
-        dispatch({type: "AGREGAR", value: "Tarea 5"})
+        dispatch({type: "AGREGAR", value: tarea});
     }
 
 
@@ -39,8 +42,9 @@ const ListaTareasReducer = () => {
     return(<>
     <div>
         <h2>42. Lista de tareas con reducer (useReducer)</h2>
-        <input />
+        <input onChange={(e) => {setTask(e.target.value)}}/>
 
+        <button onClick={() => {agregar(task)}}>Agregar</button>
 
     </div>
     

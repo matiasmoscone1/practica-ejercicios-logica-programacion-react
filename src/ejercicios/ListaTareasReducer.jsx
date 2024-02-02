@@ -16,7 +16,7 @@ const ListaTareasReducer = () => {
 
         switch(action.type){
             case "AGREGAR":
-                return state = state.push(action.value);
+                return state = [...state, action.value];
             case "ELIMINAR":
                 return null; 
             default:
@@ -42,7 +42,7 @@ const ListaTareasReducer = () => {
     return(<>
     <div>
         <h2>42. Lista de tareas con reducer (useReducer)</h2>
-        <input onChange={(e) => {setTask(e.target.value)}}/>
+        <input type="text" onChange={(e) => {setTask(e.target.value)}}/>
 
         <button onClick={() => {agregar(task)}}>Agregar</button>
 

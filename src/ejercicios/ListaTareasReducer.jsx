@@ -19,7 +19,9 @@ const ListaTareasReducer = () => {
             case "AGREGAR":
                 return state = [...state, action.value];
             case "ELIMINAR":
-                return null; 
+                return state = state.map((tarea) => {
+                    return tarea !== action.value;
+                }); 
             default:
                 return null;
         }

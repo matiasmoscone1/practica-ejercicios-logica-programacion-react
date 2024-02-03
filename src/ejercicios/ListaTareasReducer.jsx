@@ -39,7 +39,9 @@ const ListaTareasReducer = () => {
         dispatch({type: "AGREGAR", value: tarea});
     }
 
-
+    const eliminar = (tarea) => {
+        dispatch({type: "ELIMINAR", value: tarea});
+    }
 
 
     return(<>

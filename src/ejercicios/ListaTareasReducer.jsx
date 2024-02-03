@@ -52,6 +52,7 @@ const ListaTareasReducer = () => {
         <input type="text" onChange={(e) => {setTask(e.target.value)}}/>{" "}
 
         <button onClick={() => {agregar(task)}}>Agregar</button>
+        <button onClick={() => {eliminar(task)}}>Eliminar</button>
         <p>Lista de tareas: {`[${state.join(", ")}]`}</p>
     </div>
     

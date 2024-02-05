@@ -49,11 +49,14 @@ const ListaTareasReducer = () => {
     }
 
     const eliminar = (tarea) => {
+        console.log(tarea);
         if(tarea !== tarea.value){
             return null;
         }else{
-            dispatch({type: "ELIMINAR", value: tarea});
+            dispatch({type: "ELIMINAR", value: tarea});        
         }
+
+         
     }
 
 

@@ -37,12 +37,12 @@ const ListaTareasReducer = () => {
 
     const agregar = (tarea) => {
         dispatch({type: "AGREGAR", value: tarea});
-        setTask(" ");
+        setTask("");
     }
 
     const eliminar = (tarea) => {
         dispatch({type: "ELIMINAR", value: tarea});
-        setTask(" ");
+        setTask("");
     } 
     
 
@@ -50,7 +50,7 @@ const ListaTareasReducer = () => {
     return(<>
     <div>
         <h2>42. Lista de tareas con reducer (useReducer)</h2>
-        <input type="text" onChange={(e) => {setTask(e.target.value)}}/>{" "}
+        <input type="text" value={task} onChange={(e) => {setTask(e.target.value)}}/>{" "}
 
         <button onClick={() => {agregar(task)}}>Agregar</button>{" "}
         <button onClick={() => {eliminar(task)}}>Eliminar</button>

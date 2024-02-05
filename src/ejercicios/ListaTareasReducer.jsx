@@ -43,16 +43,9 @@ const ListaTareasReducer = () => {
     }
 
     const eliminar = (tarea) => {
-        console.log(tarea);
-        /*
-        if(tarea !== tarea.value){
-            return null;
-        }else{
-            dispatch({type: "ELIMINAR", value: tarea});        
-        }*/
         dispatch({type: "ELIMINAR", value: tarea});
-         
-    }
+    } 
+    
 
 
     return(<>
@@ -60,7 +53,7 @@ const ListaTareasReducer = () => {
         <h2>42. Lista de tareas con reducer (useReducer)</h2>
         <input type="text" onChange={(e) => {setTask(e.target.value)}}/>{" "}
 
-        <button onClick={() => {agregar(task)}}>Agregar</button>
+        <button onClick={() => {agregar(task)}}>Agregar</button>{" "}
         <button onClick={() => {eliminar(task)}}>Eliminar</button>
         <p>Lista de tareas: {`[${state.join(", ")}]`}</p>
     </div>

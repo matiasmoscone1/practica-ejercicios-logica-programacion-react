@@ -18,10 +18,7 @@ const ListaTareasReducer = () => {
         switch(action.type){
             case "AGREGAR":
                 return state = [...state, action.value];
-            case "ELIMINAR":/*
-                return state = state.map((tarea) => {
-                    return tarea !== action.value;
-                }); */
+            case "ELIMINAR":
                 return state.filter((tarea) => tarea !== action.value);
             default:
                 return null;

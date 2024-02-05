@@ -18,10 +18,17 @@ const ListaTareasReducer = () => {
         switch(action.type){
             case "AGREGAR":
                 return state = [...state, action.value];
-            case "ELIMINAR":
+            case "ELIMINAR":/*
                 return state = state.map((tarea) => {
                     return tarea !== action.value;
-                }); 
+                }); */
+                return state = (ac, currentValue) => {
+                    if(tarea !== action.value){
+                        ac.push(tarea);
+                    }
+                    return ac;
+
+                }
             default:
                 return null;
         }
@@ -42,7 +49,11 @@ const ListaTareasReducer = () => {
     }
 
     const eliminar = (tarea) => {
-        dispatch({type: "ELIMINAR", value: tarea});
+        if(tarea !== tarea.value){
+            return null;
+        }else{
+            dispatch({type: "ELIMINAR", value: tarea});
+        }
     }
 
 

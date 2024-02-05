@@ -45,6 +45,37 @@ const ListaTareasReducer = () => {
         setTask("");
     } 
     
+    const listadoTarea = (tarea) => {
+        
+        let listaDOM  = "";
+
+        listaDOM += `<table>
+            <thead>
+                <tr>
+                    <td>Tarea</td>
+                </tr>
+            </thead>
+            <tbody>
+            `;
+
+        for(let i = 0; i < tarea.lenght; i++){
+            listaDOM += `<tr>
+                <td>${tar}</td>
+            </tr>`;
+        }
+            /*
+        tarea.map((tar) => {
+            listaDOM += `<tr>
+                <td>${tar}</td>
+            </tr>`;
+        });*/
+
+        listaDOM += `</tbody>
+        </table>`;
+
+        return listaDOM;
+
+    }
 
 
     return(<>
@@ -55,6 +86,8 @@ const ListaTareasReducer = () => {
         <button onClick={() => {agregar(task)}}>Agregar</button>{" "}
         <button onClick={() => {eliminar(task)}}>Eliminar</button>
         <p>Lista de tareas: {`[${state.join(", ")}]`}</p>
+
+        <p>{listadoTarea(task)}</p>
     </div>
     
     </>)

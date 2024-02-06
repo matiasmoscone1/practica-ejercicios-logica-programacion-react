@@ -56,9 +56,10 @@ const ListaTareasReducer = () => {
             </thead>
             <tbody>
                 {tarea.map((tar, index) => {
+                    return(
                     <tr key={index}>
                         <td>{tar}</td>
-                    </tr>   
+                    </tr>) 
                 })}
             </tbody>
         </table>)

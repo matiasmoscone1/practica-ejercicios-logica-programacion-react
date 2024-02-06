@@ -45,8 +45,8 @@ const ListaTareasReducer = () => {
         setTask("");
     } 
     
-    const ListadoTarea = (tarea) => {
-        return(<table>
+    const ListadoTarea = ({ tarea }) => {
+        return(<table border={1}>
             <thead>
                 <tr>
                     <td>
@@ -75,7 +75,7 @@ const ListaTareasReducer = () => {
         <button onClick={() => {eliminar(task)}}>Eliminar</button>
         <p>Lista de tareas: {`[${state.join(", ")}]`}</p>
 
-        <ListadoTarea />
+        <ListadoTarea tarea={state}/>
     </div>
     
     </>)

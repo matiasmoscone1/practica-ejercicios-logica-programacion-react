@@ -58,9 +58,9 @@ const ListaTareasReducer = () => {
             <tbody>
             `;
 
-        for(let i = 0; i < tarea.lenght; i++){
+        for(let i = 0; i < tarea.length; i++){
             listaDOM += `<tr>
-                <td>${tar}</td>
+                <td>${tar[i]}</td>
             </tr>`;
         }
             /*

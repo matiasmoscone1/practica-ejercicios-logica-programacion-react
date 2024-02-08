@@ -7,24 +7,30 @@ import { useReducer } from "react";
 //estado que represente una lista de tareas. Implementa la capacidad de agregar y eliminar 
 //tareas.
 
-
-
+//creando componente principal
 const ListaTareasReducer = () => {
 
+    //creando array de tareas 
     const initialState = ["Tarea 1", "Tarea 2", "Tarea 3", "Tarea 4"];
     
+    //creando funcion reductora, donde se le pasa el estado global y la accion 
     const reducer = (state, action) => {
-
+        //dependiendo el tipo de accion realiza algo u otra cosa
         switch(action.type){
             case "AGREGAR":
+                //retorna el estado global + el valor de la accion (en este caso, la tarea)
                 return state = [...state, action.value];
             case "ELIMINAR":
+                //filtra en un nuevo array todas las tareas que son distintas al valor de la
+                //accion, para "eliminar" la tarea que se indico
                 return state.filter((tarea) => tarea !== action.value);
             default:
+                //devuelve null
                 return null;
         }
     }
 
+    
     const [task, setTask] = useState("");
 
     const [state, dispatch] = useReducer(reducer, initialState);

@@ -41,6 +41,7 @@ import ComponenteFormulario from './ejercicios/ComponenteFormulario';
 import ContadorUseReducer from './ejercicios/ContadorUseReducer';
 import HookPersonalizadoUseLocalStorage from './ejercicios/HookPersonalizadoUseLocalStorage';
 import ListaTareasReducer from './ejercicios/ListaTareasReducer';
+import GestionFormularioReducer from './ejercicios/GestionFormularioReducer';
 
 function App() {
 
@@ -95,6 +96,7 @@ function App() {
     <ContadorUseReducer />
     <HookPersonalizadoUseLocalStorage />
     <ListaTareasReducer />
+    <GestionFormularioReducer />
 
     </>
   )

@@ -5,8 +5,24 @@
 //Implementa la capacidad de manejar cambios en los campos y mostrar el estado del formulario.
 
 
+const GestionFormularioReducer = () => {
 
 
 
+
+
+
+    
+
+
+    return(<>
+        <h2>43. Gestionador de formularios (useReducer)</h2>
+        
+
+    </>)
+
+}
+
+export default GestionFormularioReducer;
 
 

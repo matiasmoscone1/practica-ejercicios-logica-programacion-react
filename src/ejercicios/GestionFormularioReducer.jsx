@@ -7,7 +7,7 @@
 
 const GestionFormularioReducer = () => {
 
-
+    const initialState = {valor: ""};
 
 
 

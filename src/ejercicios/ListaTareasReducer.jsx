@@ -30,27 +30,36 @@ const ListaTareasReducer = () => {
         }
     }
 
-    
+    //inicializando hook useState
     const [task, setTask] = useState("");
 
+    //inicializando hook useReducer
     const [state, dispatch] = useReducer(reducer, initialState);
 
-   
+   //creando useEffect
     useEffect(() => {
+        //tirando un console log del estado global para ver cuanodo cambia
         console.log(state);
     }, [state]);
 
 
+    //creando funcion agregar que se le pasa una tarea por parametro
     const agregar = (tarea) => {
+        //ejecuta el dispatch con el tipo de la accion y el valor de la accion
         dispatch({type: "AGREGAR", value: tarea});
+        //limpia el input 
         setTask("");
     }
 
+    //creando funcion eliminar que se le pasa una tarea por parametro
     const eliminar = (tarea) => {
+        //ejecuta el dispatch con el tipo de la accion y el valor de la accion
         dispatch({type: "ELIMINAR", value: tarea});
+        //limpia el input 
         setTask("");
     } 
     
+    //creando componente que renderiza la tabla en el DOM
     const ListadoTarea = ({ tarea }) => {
         return(<table border={1}>
             <thead>
@@ -76,12 +85,15 @@ const ListaTareasReducer = () => {
     return(<>
     <div>
         <h2>42. Lista de tareas con reducer (useReducer)</h2>
+        {/* input que setea el valor de la tarea */}
         <input type="text" value={task} onChange={(e) => {setTask(e.target.value)}}/>{" "}
 
+        {/* botones con sus acciones respectivamente */}
         <button onClick={() => {agregar(task)}}>Agregar</button>{" "}
         <button onClick={() => {eliminar(task)}}>Eliminar</button>
         <p>Lista de tareas: {`[${state.join(", ")}]`}</p>
 
+        {/* llamando al componente que renderiza la tabla en el DOM */}
         <ListadoTarea tarea={state}/>
     </div>
     

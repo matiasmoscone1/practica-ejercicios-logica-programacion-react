@@ -4,14 +4,24 @@
 //nombre, email, contraseña). Usa useReducer para gestionar el estado del formulario.
 //Implementa la capacidad de manejar cambios en los campos y mostrar el estado del formulario.
 
+import { useReducer } from "react";
+
 
 const GestionFormularioReducer = () => {
 
     const initialState = {valor: ""};
 
+    const reducer = (state, action) => {
 
+        switch(action.type){
+            case "CAMBIA":
+                return {valor: state = action.value}
+            }
 
+    
+    }
 
+    const [state, dispatch] = useReducer(reducer, initialState);
 
 
 

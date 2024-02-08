@@ -12,12 +12,25 @@ const GestionFormularioReducer = () => {
 
 
 
-    
+
 
 
     return(<>
         <h2>43. Gestionador de formularios (useReducer)</h2>
         
+        <form action="submit">
+            <label>Nombre </label>
+            <input type="text"/><br/><br/>
+            <label>Apellido </label>
+            <input type="text"/><br/><br/>
+            <label>Email </label>
+            <input type="text"/><br/><br/>
+            <label>Numero </label>
+            <input type="number"/>
+
+        </form>
+
+
 
     </>)
 

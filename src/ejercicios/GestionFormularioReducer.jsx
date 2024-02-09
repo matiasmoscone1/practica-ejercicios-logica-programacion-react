@@ -17,20 +17,22 @@ const GestionFormularioReducer = () => {
             case "CAMBIA":
                 return {valor: state = action.value}
             }
-
     
     }
 
+
     const [state, dispatch] = useReducer(reducer, initialState);
 
+    const cambiaValor = (e) => {dispatch({type: "CAMBIA", value: e.value})} 
 
+    console.log(state);
 
     return(<>
         <h2>43. Gestionador de formularios (useReducer)</h2>
         
         <form action="submit">
             <label>Nombre </label>
-            <input type="text"/><br/><br/>
+            <input type="text" onChange={(e) => cambiaValor(e.target.value)}/><br/><br/>
             <label>Apellido </label>
             <input type="text"/><br/><br/>
             <label>Email </label>

@@ -25,6 +25,12 @@ const GestionFormularioReducer = () => {
 
     const cambiaValor = (valor) => {dispatch({type: "CAMBIA", value: valor})} 
 
+    const validaForm = (valor) => {
+        if(valor.data === "nombre"){
+            console.log("Entro al input Nombre");
+        }        
+    }
+
     console.log(state);
 
 
@@ -39,7 +45,7 @@ const GestionFormularioReducer = () => {
         
         <form action="submit">
             <label>Nombre </label>
-            <input type="text" onChange={(e) => {cambiaValor(e.target.value); console.log(e.target.value)}}/><br/><br/>
+            <input data="nombre" type="text" onChange={(e) => {cambiaValor(e.target.value); validaForm(e.target.value);console.log(e.target.value)}}/><br/><br/>
             <label>Apellido </label>
             <input type="text" onChange={(e) => {cambiaValor(e.target.value)}}/><br/><br/>
             <label>Email </label>

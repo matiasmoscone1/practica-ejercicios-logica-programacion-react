@@ -19,7 +19,7 @@ const GestionFormularioReducer = () => {
             }
     }
 
-    
+
 
     const [state, dispatch] = useReducer(reducer, initialState);
 
@@ -34,11 +34,11 @@ const GestionFormularioReducer = () => {
             <label>Nombre </label>
             <input type="text" onChange={(e) => {cambiaValor(e.target.value); console.log(e.target.value)}}/><br/><br/>
             <label>Apellido </label>
-            <input type="text"/><br/><br/>
+            <input type="text" onChange={(e) => {cambiaValor(e.target.value)}}/><br/><br/>
             <label>Email </label>
-            <input type="text"/><br/><br/>
+            <input type="text" onChange={(e) => {cambiaValor(e.target.value)}}/><br/><br/>
             <label>Numero </label>
-            <input type="number"/>
+            <input type="number" onChange={(e) => {cambiaValor(e.target.value)}}/>
 
         </form>
 

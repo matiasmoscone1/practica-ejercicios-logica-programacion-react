@@ -25,10 +25,11 @@ const GestionFormularioReducer = () => {
 
     const cambiaValor = (valor) => {dispatch({type: "CAMBIA", value: valor})} 
 
-    const validaForm = (valor) => {
+    const validaForm = (campo, valor) => {
         const regExNombre = /^[a-zA-Z]{8,20}$/;
 
-        switch(valor){
+        
+        switch(campo){
             case "nombre":
                 regExNombre.test(valor) ? console.log("Pasa") : console.log("NO PASA...");
         }        
@@ -48,13 +49,13 @@ const GestionFormularioReducer = () => {
         
         <form action="submit">
             <label>Nombre </label>
-            <input data="nombre" type="text" onChange={(e) => {cambiaValor(e.target.value); validaForm("nombre");console.log(e.target.value)}}/><br/><br/>
+            <input data="nombre" type="text" onChange={(e) => {cambiaValor(e.target.value); validaForm("nombre", state);console.log(e.target.value)}}/><br/><br/>
             <label>Apellido </label>
-            <input type="text" onChange={(e) => {cambiaValor(e.target.value)}}/><br/><br/>
+            <input data="apellido" type="text" onChange={(e) => {cambiaValor(e.target.value)}}/><br/><br/>
             <label>Email </label>
-            <input type="text" onChange={(e) => {cambiaValor(e.target.value)}}/><br/><br/>
+            <input data="email" type="text" onChange={(e) => {cambiaValor(e.target.value)}}/><br/><br/>
             <label>Numero </label>
-            <input type="number" onChange={(e) => {cambiaValor(e.target.value)}}/><br/><br/>
+            <input data="telefono" type="number" onChange={(e) => {cambiaValor(e.target.value)}}/><br/><br/>
             <button onClick={(e) => {submitButton(e)}}>Enviar</button>
         </form>
 

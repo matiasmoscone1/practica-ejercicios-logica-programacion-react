@@ -25,13 +25,12 @@ const GestionFormularioReducer = () => {
 
     const cambiaValor = (valor) => {dispatch({type: "CAMBIA", value: valor})} 
 
-    const validaForm = (campo, valor) => {
+    const validaForm = (campo, valorInput) => {
         const regExNombre = /^[a-zA-Z]{8,20}$/;
 
-        
         switch(campo){
             case "nombre":
-                regExNombre.test(valor) ? console.log("Pasa") : console.log("NO PASA...");
+                regExNombre.test(valorInput.valor) ? console.log("Pasa!!!") : console.log("NO PASA...");
         }        
     }
 

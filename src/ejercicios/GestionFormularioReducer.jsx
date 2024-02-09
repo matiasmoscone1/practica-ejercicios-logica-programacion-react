@@ -4,6 +4,7 @@
 //nombre, email, contraseña). Usa useReducer para gestionar el estado del formulario.
 //Implementa la capacidad de manejar cambios en los campos y mostrar el estado del formulario.
 
+import e from "cors";
 import { useReducer } from "react";
 
 
@@ -27,6 +28,12 @@ const GestionFormularioReducer = () => {
 
     console.log(state);
 
+
+
+    const submitButton = (e) => {
+        e.preventDefault();
+    }
+
     return(<>
         <h2>43. Gestionador de formularios (useReducer)</h2>
         
@@ -38,8 +45,8 @@ const GestionFormularioReducer = () => {
             <label>Email </label>
             <input type="text" onChange={(e) => {cambiaValor(e.target.value)}}/><br/><br/>
             <label>Numero </label>
-            <input type="number" onChange={(e) => {cambiaValor(e.target.value)}}/>
-
+            <input type="number" onChange={(e) => {cambiaValor(e.target.value)}}/><br/><br/>
+            <button onClick={() => {submitButton(e)}}>Enviar</button>
         </form>
 
 

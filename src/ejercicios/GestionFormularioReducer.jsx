@@ -38,7 +38,7 @@ const GestionFormularioReducer = () => {
             case "email":
                 regExEmail.test(valorInput.valor) ? console.log("Pasa!!!") : console.log("NO PASA...");             
             case "telefono":
-                    regExTelefono.test(valorInput.valor) ? console.log("Pasa!!!") : console.log("NO PASA...");
+                regExTelefono.test(valorInput.valor) ? console.log("Pasa!!!") : console.log("NO PASA...");
             }      
     }   
     

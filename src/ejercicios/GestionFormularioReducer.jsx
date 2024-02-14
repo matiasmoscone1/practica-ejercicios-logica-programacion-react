@@ -27,7 +27,7 @@ const GestionFormularioReducer = () => {
 
     const validaForm = (campo, valorInput) => {
         const regExNombreApellido = /^[a-zA-Z]{7,20}$/;
-
+        const regExEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
         const regExTelefono = /^[0-9]{9}$/;
 
         switch(campo){
@@ -36,7 +36,7 @@ const GestionFormularioReducer = () => {
             case "apellido":
                 regExNombreApellido.test(valorInput.valor) ? console.log("Pasa!!!") : console.log("NO PASA...");
             case "email":
-                return null                    
+                regExEmail.test(valorInput.valor) ? console.log("Pasa!!!") : console.log("NO PASA...");             
             case "telefono":
                     regExTelefono.test(valorInput.valor) ? console.log("Pasa!!!") : console.log("NO PASA...");
             }      

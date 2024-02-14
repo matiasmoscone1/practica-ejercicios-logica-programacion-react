@@ -41,7 +41,13 @@ const GestionFormularioReducer = () => {
         switch(campo){
             case "nombre":
                 //regExNombreApellido.test(valorInput.valor) ? console.log("Pasa!!!") : console.log("NO PASA...");
-                regExNombreApellido.test(valorInput.valor) ? setValidacion("") : setValidacion("Debe tener entre 8 y 20 caracteres...");
+                regExNombreApellido.test(valorInput.valor) ? setValidacion(...validacion) : setValidacion("Debe tener entre 8 y 20 caracteres...");
+                setValidacion((prevState) => ({
+                    ...prevState,
+                    nombre: regExNombreApellido.test(valorInput) ? "" : "Debe tener entre 8 y 20 caracteres..."
+                }));
+                break;
+            
             case "apellido":
                 //regExNombreApellido.test(valorInput.valor) ? console.log("Pasa!!!") : console.log("NO PASA...");
                 regExNombreApellido.test(valorInput.valor) ? setValidacion("") : setValidacion("Debe tener entre 8 y 20 caracteres...");
@@ -69,7 +75,7 @@ const GestionFormularioReducer = () => {
         
         <form action="submit">
             <label>Nombre </label>
-            <input data="nombre" type="text" onChange={(e) => {cambiaValor(e.target.value); validaForm("nombre", state);}}/>{validacion}<br/><br/>
+            <input data="nombre" type="text" onChange={(e) => {cambiaValor(e.target.value); validaForm("nombre", state);}}/> {validacion.nombre && <span>{validacion.nombre}</span>}<br/><br/>
             <label>Apellido </label>
             <input data="apellido" type="text" onChange={(e) => {cambiaValor(e.target.value); validaForm("apellido", state);}}/>{validacion}<br/><br/>
             <label>Email </label>

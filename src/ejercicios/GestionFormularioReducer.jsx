@@ -63,7 +63,7 @@ const GestionFormularioReducer = () => {
         
         <form action="submit">
             <label>Nombre </label>
-            <input data="nombre" type="text" onChange={(e) => {cambiaValor(e.target.value); validaForm("nombre", state); console.log(e.target.value)}}/>{validacion}<br/><br/>
+            <input data="nombre" type="text" onChange={(e) => {cambiaValor(e.target.value); validaForm("nombre", state);}}/>{validacion}<br/><br/>
             <label>Apellido </label>
             <input data="apellido" type="text" onChange={(e) => {cambiaValor(e.target.value); validaForm("apellido", state);}}/>{validacion}<br/><br/>
             <label>Email </label>

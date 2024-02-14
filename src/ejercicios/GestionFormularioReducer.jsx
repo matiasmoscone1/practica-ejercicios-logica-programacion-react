@@ -23,7 +23,13 @@ const GestionFormularioReducer = () => {
 
 
     const [state, dispatch] = useReducer(reducer, initialState);
-    const [validacion, setValidacion] = useState("");
+
+    const [validacion, setValidacion] = useState({
+        nombre: "",
+        apellido: "",
+        email: "",
+        telefono: ""
+    });
 
     const cambiaValor = (valor) => {dispatch({type: "CAMBIA", value: valor})} 
 

@@ -32,7 +32,17 @@ const GestionFormularioReducer = () => {
 
         switch(campo){
             case "nombre":
-                regExNombreApellido.test(valorInput.valor) ? console.log("Pasa!!!") : console.log("NO PASA...");
+                //regExNombreApellido.test(valorInput.valor) ? console.log("Pasa!!!") : console.log("NO PASA...");
+                //regExNombreApellido.test(valorInput.valor) ? console.log("Pasa!!!") : console.log("NO PASA...");
+                if(regExNombreApellido.test(valorInput.value)){
+                    return(<>
+                        <p>No pasa... (debe tener entre 8 y 20 caracteres)</p>
+                    </>)
+                }else{
+                    return(<>
+                        <p>Pasa!!!</p>
+                    </>)
+                }
             case "apellido":
                 regExNombreApellido.test(valorInput.valor) ? console.log("Pasa!!!") : console.log("NO PASA...");
             case "email":

@@ -4,6 +4,7 @@
 //nombre, email, contraseña). Usa useReducer para gestionar el estado del formulario.
 //Implementa la capacidad de manejar cambios en los campos y mostrar el estado del formulario.
 
+import { useState } from "react";
 import { useReducer } from "react";
 
 
@@ -22,6 +23,7 @@ const GestionFormularioReducer = () => {
 
 
     const [state, dispatch] = useReducer(reducer, initialState);
+    const [validacion, setValidacion] = useState("");
 
     const cambiaValor = (valor) => {dispatch({type: "CAMBIA", value: valor})} 
 
@@ -33,16 +35,8 @@ const GestionFormularioReducer = () => {
         switch(campo){
             case "nombre":
                 //regExNombreApellido.test(valorInput.valor) ? console.log("Pasa!!!") : console.log("NO PASA...");
-                //regExNombreApellido.test(valorInput.valor) ? console.log("Pasa!!!") : console.log("NO PASA...");
-                if(regExNombreApellido.test(valorInput.value)){
-                    return(<>
-                        <p>No pasa... (debe tener entre 8 y 20 caracteres)</p>
-                    </>)
-                }else{
-                    return(<>
-                        <p>Pasa!!!</p>
-                    </>)
-                }
+                regExNombreApellido.test(valorInput.valor) ? setValidacion("") : setValidacion("Debe tener entre 8 y 20 caracteres...");
+            
             case "apellido":
                 regExNombreApellido.test(valorInput.valor) ? console.log("Pasa!!!") : console.log("NO PASA...");
             case "email":
@@ -67,7 +61,7 @@ const GestionFormularioReducer = () => {
         
         <form action="submit">
             <label>Nombre </label>
-            <input data="nombre" type="text" onChange={(e) => {cambiaValor(e.target.value); validaForm("nombre", state); console.log(e.target.value)}}/><br/><br/>
+            <input data="nombre" type="text" onChange={(e) => {cambiaValor(e.target.value); validaForm("nombre", state); console.log(e.target.value)}}/>{validacion}<br/><br/>
             <label>Apellido </label>
             <input data="apellido" type="text" onChange={(e) => {cambiaValor(e.target.value); validaForm("apellido", state);}}/><br/><br/>
             <label>Email </label>

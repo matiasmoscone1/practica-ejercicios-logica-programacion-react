@@ -9,7 +9,7 @@ import { useReducer } from "react";
 
 const GestionFormularioReducer = () => {
 
-    const initialState = {valor: "", flag: false};
+    const initialState = {valor: "", flag: true};
 
     const reducer = (state, action) => {
 
@@ -52,6 +52,7 @@ const GestionFormularioReducer = () => {
 
     console.log(state);
 
+    console.log(state.flag);
 
     const submitButton = (e) => {
         e.preventDefault();
@@ -66,7 +67,7 @@ const GestionFormularioReducer = () => {
         
         <form action="submit">
             <label>Nombre </label>
-            <input data="nombre" type="text" onChange={(e) => {cambiaValor(e.target.value); validaForm("nombre", state);}}/><br/><br/>
+            <input data="nombre" type="text" onChange={(e) => {cambiaValor(e.target.value); validaForm("nombre", state);}}/>{state.flag ? null : <> Debe contener entre 8 y 20 caracteres...</>}<br/><br/>
             <label>Apellido </label>
             <input data="apellido" type="text" onChange={(e) => {cambiaValor(e.target.value); validaForm("apellido", state);}}/><br/><br/>
             <label>Email </label>

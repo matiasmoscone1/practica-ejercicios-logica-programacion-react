@@ -9,7 +9,7 @@ import { useReducer } from "react";
 
 const GestionFormularioReducer = () => {
 
-    const initialState = {valor: "", flag: true};
+    const initialState = {valor: "", flag: false};
 
     const reducer = (state, action) => {
 
@@ -18,7 +18,7 @@ const GestionFormularioReducer = () => {
             case "CAMBIA":
                 return {valor: state = action.value}
             case "BANDERA":
-                return {flag: }
+                return {flag: action.flag}
             }
 
 

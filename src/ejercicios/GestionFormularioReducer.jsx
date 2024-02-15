@@ -9,7 +9,7 @@ import { useReducer } from "react";
 
 const GestionFormularioReducer = () => {
 
-    const initialState = {valor: ""};
+    const initialState = {valor: "", flag: false};
 
     const reducer = (state, action) => {
 
@@ -17,6 +17,8 @@ const GestionFormularioReducer = () => {
             case "CAMBIA":
                 return {valor: state = action.value}
             }
+
+
     }
 
 
@@ -57,13 +59,6 @@ const GestionFormularioReducer = () => {
     }
 
 
-    const ValidaForm = (campo) => {
-       /* switch(campo){
-            case "nombre":
-                return(<>Debe tener entre 8 y 20 caracteres...</>);
-        }*/
-        return(<> Debe contener entre 8 y 20 caracteres...</>)
-    }
 
 
     return(<>

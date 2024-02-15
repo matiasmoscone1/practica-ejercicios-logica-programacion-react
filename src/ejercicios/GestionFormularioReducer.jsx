@@ -13,6 +13,7 @@ const GestionFormularioReducer = () => {
 
     const reducer = (state, action) => {
 
+        
         switch(action.type){
             case "CAMBIA":
                 return {valor: state = action.value}
@@ -27,6 +28,8 @@ const GestionFormularioReducer = () => {
 
     
     const cambiaValor = (valor) => {dispatch({type: "CAMBIA", value: valor})} 
+
+    const cambiaFlag = (booleano) => {dispatch({type: "BANDERA", flag: booleano})}
 
     const validaForm = (campo, valorInput) => {
         const regExNombreApellido = /^[a-zA-Z]{7,20}$/;

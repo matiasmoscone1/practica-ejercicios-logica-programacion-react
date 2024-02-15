@@ -33,8 +33,7 @@ const GestionFormularioReducer = () => {
 
         switch(campo){
             case "nombre":
-                //regExNombreApellido.test(valorInput.valor) ? console.log("Pasa!!!") : console.log("NO PASA...");
-                regExNombreApellido.test(valorInput.valor) ? console.log("Pasa!!!") : <ValidaForm campo={"nombre"}/>;
+                regExNombreApellido.test(valorInput.valor) ? console.log("Pasa!!!") : console.log("NO PASA...");
                 break;
             case "apellido":
                 regExNombreApellido.test(valorInput.valor) ? console.log("Pasa!!!") : console.log("NO PASA...");
@@ -59,10 +58,11 @@ const GestionFormularioReducer = () => {
 
 
     const ValidaForm = (campo) => {
-        switch(campo){
+       /* switch(campo){
             case "nombre":
                 return(<>Debe tener entre 8 y 20 caracteres...</>);
-        }
+        }*/
+        return(<> Debe contener entre 8 y 20 caracteres...</>)
     }
 
 
@@ -71,7 +71,7 @@ const GestionFormularioReducer = () => {
         
         <form action="submit">
             <label>Nombre </label>
-            <input data="nombre" type="text" onChange={(e) => {cambiaValor(e.target.value); validaForm("nombre", state);}}/> <br/><br/>
+            <input data="nombre" type="text" onChange={(e) => {cambiaValor(e.target.value); validaForm("nombre", state);}}/><br/><br/>
             <label>Apellido </label>
             <input data="apellido" type="text" onChange={(e) => {cambiaValor(e.target.value); validaForm("apellido", state);}}/><br/><br/>
             <label>Email </label>

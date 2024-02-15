@@ -18,7 +18,7 @@ const GestionFormularioReducer = () => {
             case "CAMBIA":
                 return {valor: state = action.value}
             case "BANDERA":
-                return {flag: action.value}
+                return {flag: }
             }
 
 
@@ -41,7 +41,7 @@ const GestionFormularioReducer = () => {
         switch(campo){
             case "nombre":
                 //regExNombreApellido.test(valorInput.valor) ? console.log("Pasa!!!") : console.log("NO PASA...");
-                regExNombreApellido.test(valorInput.valor) ? console.log("Pasa!!!") : cambiaFlag(false); 
+                regExNombreApellido.test(valorInput.valor) ? cambiaFlag(true) : cambiaFlag(false); 
                 break;
             case "apellido":
                 regExNombreApellido.test(valorInput.valor) ? console.log("Pasa!!!") : console.log("NO PASA...");

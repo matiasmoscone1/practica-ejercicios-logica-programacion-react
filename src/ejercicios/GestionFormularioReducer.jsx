@@ -34,12 +34,16 @@ const GestionFormularioReducer = () => {
         switch(campo){
             case "nombre":
                 regExNombreApellido.test(valorInput.valor) ? console.log("Pasa!!!") : console.log("NO PASA...");
+                break;
             case "apellido":
                 regExNombreApellido.test(valorInput.valor) ? console.log("Pasa!!!") : console.log("NO PASA...");
+                break;
             case "email":
                 regExEmail.test(valorInput.valor) ? console.log("Pasa!!!") : console.log("NO PASA...");
+                break;
             case "telefono":
                 regExTelefono.test(valorInput.valor) ? console.log("Pasa!!!") : console.log("NO PASA...");
+                break;
             }      
     }   
     

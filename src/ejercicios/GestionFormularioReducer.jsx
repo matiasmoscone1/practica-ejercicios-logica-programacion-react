@@ -33,7 +33,8 @@ const GestionFormularioReducer = () => {
 
         switch(campo){
             case "nombre":
-                regExNombreApellido.test(valorInput.valor) ? console.log("Pasa!!!") : console.log("NO PASA...");
+                //regExNombreApellido.test(valorInput.valor) ? console.log("Pasa!!!") : console.log("NO PASA...");
+                regExNombreApellido.test(valorInput.valor) ? console.log("Pasa!!!") : <ValidaForm campo={"nombre"}/>;
                 break;
             case "apellido":
                 regExNombreApellido.test(valorInput.valor) ? console.log("Pasa!!!") : console.log("NO PASA...");
@@ -51,11 +52,19 @@ const GestionFormularioReducer = () => {
     console.log(state);
 
 
-
     const submitButton = (e) => {
         e.preventDefault();
         console.log(state);
     }
+
+
+    const ValidaForm = (campo) => {
+        switch(campo){
+            case "nombre":
+                return(<>Debe tener entre 8 y 20 caracteres...</>);
+        }
+    }
+
 
     return(<>
         <h2>43. Gestionador de formularios (useReducer)</h2>

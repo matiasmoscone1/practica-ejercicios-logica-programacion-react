@@ -40,15 +40,7 @@ const GestionFormularioReducer = () => {
 
         switch(campo){
             case "nombre":
-                //regExNombreApellido.test(valorInput.valor) ? console.log("Pasa!!!") : console.log("NO PASA...");
-                //regExNombreApellido.test(valorInput.valor) ? cambiaFlag(true) : cambiaFlag(false); 
-                console.log(state.flag);
-                if(regExNombreApellido.test(valorInput.valor)){
-                    cambiaFlag(true);
-                }else{
-                    cambiaFlag(false);
-                }
-                
+                regExNombreApellido.test(valorInput.valor) ? cambiaFlag(true) : cambiaFlag(false);                 
                 break;
             case "apellido":
                 regExNombreApellido.test(valorInput.valor) ? console.log("Pasa!!!") : console.log("NO PASA...");

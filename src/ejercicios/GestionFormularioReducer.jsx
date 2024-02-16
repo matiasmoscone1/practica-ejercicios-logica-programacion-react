@@ -74,11 +74,11 @@ const GestionFormularioReducer = () => {
             <label>Nombre </label>
             <input data="nombre" id="nombre" type="text" onChange={(e) => {cambiaValor(e.target.value); validaForm("nombre", state);}}/>{(state.flag && document.getElementById("nombre")) ? null : <> Debe contener entre 8 y 20 caracteres...</>}<br/><br/>
             <label>Apellido </label>
-            <input data="apellido" type="text" onChange={(e) => {cambiaValor(e.target.value); validaForm("apellido", state);}}/>{state.flag ? null : <> Debe contener entre 8 y 20 caracteres...</>}<br/><br/>
+            <input data="apellido" id="apellido" type="text" onChange={(e) => {cambiaValor(e.target.value); validaForm("apellido", state);}}/>{(state.flag && document.getElementById("apellido"))? null : <> Debe contener entre 8 y 20 caracteres...</>}<br/><br/>
             <label>Email </label>
-            <input data="email" type="text" onChange={(e) => {cambiaValor(e.target.value); validaForm("email", state);}}/>{state.flag ? null : <> Debe contener formato xxxx@xxxx.xxx</>}<br/><br/>
+            <input data="email" id="email" type="text" onChange={(e) => {cambiaValor(e.target.value); validaForm("email", state);}}/>{(state.flag && document.getElementById("email"))? null : <> Debe contener formato xxxx@xxxx.xxx</>}<br/><br/>
             <label>Numero </label>
-            <input data="telefono" type="number" onChange={(e) => {cambiaValor(e.target.value); validaForm("telefono", state);}}/>{state.flag ? null : <> Debe contener 10 numeros</>}<br/><br/>
+            <input data="telefono" id="telefono" type="number" onChange={(e) => {cambiaValor(e.target.value); validaForm("telefono", state);}}/>{(state.flag && document.getElementById("telefono"))? null : <> Debe contener 10 numeros</>}<br/><br/>
             <button onClick={(e) => {submitButton(e)}}>Enviar</button>
         </form>
 

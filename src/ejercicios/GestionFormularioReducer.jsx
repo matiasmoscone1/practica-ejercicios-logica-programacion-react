@@ -43,13 +43,13 @@ const GestionFormularioReducer = () => {
                 regExNombreApellido.test(valorInput.valor) ? cambiaFlag(true) : cambiaFlag(false);                 
                 break;
             case "apellido":
-                regExNombreApellido.test(valorInput.valor) ? console.log("Pasa!!!") : console.log("NO PASA...");
+                regExNombreApellido.test(valorInput.valor) ? cambiaFlag(true) : cambiaFlag(false);
                 break;
             case "email":
-                regExEmail.test(valorInput.valor) ? console.log("Pasa!!!") : console.log("NO PASA...");
+                regExEmail.test(valorInput.valor) ? cambiaFlag(true) : cambiaFlag(false);
                 break;
             case "telefono":
-                regExTelefono.test(valorInput.valor) ? console.log("Pasa!!!") : console.log("NO PASA...");
+                regExTelefono.test(valorInput.valor) ? cambiaFlag(true) : cambiaFlag(false);
                 break;
             }      
     }   

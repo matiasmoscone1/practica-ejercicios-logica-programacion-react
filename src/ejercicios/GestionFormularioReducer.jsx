@@ -72,7 +72,7 @@ const GestionFormularioReducer = () => {
         
         <form action="submit">
             <label>Nombre </label>
-            <input data="nombre" type="text" onChange={(e) => {cambiaValor(e.target.value); validaForm("nombre", state);}}/>{state.flag && campo === "nombre" ? null : <> Debe contener entre 8 y 20 caracteres...</>}<br/><br/>
+            <input data="nombre" type="text" onChange={(e) => {cambiaValor(e.target.value); validaForm("nombre", state);}}/>{state.flag && state.campo === "nombre" ? null : <> Debe contener entre 8 y 20 caracteres...</>}<br/><br/>
             <label>Apellido </label>
             <input data="apellido" type="text" onChange={(e) => {cambiaValor(e.target.value); validaForm("apellido", state);}}/>{state.flag ? null : <> Debe contener entre 8 y 20 caracteres...</>}<br/><br/>
             <label>Email </label>

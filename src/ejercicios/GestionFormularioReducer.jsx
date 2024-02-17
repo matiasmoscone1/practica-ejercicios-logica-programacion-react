@@ -26,30 +26,38 @@ const GestionFormularioReducer = () => {
     }
 
 
-
+    //creando el useReducer
     const [state, dispatch] = useReducer(reducer, initialState);
 
-    
+    //funcion que dispara el reducer para cambiar el valor del estado    
     const cambiaValor = (valor) => {dispatch({type: "CAMBIA", value: valor})} 
 
+    //funcion que dispara el reducer para cambiar la bandera del estado
     const cambiaFlag = (booleano) => {dispatch({type: "BANDERA", flag: booleano})}
 
+    //creando funcion que valida el formulario, se le pasa por parametro el campo a validar y el valor del input
     const validaForm = (campo, valorInput) => {
+        //expresiones regulares para validar todos los campos
         const regExNombreApellido = /^[a-zA-Z]{7,20}$/;
         const regExEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
         const regExTelefono = /^[0-9]{9}$/;
 
+        //para cada campo se lo valida de acuerdo a la expresion regular correspondiente
         switch(campo){
             case "nombre":
+                //si valida el input, llama a la funcion cambiaFlag y le pasa por parametro true, sino le pasa false
                 regExNombreApellido.test(valorInput.valor) ? cambiaFlag(true) : cambiaFlag(false);                 
                 break;
             case "apellido":
+                                //si valida el input, llama a la funcion cambiaFlag y le pasa por parametro true, sino le pasa false
                 regExNombreApellido.test(valorInput.valor) ? cambiaFlag(true) : cambiaFlag(false);
                 break;
             case "email":
+                                //si valida el input, llama a la funcion cambiaFlag y le pasa por parametro true, sino le pasa false
                 regExEmail.test(valorInput.valor) ? cambiaFlag(true) : cambiaFlag(false);
                 break;
             case "telefono":
+                                //si valida el input, llama a la funcion cambiaFlag y le pasa por parametro true, sino le pasa false
                 regExTelefono.test(valorInput.valor) ? cambiaFlag(true) : cambiaFlag(false);
                 break;
             }      
@@ -71,6 +79,9 @@ const GestionFormularioReducer = () => {
     return(<>
         <h2>43. Gestionador de formularios (useReducer)</h2>
         
+        {/* A cada input se le llama la funcion que cambia valor, la funcion que valida el form y 
+        tambien con un operador ternario se verifica si la bandera esta en true, se le saca el
+        texto informativo al lado del input */}
         <form action="submit">
             <label>Nombre </label>
             {/*<input data="nombre" type="text" onChange={(e) => {cambiaValor(e.target.value); validaForm("nombre", state);}}/>{(state.flag && document.getElementById("nombre")) ? null : <> Debe contener entre 8 y 20 caracteres...</>}<br/><br/>*/}

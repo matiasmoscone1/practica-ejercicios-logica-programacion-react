@@ -56,13 +56,13 @@ const GestionFormularioReducer = () => {
     }   
     
 
-    console.log(state);
+    //console.log(state);
 
-    console.log(state.flag);
+    //console.log(state.flag);
 
     const submitButton = (e) => {
         e.preventDefault();
-        console.log(state);
+        //console.log(state);
     }
 
 

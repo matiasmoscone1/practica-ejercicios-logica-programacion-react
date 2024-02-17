@@ -6,22 +6,23 @@
 
 import { useReducer } from "react";
 
-
+//creando componente principal
 const GestionFormularioReducer = () => {
 
+    //inicializando el estado
     const initialState = {valor: "", flag: false};
 
+    //creando funcion reductora, se le pasa el estado global y la accion
     const reducer = (state, action) => {
-
-        
+        //para cada tipo de accion
         switch(action.type){
             case "CAMBIA":
+                //retorna el estado y se le actualiza el valor
                 return {...state, valor: state = action.value}
             case "BANDERA":
+                //retorna el estado y se le actualiza la flag
                 return {...state, flag: action.flag}
             }
-
-
     }
 
 

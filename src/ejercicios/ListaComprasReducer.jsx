@@ -8,16 +8,46 @@
 const ListaComprasReducer = () => {
 
 
-        
 
 
 
 
+    const TablaArticulos = () => {
+        return(<table border={1}>
+            <thead>
+                <tr>
+                    <td>Articulo</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Computadora</td>
+                </tr>
+                <tr>
+                    <td>Tablet</td>
+                </tr>
+                <tr>
+                    <td>Celular</td>
+                </tr>
+                <tr>
+                    <td>Teclado</td>
+                </tr>
+                <tr>
+                    <td>Monitor</td>
+                </tr>
+                <tr>
+                    <td>Mouse</td>
+                </tr>
+                
+            </tbody>
+        </table>)
+
+    }
 
 
     return(<>
         <h2>44. Lista de compras con reducer (useReducer)</h2>
-
+        <TablaArticulos/>
 
     </>)
 

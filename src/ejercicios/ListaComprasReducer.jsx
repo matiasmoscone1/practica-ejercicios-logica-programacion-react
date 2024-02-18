@@ -17,26 +17,48 @@ const ListaComprasReducer = () => {
             <thead>
                 <tr>
                     <td>Articulo</td>
+                    <td>Marca</td>
+                    <td>Precio</td>
+                    <td>Color</td>
                 </tr>
+                
             </thead>
             <tbody>
                 <tr>
                     <td>Computadora</td>
+                    <td>Logitech</td>
+                    <td>2000</td>
+                    <td>Negro</td>
                 </tr>
                 <tr>
                     <td>Tablet</td>
+                    <td>Samsung</td>
+                    <td>270</td>
+                    <td>Blanco</td>
                 </tr>
                 <tr>
                     <td>Celular</td>
+                    <td>TCL</td>
+                    <td>450</td>
+                    <td>Gris</td>
                 </tr>
                 <tr>
                     <td>Teclado</td>
+                    <td>CX</td>
+                    <td>90</td>
+                    <td>Negro</td> 
                 </tr>
                 <tr>
                     <td>Monitor</td>
+                    <td>Samsung</td>
+                    <td>390</td>
+                    <td>Negro</td>
                 </tr>
                 <tr>
                     <td>Mouse</td>
+                    <td>Talon</td>
+                    <td>60</td>
+                    <td>Rojo</td>
                 </tr>
                 
             </tbody>

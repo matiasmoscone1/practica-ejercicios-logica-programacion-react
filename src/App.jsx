@@ -42,6 +42,7 @@ import ContadorUseReducer from './ejercicios/ContadorUseReducer';
 import HookPersonalizadoUseLocalStorage from './ejercicios/HookPersonalizadoUseLocalStorage';
 import ListaTareasReducer from './ejercicios/ListaTareasReducer';
 import GestionFormularioReducer from './ejercicios/GestionFormularioReducer';
+import ListaComprasReducer from './ejercicios/ListaComprasReducer';
 
 function App() {
 
@@ -97,6 +98,7 @@ function App() {
     <HookPersonalizadoUseLocalStorage />
     <ListaTareasReducer />
     <GestionFormularioReducer />
+    <ListaComprasReducer />
 
     </>
   )

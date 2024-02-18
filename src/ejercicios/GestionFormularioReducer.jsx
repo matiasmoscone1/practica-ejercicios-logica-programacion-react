@@ -97,8 +97,6 @@ const GestionFormularioReducer = () => {
             <button onClick={(e) => {submitButton(e)}}>Enviar</button>
         </form>
 
-
-
     </>)
 
 }

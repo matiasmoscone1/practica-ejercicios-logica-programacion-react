@@ -49,15 +49,15 @@ const GestionFormularioReducer = () => {
                 regExNombreApellido.test(valorInput.valor) ? cambiaFlag(true) : cambiaFlag(false);                 
                 break;
             case "apellido":
-                                //si valida el input, llama a la funcion cambiaFlag y le pasa por parametro true, sino le pasa false
+                //si valida el input, llama a la funcion cambiaFlag y le pasa por parametro true, sino le pasa false
                 regExNombreApellido.test(valorInput.valor) ? cambiaFlag(true) : cambiaFlag(false);
                 break;
             case "email":
-                                //si valida el input, llama a la funcion cambiaFlag y le pasa por parametro true, sino le pasa false
+                //si valida el input, llama a la funcion cambiaFlag y le pasa por parametro true, sino le pasa false
                 regExEmail.test(valorInput.valor) ? cambiaFlag(true) : cambiaFlag(false);
                 break;
             case "telefono":
-                                //si valida el input, llama a la funcion cambiaFlag y le pasa por parametro true, sino le pasa false
+                //si valida el input, llama a la funcion cambiaFlag y le pasa por parametro true, sino le pasa false
                 regExTelefono.test(valorInput.valor) ? cambiaFlag(true) : cambiaFlag(false);
                 break;
             }      

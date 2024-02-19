@@ -54,6 +54,7 @@ const ListaComprasReducer = () => {
             cantidad: "",
             monto: ""
         }
+    
     ];
 
     const initialState = listaCompra;
@@ -62,17 +63,17 @@ const ListaComprasReducer = () => {
 
         switch(action.type){
             case "AGREGAR":
-                return({...state, valor: action.value});
+                console.log(action.valor);
+                return(state = action.valor);
         
         }
-
     };
 
 
     const [state, dispatch] = useReducer(reducer, initialState);
 
 
-    const agregar = (i) => {dispatch({type: "AGREGAR", valor: listaArticulos[i]})}
+    const agregar = (art) => {dispatch({type: "AGREGAR", valor: art})}
 
 
     const TablaArticulos = () => {
@@ -92,7 +93,7 @@ const ListaComprasReducer = () => {
                         <td>{art.marca}</td>
                         <td>{art.precio}</td>
                         <td>{art.color}</td>
-                        <td><button>Añadir</button></td>
+                        <td><button onClick={() => {agregar(art); console.log(art)}}>Añadir</button></td>
                         <td><button>Quitar</button></td>
                     </tr>)
                 })}
@@ -103,6 +104,8 @@ const ListaComprasReducer = () => {
     }
 
 
+    console.log(state);
+    
     return(<>
         <h2>44. Lista de compras con reducer (useReducer)</h2>
 

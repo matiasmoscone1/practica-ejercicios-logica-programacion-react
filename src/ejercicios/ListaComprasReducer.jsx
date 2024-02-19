@@ -54,8 +54,8 @@ const ListaComprasReducer = () => {
             cantidad: "",
             monto: ""
         }
-    
-    ];
+    ]
+    ;
 
     const initialState = {lista: listaCompra};
 
@@ -63,8 +63,9 @@ const ListaComprasReducer = () => {
 
         switch(action.type){
             case "AGREGAR":
-                return({lista: state.lista + action.valor});
-        
+                return {lista: [...state.lista,action.valor]};
+            default:
+                return state;
         }
     };
 

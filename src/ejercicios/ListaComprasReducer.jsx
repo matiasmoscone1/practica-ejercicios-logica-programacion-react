@@ -15,34 +15,34 @@ const ListaComprasReducer = () => {
         color: "Negro"
         },
         {
-        articulo: "Computadora",
-        marca: "Logitech",
-        precio: 2000,
+        articulo: "Tablet",
+        marca: "Samsung",
+        precio: 270,
+        color: "Blanco"
+        },
+        {
+        articulo: "Celular",
+        marca: "TCL",
+        precio: 450,
+        color: "Gris"
+        },
+        {
+        articulo: "Teclado",
+        marca: "CX",
+        precio: 90,
         color: "Negro"
         },
         {
-        articulo: "Computadora",
-        marca: "Logitech",
-        precio: 2000,
+        articulo: "Monitor",
+        marca: "Samsung",
+        precio: 390,
         color: "Negro"
         },
         {
-        articulo: "Computadora",
-        marca: "Logitech",
-        precio: 2000,
-        color: "Negro"
-        },
-        {
-        articulo: "Computadora",
-        marca: "Logitech",
-        precio: 2000,
-        color: "Negro"
-        },
-        {
-        articulo: "Computadora",
-        marca: "Logitech",
-        precio: 2000,
-        color: "Negro"
+        articulo: "Mouse",
+        marca: "Talon",
+        precio: 60,
+        color: "Rojo"
         }
     ]
 

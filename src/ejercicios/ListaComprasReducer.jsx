@@ -44,7 +44,7 @@ const ListaComprasReducer = () => {
         precio: 60,
         color: "Rojo"
         }
-    ]
+    ];
 
 
 
@@ -60,54 +60,16 @@ const ListaComprasReducer = () => {
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Computadora</td>
-                    <td>Logitech</td>
-                    <td>2000</td>
-                    <td>Negro</td>
-                    <td><button>Agregar</button></td>
-                    <td><button>Quitar</button></td>
-                </tr>
-                <tr>
-                    <td>Tablet</td>
-                    <td>Samsung</td>
-                    <td>270</td>
-                    <td>Blanco</td>
-                    <td><button>Agregar</button></td>
-                    <td><button>Quitar</button></td>
-                </tr>
-                <tr>
-                    <td>Celular</td>
-                    <td>TCL</td>
-                    <td>450</td>
-                    <td>Gris</td>
-                    <td><button>Agregar</button></td>
-                    <td><button>Quitar</button></td>
-                </tr>
-                <tr>
-                    <td>Teclado</td>
-                    <td>CX</td>
-                    <td>90</td>
-                    <td>Negro</td>
-                    <td><button>Agregar</button></td>
-                    <td><button>Quitar</button></td>
-                </tr>
-                <tr>
-                    <td>Monitor</td>
-                    <td>Samsung</td>
-                    <td>390</td>
-                    <td>Negro</td>
-                    <td><button>Agregar</button></td>
-                    <td><button>Quitar</button></td>
-                </tr>
-                <tr>
-                    <td>Mouse</td>
-                    <td>Talon</td>
-                    <td>60</td>
-                    <td>Rojo</td>
-                    <td><button>Agregar</button></td>
-                    <td><button>Quitar</button></td>
-                </tr>
+                {listaArticulos.map((art) => {
+                    return(<tr key={art.articulo}>
+                        <td>{art.articulo}</td>
+                        <td>{art.marca}</td>
+                        <td>{art.precio}</td>
+                        <td>{art.color}</td>
+                        <td><button>Añadir</button></td>
+                        <td><button>Quitar</button></td>
+                    </tr>)
+                })}
                 
             </tbody>
         </table>)

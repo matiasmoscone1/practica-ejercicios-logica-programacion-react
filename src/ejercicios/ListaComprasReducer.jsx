@@ -7,7 +7,44 @@
 
 const ListaComprasReducer = () => {
 
-
+    const listaArticulos = [
+        {
+        articulo: "Computadora",
+        marca: "Logitech",
+        precio: 2000,
+        color: "Negro"
+        },
+        {
+        articulo: "Computadora",
+        marca: "Logitech",
+        precio: 2000,
+        color: "Negro"
+        },
+        {
+        articulo: "Computadora",
+        marca: "Logitech",
+        precio: 2000,
+        color: "Negro"
+        },
+        {
+        articulo: "Computadora",
+        marca: "Logitech",
+        precio: 2000,
+        color: "Negro"
+        },
+        {
+        articulo: "Computadora",
+        marca: "Logitech",
+        precio: 2000,
+        color: "Negro"
+        },
+        {
+        articulo: "Computadora",
+        marca: "Logitech",
+        precio: 2000,
+        color: "Negro"
+        }
+    ]
 
 
 

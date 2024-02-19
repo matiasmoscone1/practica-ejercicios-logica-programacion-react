@@ -4,6 +4,8 @@
 //de compras con cantidades. Implementa la capacidad de agregar y quitar elementos, 
 //así como la posibilidad de actualizar las cantidades.
 
+import { useReducer } from "react";
+
 
 const ListaComprasReducer = () => {
 
@@ -54,9 +56,23 @@ const ListaComprasReducer = () => {
         }
     ];
 
+    const initialState = listaCompra;
+
+    const reducer = (state, action) => {
+
+        switch(action.type){
+            case "AGREGAR":
+                return({...state, valor: action.value});
+        
+        }
+
+    };
 
 
+    const [state, dispatch] = useReducer(reducer, initialState);
 
+
+    const agregar = (i) => {dispatch({type: "AGREGAR", valor: listaArticulos[i]})}
 
 
     const TablaArticulos = () => {

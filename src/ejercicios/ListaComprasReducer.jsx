@@ -64,7 +64,7 @@ const ListaComprasReducer = () => {
         switch(action.type){
             case "AGREGAR":
                 console.log(action.valor);
-                return(state = action.valor);
+                return(state += listaCompra.push(action.valor));
         
         }
     };
@@ -104,7 +104,7 @@ const ListaComprasReducer = () => {
     }
 
 
-    console.log(state);
+    console.log(listaCompra);
     
     return(<>
         <h2>44. Lista de compras con reducer (useReducer)</h2>

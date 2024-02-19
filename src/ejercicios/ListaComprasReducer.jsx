@@ -46,6 +46,16 @@ const ListaComprasReducer = () => {
         }
     ];
 
+    const listaCompra = [
+        {
+            articulo: "",
+            cantidad: "",
+            monto: ""
+        }
+    ];
+
+
+
 
 
 

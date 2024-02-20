@@ -52,6 +52,8 @@ const ListaComprasReducer = () => {
 
     const initialState = {lista: listaCompra};
 
+
+
     const reducer = (state, action) => {
 
         switch(action.type){
@@ -68,7 +70,8 @@ const ListaComprasReducer = () => {
 
                 })
                 console.log(state.lista);
-               
+                
+
                 return {lista: [...state.lista, action.valor]};
 
             default:
@@ -84,8 +87,7 @@ const ListaComprasReducer = () => {
 
 
     
-
-
+  
 
 
 

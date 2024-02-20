@@ -59,8 +59,9 @@ const ListaComprasReducer = () => {
                 let contador = 1;
                 //console.log(action.valor.articulo);
                 state.lista.map((art) => {
-                    contador++;
+                    
                     if(art.articulo === action.valor.articulo){
+                        contador++;
                         console.log("SE SUMA CANTIDAD");
                         art["cantidad"] = contador;
                     }

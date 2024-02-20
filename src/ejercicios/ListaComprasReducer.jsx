@@ -57,15 +57,13 @@ const ListaComprasReducer = () => {
         switch(action.type){
             case "AGREGAR":
                 let contador = 1;
-                //console.log(action.valor.articulo);
+                
                 state.lista.map((art) => {
-                    
+                
                     if(art.articulo === action.valor.articulo){
                         contador++;
-                        console.log("SE SUMA CANTIDAD");
                         art["cantidad"] = contador;
-                        
-                    }
+                    }  
                 })
                 
                 return {lista: [...state.lista, action.valor]};

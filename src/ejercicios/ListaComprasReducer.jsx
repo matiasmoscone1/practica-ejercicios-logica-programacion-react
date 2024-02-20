@@ -56,6 +56,7 @@ const ListaComprasReducer = () => {
 
         switch(action.type){
             case "AGREGAR":
+                
                 let contador = 1;
                 
                 state.lista.map((art) => {
@@ -69,6 +70,7 @@ const ListaComprasReducer = () => {
                 console.log(state.lista);
                
                 return {lista: [...state.lista, action.valor]};
+
             default:
                 return state;
         }

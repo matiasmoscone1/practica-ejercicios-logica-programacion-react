@@ -63,9 +63,11 @@ const ListaComprasReducer = () => {
                     if(art.articulo === action.valor.articulo){
                         contador++;
                         art["cantidad"] = contador;
-                    }  
+                    }
+
                 })
-                
+                console.log(state.lista);
+               
                 return {lista: [...state.lista, action.valor]};
             default:
                 return state;
@@ -79,9 +81,7 @@ const ListaComprasReducer = () => {
     const agregar = (art) => {dispatch({type: "AGREGAR", valor: art})}
 
 
-    const agregarCantidad = () => {
-
-    }
+    
 
 
 

@@ -48,14 +48,7 @@ const ListaComprasReducer = () => {
         }
     ];
 
-    const listaCompra = [
-        {
-            articulo: "",
-            cantidad: "",
-            monto: ""
-        }
-    ]
-    ;
+    const listaCompra = [];
 
     const initialState = {lista: listaCompra};
 
@@ -63,7 +56,13 @@ const ListaComprasReducer = () => {
 
         switch(action.type){
             case "AGREGAR":
-                return {lista: [...state.lista,action.valor]};
+                //console.log(action.valor.articulo);
+                state.lista.map((art) => {
+                    if(art.articulo === action.valor.articulo){
+                        console.log("SE SUMA CANTIDAD");
+                    }
+                })
+                return {lista: [...state.lista, action.valor]};
             default:
                 return state;
         }
@@ -74,6 +73,17 @@ const ListaComprasReducer = () => {
 
 
     const agregar = (art) => {dispatch({type: "AGREGAR", valor: art})}
+
+
+    const agregarCantidad = () => {
+
+    }
+
+
+
+
+
+
 
 
     const TablaArticulos = () => {
@@ -102,7 +112,6 @@ const ListaComprasReducer = () => {
         </table>)
 
     }
-
 
     console.log(state);
     

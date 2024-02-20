@@ -64,8 +64,10 @@ const ListaComprasReducer = () => {
                         contador++;
                         console.log("SE SUMA CANTIDAD");
                         art["cantidad"] = contador;
+                        
                     }
                 })
+                
                 return {lista: [...state.lista, action.valor]};
             default:
                 return state;

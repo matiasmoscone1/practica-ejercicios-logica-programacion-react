@@ -59,22 +59,17 @@ const ListaComprasReducer = () => {
         switch(action.type){
             case "AGREGAR":
                 
-                let contador = 1;
-                
-                state.lista.map((art) => {
-                
-                    if(art.articulo === action.valor.articulo){
-                        listaCompra.slice(0);
-                        contador++;
-                        art["cantidad"] = contador;
-                    }
+                const indexExistente = state.lista.findIndex((art) => art.articulo === action.valor.articulo);
 
-                })
-                console.log(state.lista);
-                
-
-                return {lista: [...state.lista, action.valor]};
-
+                if(indexExistente !== -1){
+                    const nuevaLista = [...state.lista];
+                    nuevaLista[indexExistente].cantidad += 1;
+                    return {lista: nuevaLista}
+                }else{
+                    action.valor.cantidad = 1;
+                    return {lista: [...state.lista, action.valor]}
+                }
+              
             default:
                 return state;
         }

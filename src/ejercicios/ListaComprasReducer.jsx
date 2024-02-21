@@ -64,6 +64,7 @@ const ListaComprasReducer = () => {
                 state.lista.map((art) => {
                 
                     if(art.articulo === action.valor.articulo){
+                        listaCompra.slice(0);
                         contador++;
                         art["cantidad"] = contador;
                     }

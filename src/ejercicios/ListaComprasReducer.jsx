@@ -53,12 +53,10 @@ const ListaComprasReducer = () => {
     const initialState = {lista: listaCompra};
 
 
-
     const reducer = (state, action) => {
 
         switch(action.type){
             case "AGREGAR":
-                
                 const indexExistente = state.lista.findIndex((art) => art.articulo === action.valor.articulo);
 
                 if(indexExistente !== -1){
@@ -69,7 +67,9 @@ const ListaComprasReducer = () => {
                     action.valor.cantidad = 1;
                     return {lista: [...state.lista, action.valor]}
                 }
-              
+            case "ELIMINAR":
+                return null;  
+
             default:
                 return state;
         }
@@ -81,7 +81,7 @@ const ListaComprasReducer = () => {
 
     const agregar = (art) => {dispatch({type: "AGREGAR", valor: art})}
 
-
+    const eliminar = (art) => {dispatch({type: "ELIMINAR", valor: art})}
     
   
 

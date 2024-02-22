@@ -68,13 +68,12 @@ const ListaComprasReducer = () => {
                     return {lista: [...state.lista, action.valor]}
                 }
             case "ELIMINAR":
-                state.lista.findIndex((art) => {
+                const nuevaLista = [];
+                    state.lista.map((art) => {
                     if(art.articulo === action.valor.articulo){
-                        state.lista.splice(art);
-                    }else{
-                        return null;
+                        console.log("Hay que remover: ", action.valor.articulo);
+                        return {lista: [state.lista.slice(action.valor)]};
                     }
-                    return state;
                 })
                 
             default:

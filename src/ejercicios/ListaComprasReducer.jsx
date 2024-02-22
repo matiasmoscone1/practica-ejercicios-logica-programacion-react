@@ -68,22 +68,29 @@ const ListaComprasReducer = () => {
                     return {lista: [...state.lista, action.valor]}
                 }
             case "ELIMINAR":
-                /*return state.lista.filter((art) => art.articulo !== action.valor.articulo);*/
                 const index = state.lista.findIndex((art) => art.articulo === action.valor.articulo);
                 const nuevaLista = [...state.lista];
-                if(nuevaLista[index].cantidad === 1){
-                    return {lista: state.lista.filter((art) => art.articulo !== action.valor.articulo)};
-                }
-                if(index !== -1){
-                    console.log(index);
+                if(index !== -1){                    
                     nuevaLista[index].cantidad -= 1;
+                    if(nuevaLista[index].cantidad < 1){
+                        return {lista: state.lista.filter((art) => art.articulo !== action.valor.articulo)};
+                    }
                     return {lista: nuevaLista}
                 }else{
                     return state;
                 }
                 
-              
-            
+                if(nuevaLista[index].cantidad === 1){
+                    return {lista: state.lista.filter((art) => art.articulo !== action.valor.articulo)};
+                }
+                /*
+                if(index !== -1){                    
+                    nuevaLista[index].cantidad -= 1;
+                    return {lista: nuevaLista}
+                }else{
+                    return state;
+                }*/
+ 
             default:
                 return state;
         }

@@ -68,11 +68,14 @@ const ListaComprasReducer = () => {
                     return {lista: [...state.lista, action.valor]}
                 }
             case "ELIMINAR":
-                state.lista.splice((art) => {
-                    if(art === action.valor){
-                        return state;
+                state.lista.findIndex((art) => {
+                    if(art.articulo === action.valor.articulo){
+                        state.lista.splice(art);
+                    }else{
+                        return null;
                     }
-                });
+                    return state;
+                })
                 
             default:
                 return state;

@@ -68,14 +68,9 @@ const ListaComprasReducer = () => {
                     return {lista: [...state.lista, action.valor]}
                 }
             case "ELIMINAR":
-                const nuevaLista = [];
-                    state.lista.map((art) => {
-                    if(art.articulo === action.valor.articulo){
-                        console.log("Hay que remover: ", action.valor.articulo);
-                        return {lista: [state.lista.slice(action.valor)]};
-                    }
-                })
-                
+                console.log("HAY Q ELIMINAR: ", action.valor.articulo);
+                return state.lista.filter((art) => art.articulo !== action.valor.articulo);
+                 
             default:
                 return state;
         }

@@ -68,8 +68,12 @@ const ListaComprasReducer = () => {
                     return {lista: [...state.lista, action.valor]}
                 }
             case "ELIMINAR":
-                const nuevaLista = state.lista.splice((art) => art === action.valor);
-                return {lista: nuevaLista};
+                state.lista.splice((art) => {
+                    if(art === action.valor){
+                        return state;
+                    }
+                });
+                
             default:
                 return state;
         }
@@ -108,7 +112,7 @@ const ListaComprasReducer = () => {
                         <td>{art.precio}</td>
                         <td>{art.color}</td>
                         <td><button onClick={() => {agregar(art); console.log(art)}}>Añadir</button></td>
-                        <td><button>Quitar</button></td>
+                        <td><button onClick={() => {eliminar(art);}}>Quitar</button></td>
                     </tr>)
                 })}
                 

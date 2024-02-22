@@ -68,8 +68,8 @@ const ListaComprasReducer = () => {
                     return {lista: [...state.lista, action.valor]}
                 }
             case "ELIMINAR":
-                return null;  
-
+                const nuevaLista = state.lista.splice((art) => art === action.valor);
+                return {lista: nuevaLista};
             default:
                 return state;
         }

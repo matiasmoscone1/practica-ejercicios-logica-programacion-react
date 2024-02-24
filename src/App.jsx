@@ -43,6 +43,7 @@ import HookPersonalizadoUseLocalStorage from './ejercicios/HookPersonalizadoUseL
 import ListaTareasReducer from './ejercicios/ListaTareasReducer';
 import GestionFormularioReducer from './ejercicios/GestionFormularioReducer';
 import ListaComprasReducer from './ejercicios/ListaComprasReducer';
+import Botones_Fin_Inicio from './ejercicios/Botones_Fin_Inicio';
 
 function App() {
 
@@ -99,6 +100,7 @@ function App() {
     <ListaTareasReducer />
     <GestionFormularioReducer />
     <ListaComprasReducer />
+    <Botones_Fin_Inicio />
 
     </>
   )

@@ -132,7 +132,7 @@ const ListaComprasReducer = () => {
     return(<>
         <h2>44. Lista de compras con reducer (useReducer)</h2>
 
-        <p>Listado de compras: (objeto completo con sus cantidades)</p>
+        <p>{state.lista}</p>
 
         <TablaArticulos/>
 

@@ -80,17 +80,6 @@ const ListaComprasReducer = () => {
                     return state;
                 }
                 
-                if(nuevaLista[index].cantidad === 1){
-                    return {lista: state.lista.filter((art) => art.articulo !== action.valor.articulo)};
-                }
-                /*
-                if(index !== -1){                    
-                    nuevaLista[index].cantidad -= 1;
-                    return {lista: nuevaLista}
-                }else{
-                    return state;
-                }*/
- 
             default:
                 return state;
         }

@@ -33,9 +33,20 @@
 /* ------------------------- BOTONES INICIO - FIN ------------------------------------- */
 
 
+.btn-container{
+    top: 10px;
+    right: 10px;
+    position: fixed;
+    
+}
 
+.btn-inicio{
+  
+}
 
+.btn-fin{
 
+}
 
 
 

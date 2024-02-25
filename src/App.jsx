@@ -44,6 +44,7 @@ import ListaTareasReducer from './ejercicios/ListaTareasReducer';
 import GestionFormularioReducer from './ejercicios/GestionFormularioReducer';
 import ListaComprasReducer from './ejercicios/ListaComprasReducer';
 import Botones_Fin_Inicio from './ejercicios/Botones_Fin_Inicio';
+import Navbar from './ejercicios/Navbar';
 
 function App() {
 
@@ -101,6 +102,7 @@ function App() {
     <GestionFormularioReducer />
     <ListaComprasReducer />
     <Botones_Fin_Inicio />
+    <Navbar />
 
     </>
   )

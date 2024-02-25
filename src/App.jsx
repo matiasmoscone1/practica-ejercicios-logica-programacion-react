@@ -101,8 +101,8 @@ function App() {
     <ListaTareasReducer />
     <GestionFormularioReducer />
     <ListaComprasReducer />
-    <Botones_Fin_Inicio />
     <Navbar />
+    
 
     </>
   )

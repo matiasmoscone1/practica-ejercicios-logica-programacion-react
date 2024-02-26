@@ -20,7 +20,6 @@ button{
     align-items: center;
     align-content: space-around;
     justify-content: center;
-    position: absolute;
     gap: 10px;
 }
 

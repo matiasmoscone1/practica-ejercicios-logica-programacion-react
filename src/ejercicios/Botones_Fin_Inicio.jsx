@@ -2,7 +2,7 @@
 
 //creando componente principal
 const Botones_Fin_Inicio = () => {
-
+    
     //creando funcion que lleva al final de la pagina
     const fin = () => {
         return(window.scrollTo({

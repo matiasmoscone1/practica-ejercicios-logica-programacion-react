@@ -7,52 +7,34 @@ const Navbar = () => {
     const [flag, setFlag] = useState(false);
 
     const DespliegaNavbar = () => {
-
-        
-        const LlamaEjercicio = () => {
-            let buttons = [];
-            for(let i = 1; i <= 15; i++){
-                buttons.push(
-                <button key={i} onClick={() => apuntaEjercicio(i)}>Ejercicio {i}</button>
-                );
-            }     
-            
-            return buttons; 
-        }
-        /*
-        const LlamaEjercicio = () => {
-            
-            let buttons = "";
-            for(let i = 1; i < 15; i++){
-                buttons += <button onClick={() => apuntaEjercicio(i)}>Ejercicio {i}</button>;
-                console.log(buttons);
-            }
-            
-            return buttons;            
-        } */
-
-
         console.log("desplegando navbar...");
-        return(
-        <div className="btn-despliega-ejercicios-container">
-            {/* 
-            <button onClick={() => apuntaEjercicio(1)}>Ejercicio 1</button>
-            <button onClick={() => apuntaEjercicio(2)}>Ejercicio 2</button>
-            <button onClick={() => apuntaEjercicio(3)}>Ejercicio 3</button>
-            <button onClick={() => apuntaEjercicio(4)}>Ejercicio 4</button>
-            <button onClick={() => apuntaEjercicio(5)}>Ejercicio 5</button>
-            <button onClick={() => apuntaEjercicio(6)}>Ejercicio 6</button>
-            */}
-
-            <LlamaEjercicio />
-
-
-
-        </div>);
+        return (
+            <div className="btn-despliega-ejercicios-container">
+                <LlamaEjercicio />
+            </div>
+        );
     }
 
+ 
+    const LlamaEjercicio = () => {
+        let buttons = [];
+        for(let i = 1; i <= 15; i++){
+            buttons.push(
+            <button key={i} onClick={() => apuntaEjercicio(i)}>Ejercicio {i}</button>
+            );
+        }     
+        
+        return buttons; 
+    }
+
+
     const apuntaEjercicio = (n) => {
-        console.log(n);
+
+        const ejercicio = document.getElementById(`ejercicio-${n}`);
+        // Si se encuentra el ejercicio, desplázate hasta él
+        if (ejercicio) {
+            ejercicio.scrollIntoView({ behavior: "smooth" });
+        }
     }
 
 

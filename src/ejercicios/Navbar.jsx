@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Botones_Fin_Inicio from "./Botones_Fin_Inicio";
-
+import { useRef } from "react";
 
 const Navbar = () => {
 
@@ -15,7 +15,7 @@ const Navbar = () => {
         );
     }
 
- 
+    /*
     const LlamaEjercicio = () => {
         let buttons = [];
         for(let i = 1; i <= 15; i++){
@@ -25,9 +25,44 @@ const Navbar = () => {
         }     
         
         return buttons; 
-    }
+    }*/
 
 
+    
+    const LlamaEjercicio = () => {
+
+        const ejercicioRefs = useRef([]);
+
+        
+        const apuntaEjercicio = (n) => {
+            // Encuentra la referencia al elemento del ejercicio correspondiente
+            const ejercicioRef = ejercicioRefs.current[n - 1];
+            // Si se encuentra el ejercicio, desplázate hasta él
+            if (ejercicioRef) {
+                ejercicioRef.scrollIntoView({ behavior: "smooth" });
+            }
+        };
+        
+
+        const handleClick = (i) => {
+            apuntaEjercicio(i);
+        };
+
+        let buttons = [];
+        for (let i = 1; i <= 15; i++) {
+            buttons.push(
+                <button key={i} onClick={() => handleClick(i)} ref={(el) => (ejercicioRefs.current[i - 1] = el)}>
+                    Ejercicio {i}
+                </button>
+            );
+        }
+
+        return buttons;
+    };
+
+    
+
+    /*
     const apuntaEjercicio = (n) => {
         console.log(n);
         const ejercicio = document.getElementById(`ejercicio-${n}`);
@@ -36,7 +71,7 @@ const Navbar = () => {
         if (ejercicio) {
             ejercicio.scrollIntoView({ behavior: "smooth" });
         }
-    }
+    }*/
 
 
     const cambiaFlag = () => {

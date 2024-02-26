@@ -52,11 +52,10 @@ function App() {
 
   return (
     <>
-    <div>
-      <h1>Ejercicios practicos con React</h1>
-    </div>
+      <h1 className='title-container'>Ejercicios practicos con React</h1>
+   
 
-
+    <div className='componentes-container'>
     <Contador />
     <ListaElementos/>
     <ContadorClicks />
@@ -102,8 +101,10 @@ function App() {
     <GestionFormularioReducer />
     <ListaComprasReducer />
     <Navbar />
-    
 
+
+
+    </div>
     </>
   )
 }

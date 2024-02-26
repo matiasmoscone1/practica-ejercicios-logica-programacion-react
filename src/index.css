@@ -1,5 +1,20 @@
 
 
+/* --------------------------------- TITULO --------------------------------- */
+
+.title-container{
+    top: 20px;
+    position: relative;
+}
+
+
+/* --------------------------------- COMPONENTES --------------------------------- */
+
+.componentes-container{
+    
+}
+
+
 /* --------------------------------- EJERCICIO 8 --------------------------------- */
 
 .contenedor-ej-8{
@@ -59,6 +74,7 @@
     align-items: center;
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: space-between;
     
 }

@@ -14,26 +14,12 @@ const Navbar = () => {
             </div>
         );
     }
-
-    /*
-    const LlamaEjercicio = () => {
-        let buttons = [];
-        for(let i = 1; i <= 15; i++){
-            buttons.push(
-            <button key={i} id={`ejercicio-${i}`} onClick={() => apuntaEjercicio(i)}>Ejercicio {i}</button>
-            );
-        }     
-        
-        return buttons; 
-    }*/
-
-
     
     const LlamaEjercicio = () => {
 
         const ejercicioRefs = useRef([]);
 
-        
+
         const apuntaEjercicio = (n) => {
             // Encuentra la referencia al elemento del ejercicio correspondiente
             const ejercicioRef = ejercicioRefs.current[n - 1];
@@ -42,7 +28,7 @@ const Navbar = () => {
                 ejercicioRef.scrollIntoView({ behavior: "smooth" });
             }
         };
-        
+
 
         const handleClick = (i) => {
             apuntaEjercicio(i);
@@ -51,7 +37,7 @@ const Navbar = () => {
         let buttons = [];
         for (let i = 1; i <= 15; i++) {
             buttons.push(
-                <button key={i} onClick={() => handleClick(i)} ref={(el) => (ejercicioRefs.current[i - 1] = el)}>
+                <button key={i} id={i} onClick={() => handleClick(i)} ref={(el) => {console.log(ejercicioRefs.current);(ejercicioRefs.current[i - 1] = el)}}>
                     Ejercicio {i}
                 </button>
             );
@@ -60,19 +46,7 @@ const Navbar = () => {
         return buttons;
     };
 
-    
-
-    /*
-    const apuntaEjercicio = (n) => {
-        console.log(n);
-        const ejercicio = document.getElementById(`ejercicio-${n}`);
-        // Si se encuentra el ejercicio, desplázate hasta él
-        console.log(ejercicio);
-        if (ejercicio) {
-            ejercicio.scrollIntoView({ behavior: "smooth" });
-        }
-    }*/
-
+   
 
     const cambiaFlag = () => {
         if(!flag){
@@ -83,29 +57,17 @@ const Navbar = () => {
     }
 
     return (
-        <>
-            <div className="navbar-container">
-                <div className="btn-ejercicios-container">
-                    <button className="btn-ejercicios-navbar" onClick={cambiaFlag}>Ejercicios</button>
-                    {flag && <DespliegaNavbar />}
-                </div>
-                {/* Otro contenido del navbar */}
-            </div>
-        </>
-    );
-/*
-    return(<>
         <div className="navbar-container">
             <div className="btn-ejercicios-container">
-                <button className="btn-ejercicios-navbar" onClick={() => cambiaFlag()}>Ejercicios</button>
-                {!flag ? console.log("Flag en false") : <DespliegaNavbar />}
+                <button className="btn-ejercicios-navbar" onClick={cambiaFlag}>
+                    Ejercicios
+                </button>
+                {flag && <DespliegaNavbar />}
             </div>
+            {/* Otro contenido del navbar */}
             <Botones_Fin_Inicio />
         </div>
-        
-    
-    </>)
-*/
+    );
 
 
 }

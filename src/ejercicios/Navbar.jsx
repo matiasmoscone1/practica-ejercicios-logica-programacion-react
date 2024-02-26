@@ -20,7 +20,7 @@ const Navbar = () => {
         let buttons = [];
         for(let i = 1; i <= 15; i++){
             buttons.push(
-            <button key={i} onClick={() => apuntaEjercicio(i)}>Ejercicio {i}</button>
+            <button key={i} id={`ejercicio-${i}`} onClick={() => apuntaEjercicio(i)}>Ejercicio {i}</button>
             );
         }     
         
@@ -29,9 +29,10 @@ const Navbar = () => {
 
 
     const apuntaEjercicio = (n) => {
-
+        console.log(n);
         const ejercicio = document.getElementById(`ejercicio-${n}`);
         // Si se encuentra el ejercicio, desplázate hasta él
+        console.log(ejercicio);
         if (ejercicio) {
             ejercicio.scrollIntoView({ behavior: "smooth" });
         }
@@ -46,6 +47,18 @@ const Navbar = () => {
         }
     }
 
+    return (
+        <>
+            <div className="navbar-container">
+                <div className="btn-ejercicios-container">
+                    <button className="btn-ejercicios-navbar" onClick={cambiaFlag}>Ejercicios</button>
+                    {flag && <DespliegaNavbar />}
+                </div>
+                {/* Otro contenido del navbar */}
+            </div>
+        </>
+    );
+/*
     return(<>
         <div className="navbar-container">
             <div className="btn-ejercicios-container">
@@ -57,7 +70,7 @@ const Navbar = () => {
         
     
     </>)
-
+*/
 
 
 }

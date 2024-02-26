@@ -69,6 +69,11 @@ button{
     position: absolute;
 }
 
+.boton-ejercicios-container .btn-despliega-ejercicios-container{
+    display: flex;
+    flex-direction: column;  
+
+}
 
 
 /* ----------------------------------- NAVBAR ------------------------------------------ */
@@ -92,8 +97,8 @@ button{
 /* ----------------------------------- EJERCICIOS ------------------------------------------ */
 
 .btn-despliega-ejercicios-container{
-    
-    
+    display: flex;
+    flex-direction: column;   
 }
 
 

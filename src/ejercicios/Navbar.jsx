@@ -23,7 +23,7 @@ const Navbar = () => {
 
     const cambiaFlag = () => {
         if(!flag){
-            setFlag(true)
+            setFlag(true);
         }else{
             setFlag(false);
         }

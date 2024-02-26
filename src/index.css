@@ -66,14 +66,22 @@ button{
 
 .btn-ejercicios-container{
     left: 20px;
+    position: relative;
+
+}
+
+.btn-despliega-ejercicios-container{
     position: absolute;
-}
-
-.boton-ejercicios-container .btn-despliega-ejercicios-container{
-    display: flex;
-    flex-direction: column;  
+    top: 100%;
+    left: 0; 
 
 }
+
+.btn-ejercicios-container button{
+    width: 100px;
+    height: 30px;
+}
+
 
 
 /* ----------------------------------- NAVBAR ------------------------------------------ */

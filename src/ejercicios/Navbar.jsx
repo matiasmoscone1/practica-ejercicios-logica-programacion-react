@@ -33,8 +33,8 @@ const Navbar = () => {
         <div className="navbar-container">
             <div className="btn-ejercicios-container">
                 <button className="btn-ejercicios-navbar" onClick={() => cambiaFlag()}>Ejercicios</button>
+                {!flag ? console.log("Flag en false") : <DespliegaNavbar />}
             </div>
-            {!flag ? console.log("Flag en false") : <DespliegaNavbar />}
             <Botones_Fin_Inicio />
         </div>
         

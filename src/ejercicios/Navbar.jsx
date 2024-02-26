@@ -5,7 +5,7 @@ import { useRef } from "react";
 const Navbar = () => {
 
     const [flag, setFlag] = useState(false);
-
+    console.log(-scrollY);
     const DespliegaNavbar = () => {
         console.log("desplegando navbar...");
         return (
@@ -19,30 +19,36 @@ const Navbar = () => {
 
         const ejercicioRefs = useRef([]);
 
-
+        console.log(ejercicioRefs);
         const apuntaEjercicio = (n) => {
             // Encuentra la referencia al elemento del ejercicio correspondiente
             const ejercicioRef = ejercicioRefs.current[n - 1];
             // Si se encuentra el ejercicio, desplázate hasta él
             if (ejercicioRef) {
                 ejercicioRef.scrollIntoView({ behavior: "smooth" });
+                return(window.scrollTo({
+                    top: -ejercicioRef * (-scrollY % 15),
+                    behavior: "smooth"
+                }));       
             }
         };
 
 
         const handleClick = (i) => {
+            
+            console.log(ejercicioRefs);
             apuntaEjercicio(i);
         };
 
         let buttons = [];
-        for (let i = 1; i <= 15; i++) {
+        for (let i = 0; i <= 15; i++) {
             buttons.push(
                 <button key={i} id={i} onClick={() => handleClick(i)} ref={(el) => {console.log(ejercicioRefs.current);(ejercicioRefs.current[i - 1] = el)}}>
                     Ejercicio {i}
                 </button>
             );
         }
-
+        console.log(buttons);
         return buttons;
     };
 

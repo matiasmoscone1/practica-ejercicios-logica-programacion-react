@@ -2,22 +2,23 @@
 
 /* --------------------------------- TITULO --------------------------------- */
 
-.title-container{
-    top: 20px;
-    position: absolute;
+h1{
+    text-align: center;
+    padding-top: 40px;
 }
 
 
 /* --------------------------------- COMPONENTES --------------------------------- */
 
 .componentes-container{
-    top: 80px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     align-content: space-around;
+    justify-content: center;
     position: absolute;
+    gap: 10px;
 }
 
 
@@ -59,13 +60,18 @@
     position: absolute;
     cursor: pointer;
 } 
+.btn-container button{
+    cursor: pointer;
+} 
 
 .btn-ejercicios-container{
     left: 20px;
     position: absolute;
-    cursor: pointer;
 }
 
+.btn-ejercicios-container button{
+    cursor: pointer;
+}
 
 /* ----------------------------------- NAVBAR ------------------------------------------ */
 

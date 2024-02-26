@@ -52,8 +52,10 @@ function App() {
 
   return (
     <>
-      <h1 className='title-container'>Ejercicios practicos con React</h1>
-   
+      {/*<h1 className='title-container'>Ejercicios practicos con React</h1>*/}
+
+      <div className='title-container'><h1>Ejercicios practicos con React JS</h1></div>
+
 
     <div className='componentes-container'>
     <Contador />

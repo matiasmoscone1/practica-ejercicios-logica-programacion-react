@@ -10,7 +10,9 @@ const Navbar = () => {
 
     return(<>
         <div className="navbar-container">
-            <button>Ejercicios</button>
+            <div className="btn-ejercicios-container">
+                <button className="btn-ejercicios-navbar">Ejercicios</button>
+            </div>
             <Botones_Fin_Inicio />
         </div>
         

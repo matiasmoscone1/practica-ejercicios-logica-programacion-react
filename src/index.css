@@ -30,17 +30,20 @@
 
 }
 
-/* ------------------------- BOTONES INICIO - FIN ------------------------------------- */
+/* -------------------------------------------------------------------------------------- */
 
 
 .btn-container{
-    top: 10px;
-    right: 10px;
-    position: fixed;
-    
-}
+    right: 20px;
+    position: absolute;
+    cursor: pointer;
+} 
 
-/* ------------------------------------------------------------------------------------- */
+.btn-ejercicios-container{
+    left: 20px;
+    position: absolute;
+    cursor: pointer;
+}
 
 
 /* ----------------------------------- NAVBAR ------------------------------------------ */
@@ -54,20 +57,13 @@
     position: fixed;
     background-color: black;
     align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
 }
 
 
-.btn-ejercicios-container{
-    top: 10px;
-    left: 10px;
-    position: absolute;
-}
-
-.btn-ejercicios-navbar{
-    top: 10px;
-    left: 10px;
-    position: relative;
-}
 
 
 

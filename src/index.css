@@ -18,10 +18,14 @@ button{
     display: flex;
     flex-direction: column;
     align-items: center;
-    align-content: space-around;
     justify-content: center;
-    gap: 10px;
 }
+
+.componentes-container section{
+    height: 100vh;
+    justify-items: center;
+}
+
 
 
 /* --------------------------------- EJERCICIO 8 --------------------------------- */

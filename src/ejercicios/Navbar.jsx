@@ -22,7 +22,9 @@ const Navbar = () => {
         const apuntaEjercicio = (n) => {
             const ejercicioRef = ejercicioRefs.current[n - 1];
             if (ejercicioRef) {
-                ejercicioRef.scrollIntoView({ behavior: "smooth" });
+                const yOffset = -70; // Ajusta este valor según sea necesario
+                const y = ejercicioRef.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                ejercicioRef.scrollIntoView({ top: y ,behavior: "smooth" });
             }
         };
 

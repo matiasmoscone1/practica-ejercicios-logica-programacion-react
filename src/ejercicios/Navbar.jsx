@@ -5,7 +5,7 @@ import { useRef } from "react";
 const Navbar = () => {
 
     const [flag, setFlag] = useState(false);
-    console.log(-scrollY);
+    //console.log(scrollY);
     const DespliegaNavbar = () => {
         console.log("desplegando navbar...");
         return (

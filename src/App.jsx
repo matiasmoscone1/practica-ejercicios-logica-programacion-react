@@ -50,11 +50,17 @@ function App() {
 
   const arrayNumeros = [1, 2, 5, 7, 8];
 
+
+  const scrollEnY = window.scrollY;
+
+  console.log(scrollEnY);
+
   return (
     <>
     
     
     <h1>Ejercicios practicos con React JS</h1>
+
 
    
     <div className='componentes-container'>

@@ -7,6 +7,7 @@ import { useState } from "react";
 //Creando el Componente Contador
 const Contador = () => {
 
+    
     //Creando el hook useState
     const [contador, setContador] = useState(0);
 

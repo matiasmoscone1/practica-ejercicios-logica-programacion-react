@@ -25,13 +25,16 @@ const Navbar = () => {
             const ejercicioRef = ejercicioRefs.current[n - 1];
             // Si se encuentra el ejercicio, desplázate hasta él
             if (ejercicioRef) {
-                const nuevaRef = ejercicioRef * (-scrollY % 15);
-                nuevaRef.scrollIntoView({ behavior: "smooth" });
-                console.log(-scrollY);
-                return(window.scrollTo({
-                    top: nuevaRef,
-                    behavior: "smooth"
-                }));       
+                ejercicioRef.onClick("click", (e) => {
+                    const nuevaRef = e * (-scrollY % 15);
+                    nuevaRef.scrollIntoView({ behavior: "smooth" });
+                    console.log(-scrollY);
+                    return(window.scrollTo({
+                        top: nuevaRef,
+                        behavior: "smooth"
+                    }));       
+    
+                });
             }
         };
 

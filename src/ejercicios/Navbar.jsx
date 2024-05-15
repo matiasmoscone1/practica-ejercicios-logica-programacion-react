@@ -19,29 +19,17 @@ const Navbar = () => {
 
         const ejercicioRefs = useRef([]);
 
-        console.log(ejercicioRefs);
         const apuntaEjercicio = (n) => {
-            // Encuentra la referencia al elemento del ejercicio correspondiente
             const ejercicioRef = ejercicioRefs.current[n - 1];
-            // Si se encuentra el ejercicio, desplázate hasta él
             if (ejercicioRef) {
-                ejercicioRef.onClick("click", (e) => {
-                    const nuevaRef = e * (-scrollY % 15);
-                    nuevaRef.scrollIntoView({ behavior: "smooth" });
-                    console.log(-scrollY);
-                    return(window.scrollTo({
-                        top: nuevaRef,
-                        behavior: "smooth"
-                    }));       
-    
-                });
+                ejercicioRef.scrollIntoView({ behavior: "smooth" });
             }
         };
 
 
         const handleClick = (i) => {
             
-            console.log(ejercicioRefs);
+
             apuntaEjercicio(i);
         };
 

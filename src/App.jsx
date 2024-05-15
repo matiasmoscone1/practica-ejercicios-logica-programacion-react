@@ -64,175 +64,178 @@ function App() {
 
    
     <div className='componentes-container'>
-    <section>
-      <Contador />
-    </section>
-    <section>
-      <ListaElementos/>
-    </section>
-    <section>
-      <ContadorClicks />
-    </section>
-    <section>
-      <OcultarTexto />
-    </section>
-    <section>
-      <CalculadoraSimple />
-    </section>
-    <section>
-      <ConversorMonedas />
-    </section>  
-    <section>
-      <MostrarHora />
-    </section>
-    <section>
-      <VisualizarImagen />        
-    </section>
+      
+      <Navbar />
+
+      <section>
+        <Contador />
+      </section>
+      <section>
+        <ListaElementos/>
+      </section>
+      <section>
+        <ContadorClicks />
+      </section>
+      <section>
+        <OcultarTexto />
+      </section>
+      <section>
+        <CalculadoraSimple />
+      </section>
+      <section>
+        <ConversorMonedas />
+      </section>  
+      <section>
+        <MostrarHora />
+      </section>
+      <section>
+        <VisualizarImagen />        
+      </section>
+      
+      <section>
+        <Temporizador />
+      </section>  
+        <ListaDinamica />
+      <section>
+        <FiltroDeTareas />
+      </section>
+
+      <section>
+        <ValidarFormulario />
+      </section>
+
+      <section>
+        <OrdenarDatos />
+      </section>
+
+      <section>
+        <TarjetaInteractiva />
+      </section>
+      
+      <section>
+        <SumarArray />
+      </section>
+
+      <section>
+        <ObjetosValor />
+      </section>
+
+      <section>
+        <MultiplicaPor2 />
+      </section>
+
+      <section>
+        <EliminarElementos />
+      </section>
+
+      <section>
+        <LongitudPalabras />
+      </section>
+
+      <section>
+        <SumaDePares />
+      </section>
+
+      <section>
+        <EliminaDuplicados />
+      </section>
+
+      <section>
+        <ConteoElementos />
+      </section>
+
+      <section>
+        <MinimoMaximo />
+      </section>
+
+      <section>
+        <SumaDeArrays />
+      </section>
+
+      <section>
+        <ReduccionDeCadenas />
+      </section>
+
+      <section>
+        <SumaReduce />
+      </section>
+
+      <section>
+        <CuentaElementos />
+      </section>
+
+      <section>
+        <MapeoDePalabras />
+      </section>
+
+      <section>
+        <SumaNumerosPares />
+      </section>
+
+      <section>
+        <DuplicadosReduce />
+      </section>
+
+      <section>
+        <CuentaElementoReduce />
+      </section>
+
+      <section>
+        <SumaMatricesReduce />
+      </section>
+
+      <section>
+        <FiltraElementosReduce />
+      </section>
+
+      <section>
+        <CalcularPromedioReduce />
+      </section>
+
+      <section>
+        <AgrupaDatos />    
+      </section>
+
+      <section>
+        <FlattenDeArreglos />
+      </section>
+
+      <section>
+        <ComponenteFuncional arr={arrayNumeros}/>
+      </section>
+
+      <section>
+        <RenderizadoCondicional />
+      </section>
+
+      <section>
+        <ComponenteFormulario />
+      </section>
+
+      <section>
+        <ContadorUseReducer />
+      </section>
+
+      <section>
+        <HookPersonalizadoUseLocalStorage />
+      </section>
+
+      <section>
+        <ListaTareasReducer />
+      </section>
+
+      <section>
+        <GestionFormularioReducer />
+      </section>
+
+      <section>
+        <ListaComprasReducer />
+      </section>
+
     
-    <section>
-      <Temporizador />
-    </section>  
-      <ListaDinamica />
-    <section>
-      <FiltroDeTareas />
-    </section>
-
-    <section>
-      <ValidarFormulario />
-    </section>
-
-    <section>
-      <OrdenarDatos />
-    </section>
-
-    <section>
-      <TarjetaInteractiva />
-    </section>
+  
     
-    <section>
-      <SumarArray />
-    </section>
 
-    <section>
-      <ObjetosValor />
-    </section>
-
-    <section>
-      <MultiplicaPor2 />
-    </section>
-
-    <section>
-      <EliminarElementos />
-    </section>
-
-    <section>
-      <LongitudPalabras />
-    </section>
-
-    <section>
-      <SumaDePares />
-    </section>
-
-    <section>
-      <EliminaDuplicados />
-    </section>
-
-<section>
-
-</section>
-    <ConteoElementos />
-<section>
-
-</section>
-    <MinimoMaximo />
-<section>
-
-</section>
-    <SumaDeArrays />
-<section>
-
-</section>
-    <ReduccionDeCadenas />
-<section>
-
-</section>
-    <SumaReduce />
-<section>
-
-</section>
-    <CuentaElementos />
-<section>
-
-</section>
-    <MapeoDePalabras />
-<section>
-
-</section>
-    <SumaNumerosPares />
-<section>
-
-</section>
-    <DuplicadosReduce />
-<section>
-
-</section>
-    <CuentaElementoReduce />
-<section>
-
-</section>
-    <SumaMatricesReduce />
-<section>
-
-</section>
-    <FiltraElementosReduce />
-<section>
-
-</section>
-    <CalcularPromedioReduce />
-<section>
-
-</section>
-    <AgrupaDatos />    
-<section>
-
-</section>
-    <FlattenDeArreglos />
-<section>
-
-</section>
-    <ComponenteFuncional arr={arrayNumeros}/>
-<section>
-
-</section>
-    <RenderizadoCondicional />
-<section>
-
-</section>
-    <ComponenteFormulario />
-<section>
-
-</section>
-    <ContadorUseReducer />
-<section>
-
-</section>
-    <HookPersonalizadoUseLocalStorage />
-<section>
-
-</section>
-    <ListaTareasReducer />
-<section>
-
-</section>
-    <GestionFormularioReducer />
-<section>
-
-</section>
-    <ListaComprasReducer />
-<section>
-
-</section>
-    <Navbar />
 
 
 

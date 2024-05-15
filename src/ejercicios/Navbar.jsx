@@ -36,7 +36,7 @@ const Navbar = () => {
         let buttons = [];
         for (let i = 0; i <= 15; i++) {
             buttons.push(
-                <button key={i} id={i} onClick={() => handleClick(i)} ref={(el) => {console.log(ejercicioRefs.current);(ejercicioRefs.current[i - 1] = el)}}>
+                <button key={i} id={i} onClick={() => handleClick(i)} ref={(el) => (ejercicioRefs.current[i - 1] = el)}>
                     Ejercicio {i}
                 </button>
             );

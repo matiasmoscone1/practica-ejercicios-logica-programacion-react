@@ -45,6 +45,7 @@ import GestionFormularioReducer from './ejercicios/GestionFormularioReducer';
 import ListaComprasReducer from './ejercicios/ListaComprasReducer';
 import Botones_Fin_Inicio from './ejercicios/Botones_Fin_Inicio';
 import Navbar from './ejercicios/Navbar';
+import ApiToDo from './ejercicios/ApiToDo';
 
 function App() {
 
@@ -58,9 +59,9 @@ function App() {
   return (
     <>
     
-
-    <h1>Ejercicios practicos con React JS</h1>
-
+    <div className='title-container'>
+      <h1>Ejercicios practicos con React JS</h1>
+    </div>
 
    
     <div className='componentes-container'>
@@ -230,6 +231,10 @@ function App() {
 
       <section>
         <ListaComprasReducer />
+      </section>
+
+      <section>
+        <ApiToDo />
       </section>
 
     

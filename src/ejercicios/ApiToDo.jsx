@@ -30,7 +30,7 @@ const ApiToDo = () => {
         </div>
     
         <div>
-            <table>
+            <table border={1}>
                 <th>
                     <tr>
                         <td>UserId</td>
@@ -45,7 +45,7 @@ const ApiToDo = () => {
                             <td>{tarea.userId}</td>
                             <td>{tarea.id}</td>
                             <td>{tarea.title}</td>
-                            <td>{tarea.completed}</td>
+                            <td>{tarea.completed ? "true" : "false"}</td>
                         </tr>)
                     })}
                 </tbody>

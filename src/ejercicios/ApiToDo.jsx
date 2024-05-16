@@ -33,11 +33,22 @@ const ApiToDo = () => {
             <table>
                 <th>
                     <tr>
+                        <td>UserId</td>
                         <td>Id</td>
                         <td>Titulo</td>
                         <td>Estado</td>
                     </tr>
                 </th>
+                <tbody>
+                    {info.map((tarea) => {
+                        return(<tr>
+                            <td>{tarea.userId}</td>
+                            <td>{tarea.id}</td>
+                            <td>{tarea.title}</td>
+                            <td>{tarea.completed}</td>
+                        </tr>)
+                    })}
+                </tbody>
             </table>
         </div>
     

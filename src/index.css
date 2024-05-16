@@ -30,9 +30,11 @@ button{
 .componentes-container section{
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-items: center;
     align-items: center;
 }
+
 
 
 

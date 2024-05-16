@@ -23,10 +23,6 @@ const ApiToDo = () => {
 
 
 
-
-
-
-
     return(<>
 
         <div>
@@ -34,8 +30,15 @@ const ApiToDo = () => {
         </div>
     
         <div>
-
-
+            <table>
+                <th>
+                    <tr>
+                        <td>Id</td>
+                        <td>Titulo</td>
+                        <td>Estado</td>
+                    </tr>
+                </th>
+            </table>
         </div>
     
     </>);

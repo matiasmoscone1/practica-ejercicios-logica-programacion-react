@@ -37,14 +37,14 @@ const ApiToDo = () => {
     }
 
     const filtradoUserId = (id) => {
-        console.log(id);
         const arrayFiltrado = info.filter((tarea) => tarea.userId = id);
         setInfo(arrayFiltrado);        
     }
 
 
     const filtradoId = (id) => {
-    
+        const arrayFiltrado = info.filter((tarea) => tarea.id = id);
+        setInfo(arrayFiltrado);
     }
 
     return(<>

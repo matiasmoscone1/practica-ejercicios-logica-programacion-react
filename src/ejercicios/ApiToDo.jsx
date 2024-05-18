@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const ApiToDo = () => {
 
-    const [info, setInfo] = useState(null);
+    const [info, setInfo] = useState([]);
 
     const URL = "https://jsonplaceholder.typicode.com/todos";
 
@@ -15,7 +15,8 @@ const ApiToDo = () => {
         .then((data) => setInfo(data))
     }
 
-    /* ASYNC - AWAIT
+    /* ASYNC - AWAIT */
+    /*
     const callApi = async () => {
         const response = await fetch(URL);
         const data = response.json();
@@ -40,17 +41,17 @@ const ApiToDo = () => {
     
         <div>
             <table border={1}>
-                <th>
+                <thead>
                     <tr>
                         <td>UserId</td>
                         <td>Id</td>
                         <td>Titulo</td>
                         <td>Estado</td>
                     </tr>
-                </th>
+                </thead>
                 <tbody>
                     {info.map((tarea) => {
-                        return(<tr>
+                        return(<tr key={tarea.id}>
                             <td>{tarea.userId}</td>
                             <td>{tarea.id}</td>
                             <td>{tarea.title}</td>

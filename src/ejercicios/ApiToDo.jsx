@@ -5,6 +5,7 @@ import { useState } from "react";
 const ApiToDo = () => {
 
     const [info, setInfo] = useState([]);
+    const [estadoInput, setEstadoInput] = useState(null);
 
     const URL = "https://jsonplaceholder.typicode.com/todos";
 
@@ -35,6 +36,10 @@ const ApiToDo = () => {
         setInfo(arrayFiltrado);
     }
 
+    const filtradoId = (estadoInput) => {
+
+    }
+
 
     return(<>
 
@@ -45,7 +50,7 @@ const ApiToDo = () => {
         <div>
             <h5>Filtrado por: </h5>
 
-            <input />
+            <input onChange={(e) => e.target.value = estadoInput}/>
             <br/><br/>
 
             <button>UserId</button>{" "}

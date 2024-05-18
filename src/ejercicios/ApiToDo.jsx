@@ -52,6 +52,8 @@ const ApiToDo = () => {
             <button>Id</button>{" "}
             <button onClick={() => filtradoCompletado()}>Completado</button>
             <br/><br/>
+            <button onClick={() => callApi()}>Todas las tareas</button>
+            <br/><br/>
 
         </div>
 

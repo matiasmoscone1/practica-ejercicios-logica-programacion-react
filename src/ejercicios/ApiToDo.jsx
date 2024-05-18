@@ -38,7 +38,17 @@ const ApiToDo = () => {
         <div>
             <h2>Lista de tareas</h2>
         </div>
-    
+
+        <div>
+            <h5>Filtrado por: </h5>
+
+            <button>UserId</button>{" "}
+            <button>Id</button>{" "}
+            <button>Completado</button>
+            <br/><br/>
+
+        </div>
+
         <div>
             <table border={1}>
                 <thead>

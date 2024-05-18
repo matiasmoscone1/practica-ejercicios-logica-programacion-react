@@ -31,7 +31,8 @@ const ApiToDo = () => {
     console.log(info);
 
     const filtradoCompletado = () => {
-        return(info.filter(tarea) = tarea.completed)
+        const arrayFiltrado = info.filter((tarea) => tarea.completed);
+        setInfo(arrayFiltrado);
     }
 
 
@@ -49,7 +50,7 @@ const ApiToDo = () => {
 
             <button>UserId</button>{" "}
             <button>Id</button>{" "}
-            <button onClick={filtradoCompletado()}>Completado</button>
+            <button onClick={() => filtradoCompletado()}>Completado</button>
             <br/><br/>
 
         </div>

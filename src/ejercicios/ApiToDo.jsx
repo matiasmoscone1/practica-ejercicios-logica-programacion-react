@@ -8,11 +8,20 @@ const ApiToDo = () => {
 
     const URL = "https://jsonplaceholder.typicode.com/todos";
 
+    
     const callApi = () => {
         fetch(URL)
         .then((response) => response.json())
         .then((data) => setInfo(data))
     }
+
+    /* ASYNC - AWAIT
+    const callApi = async () => {
+        const response = await fetch(URL);
+        const data = response.json();
+        setInfo(data);
+    }*/
+
 
     useEffect(() => {
         callApi();

@@ -36,7 +36,8 @@ const ApiToDo = () => {
         setInfo(arrayFiltrado);
     }
 
-    const filtradoId = (estadoInput) => {
+    const filtradoId = (id) => {
+        console.log(id);
 
     }
 
@@ -50,11 +51,11 @@ const ApiToDo = () => {
         <div>
             <h5>Filtrado por: </h5>
 
-            <input onChange={(e) => e.target.value = estadoInput}/>
+            <input onChange={(e) => setEstadoInput(e.target.value)}/>
             <br/><br/>
 
-            <button>UserId</button>{" "}
-            <button>Id</button>{" "}
+            <button onClick={() => filtradoId(estadoInput)}>UserId</button>{" "}
+            <button onClick={() => filtradoId(estadoInput)}>Id</button>{" "}
             <button onClick={() => filtradoCompletado()}>Completado</button>
             <br/><br/>
             <button onClick={() => callApi()}>Todas las tareas</button>

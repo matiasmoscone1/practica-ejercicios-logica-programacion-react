@@ -34,17 +34,20 @@ const ApiToDo = () => {
     const filtradoCompletado = () => {
         const arrayFiltrado = info.filter((tarea) => tarea.completed);
         setInfo(arrayFiltrado);
+
     }
 
     const filtradoUserId = (id) => {
         const arrayFiltrado = info.filter((tarea) => tarea.userId = id);
-        setInfo(arrayFiltrado);        
+        setInfo(arrayFiltrado);     
     }
 
     const filtradoId = (id) => {
-        const arrayFiltrado = info.filter((tarea) => tarea.id = id);
+        const arrayFiltrado = info.find((tarea) => tarea.id = id);
         setInfo(arrayFiltrado);
+ 
     }
+
 
     
 

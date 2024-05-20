@@ -234,9 +234,9 @@ function App() {
         <ListaComprasReducer />
       </section>
 
-      <section>
+      <div className='section-apitodo'>
         <ApiToDo />
-      </section>
+      </div>
 
     
   

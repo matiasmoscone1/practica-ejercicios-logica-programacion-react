@@ -28,8 +28,16 @@ button{
 }
 
 .componentes-container section{
+    /*height: auto;*/
     height: 100vh;
     margin-top: -20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-apitodo{
     display: flex;
     flex-direction: column;
     justify-content: center;

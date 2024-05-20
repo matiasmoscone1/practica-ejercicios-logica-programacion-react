@@ -37,6 +37,16 @@ button{
 }
 
 
+.componentes-container section:not(.section-apitodo) {
+    height: 100vh; 
+}
+
+
+.section-apitodo {
+    height: auto; 
+    min-height: 100vh; 
+}
+
 
 
 /* --------------------------------- EJERCICIO 8 --------------------------------- */

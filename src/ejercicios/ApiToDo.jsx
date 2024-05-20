@@ -41,11 +41,14 @@ const ApiToDo = () => {
         setInfo(arrayFiltrado);        
     }
 
-
     const filtradoId = (id) => {
         const arrayFiltrado = info.filter((tarea) => tarea.id = id);
         setInfo(arrayFiltrado);
     }
+
+    
+
+
 
     return(<>
 

@@ -38,13 +38,18 @@ const ApiToDo = () => {
     }
 
     const filtradoUserId = (id) => {
-        const arrayFiltrado = info.filter((tarea) => tarea.userId = id);
+        const arrayFiltrado = info.filter((tarea) => tarea.userId === id);
         setInfo(arrayFiltrado);     
     }
 
     const filtradoId = (id) => {
-        const arrayFiltrado = info.find((tarea) => tarea.id = id);
-        setInfo(arrayFiltrado);
+        const tareaFiltrada = info.find((tarea) => tarea.id === id);
+
+        if(tareaFiltrada){
+            setInfo(tareaFiltrada);
+        }else{
+            setInfo([]);
+        }
  
     }
 

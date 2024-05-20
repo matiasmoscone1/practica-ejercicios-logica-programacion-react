@@ -20,7 +20,7 @@ button{
 
 .componentes-container{
     width: 100%;
-    margin-top: -20vh;
+    margin-top: 20vh;
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -20,7 +20,7 @@ button{
 
 .componentes-container{
     width: 100%;
-    margin-top: 20vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -29,9 +29,10 @@ button{
 
 .componentes-container section{
     height: 100vh;
+    margin-top: -20vh;
     display: flex;
     flex-direction: column;
-    justify-items: center;
+    justify-content: center;
     align-items: center;
 }
 

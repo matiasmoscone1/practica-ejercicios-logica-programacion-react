@@ -5,7 +5,7 @@ import { useState } from "react";
 const ApiToDo = () => {
 
     const [info, setInfo] = useState([]);
-    const [estadoInput, setEstadoInput] = useState(null);
+    const [estadoInput, setEstadoInput] = useState("");
 
     const URL = "https://jsonplaceholder.typicode.com/todos";
 
@@ -34,17 +34,19 @@ const ApiToDo = () => {
     const filtradoCompletado = () => {
         const arrayFiltrado = info.filter((tarea) => tarea.completed);
         setInfo(arrayFiltrado);
-
+        setEstadoInput("");
     }
 
     const filtradoUserId = (id) => {
         const arrayFiltrado = info.filter((tarea) => tarea.userId === Number(id));
         setInfo(arrayFiltrado);     
+        setEstadoInput("");
     }
 
     const filtradoId = (id) => {
         const arrayFiltrado = info.filter((tarea) => tarea.id === Number(id));
         setInfo(arrayFiltrado);
+        setEstadoInput("");
     }
 
 
@@ -63,7 +65,7 @@ const ApiToDo = () => {
         <div>
             <h5>Filtrado por: </h5>
 
-            <input onChange={(e) => setEstadoInput(e.target.value)}/>
+            <input value={estadoInput} onChange={(e) => setEstadoInput(e.target.value)}/>
             <br/><br/>
 
             <button onClick={() => filtradoUserId(estadoInput)}>UserId</button>{" "}

@@ -38,13 +38,9 @@ const ApiToDo = () => {
     }
 
     const filtradoUserId = (id) => {
-        const nuevoArray = [];
-        info.filter((tarea) => {
-            if(id === tarea.userId){
-                nuevoArray.push(tarea);
-            }
-        })
-        setInfo(nuevoArray);     
+        
+        const arrayFiltrado = info.filter((tarea) => tarea.userId === Number(id));
+        setInfo(arrayFiltrado);     
     }
 
     const filtradoId = (id) => {
@@ -61,7 +57,9 @@ const ApiToDo = () => {
     }
 
 
-    
+    useEffect(() => {
+        callApi();
+    }, []);
 
 
 

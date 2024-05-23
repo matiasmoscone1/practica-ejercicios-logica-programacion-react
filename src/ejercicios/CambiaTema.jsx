@@ -1,9 +1,11 @@
 import { useState, createContext } from "react";
 import App from "../App";
 
+export const themeContext = createContext();
+
 const CambiaTema = () => {
 
-    const themeContext = createContext();
+    
 
     const [estado, setEstado] = useState(false);
 

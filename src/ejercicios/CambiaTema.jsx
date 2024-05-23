@@ -1,4 +1,5 @@
 import { useState, createContext } from "react";
+import App from "../App";
 
 const CambiaTema = () => {
 
@@ -6,13 +7,16 @@ const CambiaTema = () => {
 
     const [estado, setEstado] = useState(false);
 
-    
+
 
 
     return(<>
     
         <themeContext.Provider value={estado}>
-            <App/>
+            <button onClick={setEstado(!estado)}>
+                <App />
+            </button>
+
         </themeContext.Provider>
 
     </>)

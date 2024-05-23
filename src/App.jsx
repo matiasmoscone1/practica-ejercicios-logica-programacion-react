@@ -47,7 +47,7 @@ import Botones_Fin_Inicio from './ejercicios/Botones_Fin_Inicio';
 import Navbar from './ejercicios/Navbar';
 import ApiToDo from './ejercicios/ApiToDo';
 
-import { themeContex } from './ejercicios/CambiaTema';
+import { themeContext } from './ejercicios/CambiaTema';
 import { useContext } from 'react';
 
 function App() {
@@ -59,11 +59,13 @@ function App() {
 
   console.log(scrollEnY);
 
-  const tema = useContext(themeContex);
+  const tema = useContext(themeContext);
 
 
   return (
     <>
+
+    {tema && <h1>ESTOY PROBNADO USECONTEXT</h1>}
     
     <div className='title-container'>
       <h1>Ejercicios practicos con React JS</h1>

@@ -46,9 +46,12 @@ import ListaComprasReducer from './ejercicios/ListaComprasReducer';
 import Botones_Fin_Inicio from './ejercicios/Botones_Fin_Inicio';
 import Navbar from './ejercicios/Navbar';
 import ApiToDo from './ejercicios/ApiToDo';
+import { createContext } from 'react';
+import CambiaTema from './ejercicios/CambiaTema';
 
-import { themeContext } from './ejercicios/CambiaTema';
-import { useContext } from 'react';
+export const themeContext = createContext();
+
+
 
 function App() {
 
@@ -59,14 +62,13 @@ function App() {
 
   console.log(scrollEnY);
 
-  const tema = useContext(themeContext);
+  const [estado, setEstado] = useState(false);
 
 
   return (
     <>
 
-    {tema && <h1>ESTOY PROBNADO USECONTEXT</h1>}
-    
+   
     <div className='title-container'>
       <h1>Ejercicios practicos con React JS</h1>
     </div>
@@ -76,9 +78,17 @@ function App() {
       
       <Navbar />
 
+
+      <themeContext.Provider value={estado}>
+        <button onClick={setEstado(!estado)}>
+            <CambiaTema />
+        </button>
+      </themeContext.Provider>
+      
       <section>
         <Contador />
       </section>
+
       <section>
         <ListaElementos/>
       </section>

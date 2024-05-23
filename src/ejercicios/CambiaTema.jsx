@@ -1,25 +1,13 @@
-import { useState, createContext } from "react";
-import App from "../App";
 
-export const themeContext = createContext();
+import { useContext } from 'react';
+import { themeContext } from "../App";
 
 const CambiaTema = () => {
 
-    
-
-    const [estado, setEstado] = useState(false);
-
-
-
+    const tema = useContext(themeContext);
 
     return(<>
-    
-        <themeContext.Provider value={estado}>
-            <button onClick={setEstado(!estado)}>
-                <App />
-            </button>
-
-        </themeContext.Provider>
+          {tema && <h1>ESTOY PROBNADO USECONTEXT</h1>}
 
     </>)
 

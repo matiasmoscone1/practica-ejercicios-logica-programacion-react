@@ -2,10 +2,14 @@
 //1. Crear un contador usando 3 botones, agregar, restar y resetear
 
 import { useState } from "react";
+import { useContext } from 'react';
+import themeContext from "./CambiaTema";
 
 
 //Creando el Componente Contador
 const Contador = () => {
+
+    const tema = useContext(themeContext);
 
     
     //Creando el hook useState
@@ -28,6 +32,8 @@ const Contador = () => {
 
     return(
         <>
+        {tema && <h1>ESTOY PROBNADO USECONTEXT</h1>}
+    
         <div>
             <h2>Ejercicio 1: Contador</h2>
             {/* Botones que al clickear llaman a la funcion correspondiente */}

@@ -65,6 +65,14 @@ function App() {
   const [estado, setEstado] = useState(false);
 
 
+  const cambiaEstado = () => {
+    if(estado){
+      setEstado(false);
+    }else{
+      setEstado(true);
+    }
+  }
+
   return (
     <>
 
@@ -80,9 +88,10 @@ function App() {
 
 
       <themeContext.Provider value={estado}>
-        <button onClick={setEstado(!estado)}>
-            <CambiaTema />
-        </button>
+      <section>
+        <button onClick={() => cambiaEstado()}>useContext</button>
+        <CambiaTema />
+        </section>
       </themeContext.Provider>
       
       <section>

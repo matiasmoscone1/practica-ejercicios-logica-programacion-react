@@ -7,8 +7,9 @@ const CambiaTema = () => {
     const tema = useContext(themeContext);
 
     return(<>
+        <div>
           {tema && <h1>ESTOY PROBNADO USECONTEXT</h1>}
-
+        </div>
     </>)
 
 

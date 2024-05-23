@@ -6,15 +6,15 @@ const CambiaTema = () => {
 
     const [estado, setEstado] = useState(false);
 
-    const cambiaColor = () => {
-
-
+    if(estado){
+        document.querySelector(".btn-context").style.color = "#000000";
     }
-    
+
+
     return(<>
     
-        <themeContext.Provider>
-            <button className="btn-context"></button>
+        <themeContext.Provider value={estado}>
+            <button onClick={setEstado(!estado)} className="btn-context"></button>
         </themeContext.Provider>
 
     </>)

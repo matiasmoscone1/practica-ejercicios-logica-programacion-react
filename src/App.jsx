@@ -47,6 +47,8 @@ import Botones_Fin_Inicio from './ejercicios/Botones_Fin_Inicio';
 import Navbar from './ejercicios/Navbar';
 import ApiToDo from './ejercicios/ApiToDo';
 
+import { themeContex } from './ejercicios/CambiaTema';
+import { useContext } from 'react';
 
 function App() {
 
@@ -56,6 +58,9 @@ function App() {
   const scrollEnY = window.scrollY;
 
   console.log(scrollEnY);
+
+  const tema = useContext(themeContex);
+
 
   return (
     <>
@@ -238,7 +243,7 @@ function App() {
         <ApiToDo />
       </div>
 
-    
+   
   
   
     </div>

@@ -40,15 +40,15 @@ const EjercicioCRUD = () => {
 
 
     return(
-    <div>
-        <div>
+    <div className="crud-container">
+        <div className="form-container">
             <form onSubmit={() => {}}>
-                <label>Articulo:</label>
-                <input type="text" name="articulo" />
-                <label>Color:</label>
-                <input type="text" name="color" />
-                <label>Precio:</label>
-                <input type="number" name="precio" />
+                <label>Articulo:</label>{" "}
+                <input type="text" name="articulo" /><br/>
+                <label>Color:</label>{" "}
+                <input type="text" name="color" /><br/>
+                <label>Precio:</label>{" "}
+                <input type="number" name="precio" /><br/>
                 <button type="submit">Enviar</button>
             </form>
         </div>

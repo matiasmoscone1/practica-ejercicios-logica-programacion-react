@@ -132,8 +132,19 @@ button{
 }
 
 
+.crud-container{
+    margin-top: 5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3em;
+}
 
-
+.crud-container table{
+    margin-left: auto;
+    margin-right: auto;
+}
 
 
 

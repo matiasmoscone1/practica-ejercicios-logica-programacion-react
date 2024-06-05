@@ -3,7 +3,7 @@ import { useState } from "react";
 
 const EjercicioCRUD = () => {
 
-    const productos = [{
+    const [productos, setProductos] = useState([{
         id: 1,
         articulo: "Celular",
         color: "Negro",
@@ -33,7 +33,7 @@ const EjercicioCRUD = () => {
         color: "Negro",
         precio: 120
     }
-    ];
+    ]);
 
     const [item, setItem] = useState({
         id: productos.length + 1,
@@ -48,7 +48,7 @@ const EjercicioCRUD = () => {
     }
 
     const agregaProducto = (obj) => {
-        
+        setProductos((prevProductos) => [...prevProductos, obj]);
     };
 
 
@@ -59,6 +59,7 @@ const EjercicioCRUD = () => {
     }
 
     console.log(item);
+    console.log(productos);
 
     return(
     <div className="crud-container">

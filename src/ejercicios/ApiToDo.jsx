@@ -29,7 +29,7 @@ const ApiToDo = () => {
         callApi();
     }, []);
 
-    console.log(info);
+    //console.log(info);
 
     const filtradoCompletado = () => {
         const arrayFiltrado = info.filter((tarea) => tarea.completed);

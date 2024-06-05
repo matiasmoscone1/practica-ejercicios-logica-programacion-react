@@ -53,22 +53,23 @@ const EjercicioCRUD = () => {
 
 
 
-    const handleProduct = (value, name) => {
-        Object.defineProperty(item, name, value);
+    const handleProduct = (e) => {
+        const { name, value } = e.target;
+        setItem((prevProd) => ({...prevProd, [name]: value}));
     }
 
-
+    console.log(item);
 
     return(
     <div className="crud-container">
         <div className="form-container">
             <form onSubmit={(e) => handleSubmit(e)}>
                 <label>Articulo:</label>{" "}
-                <input type="text" name="articulo" onChange={(e) => handleProduct(e.target.value, name)}/><br/>
+                <input type="text" name="articulo" value={item.articulo} onChange={(e) => handleProduct(e)}/><br/>
                 <label>Color:</label>{" "}
-                <input type="text" name="color" /><br/>
+                <input type="text" name="color" value={item.color} onChange={(e) => handleProduct(e)}/><br/>
                 <label>Precio:</label>{" "}
-                <input type="number" name="precio" /><br/>
+                <input type="number" name="precio" value={item.precio} onChange={(e) => handleProduct(e)}/><br/>
                 <button type="submit">Enviar</button>
             </form>
         </div>

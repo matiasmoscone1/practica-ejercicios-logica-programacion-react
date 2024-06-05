@@ -48,6 +48,7 @@ import Navbar from './ejercicios/Navbar';
 import ApiToDo from './ejercicios/ApiToDo';
 import { createContext } from 'react';
 import CambiaTema from './ejercicios/CambiaTema';
+import EjercicioCRUD from './ejercicios/EjercicioCRUD';
 
 export const themeContext = createContext();
 
@@ -264,7 +265,10 @@ function App() {
         <ApiToDo />
       </div>
 
-   
+      <section>
+        <EjercicioCRUD />
+      </section>
+      
   
   
     </div>

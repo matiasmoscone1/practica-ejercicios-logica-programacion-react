@@ -1,4 +1,4 @@
-
+import { useState } from "react";
 
 
 const EjercicioCRUD = () => {
@@ -35,16 +35,36 @@ const EjercicioCRUD = () => {
     }
     ];
 
+    const [item, setItem] = useState({
+        id: null,
+        articulo: "",
+        color: "",
+        precio: null   
+    });
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+    }
+
+    const agregaProducto = () => {
+
+
+    };
+
+
+
+    const handleProduct = (value, name) => {
+        Object.defineProperty(item, name, value);
+    }
 
 
 
     return(
     <div className="crud-container">
         <div className="form-container">
-            <form onSubmit={() => {}}>
+            <form onSubmit={(e) => handleSubmit(e)}>
                 <label>Articulo:</label>{" "}
-                <input type="text" name="articulo" /><br/>
+                <input type="text" name="articulo" onChange={(e) => handleProduct(e.target.value, name)}/><br/>
                 <label>Color:</label>{" "}
                 <input type="text" name="color" /><br/>
                 <label>Precio:</label>{" "}

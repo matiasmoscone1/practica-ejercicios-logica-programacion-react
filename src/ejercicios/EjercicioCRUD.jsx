@@ -41,6 +41,17 @@ const EjercicioCRUD = () => {
 
     return(
     <div>
+        <div>
+            <form onSubmit={() => {}}>
+                <label>Articulo:</label>
+                <input type="text" name="articulo" />
+                <label>Color:</label>
+                <input type="text" name="color" />
+                <label>Precio:</label>
+                <input type="number" name="precio" />
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
         <table border={1}>
             <thead>
                 <tr>
@@ -48,6 +59,7 @@ const EjercicioCRUD = () => {
                     <td>Articulo</td>
                     <td>Color</td>
                     <td>Precio</td>
+                    <td colSpan={2} style={{textAlign: "center"}}>Acciones</td>
                 </tr>
             </thead>
             <tbody>
@@ -58,6 +70,8 @@ const EjercicioCRUD = () => {
                             <td>{producto.articulo}</td>
                             <td>{producto.color}</td>
                             <td>{producto.precio}</td>
+                            <td><button>Editar</button></td>
+                            <td><button>Eliminar</button></td>
                         </tr>
                     )
                 })}

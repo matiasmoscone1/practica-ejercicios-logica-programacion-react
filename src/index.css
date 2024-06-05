@@ -133,7 +133,7 @@ button{
 
 
 .crud-container{
-    margin-top: 5em;
+    margin-top: 10em;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -144,6 +144,13 @@ button{
 .crud-container table{
     margin-left: auto;
     margin-right: auto;
+}
+
+.form-container form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 

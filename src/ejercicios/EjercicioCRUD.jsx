@@ -36,19 +36,19 @@ const EjercicioCRUD = () => {
     ];
 
     const [item, setItem] = useState({
-        id: null,
+        id: productos.length + 1,
         articulo: "",
         color: "",
         precio: null   
     });
 
+    
     const handleSubmit = (e) => {
         e.preventDefault();
     }
 
-    const agregaProducto = () => {
-
-
+    const agregaProducto = (obj) => {
+        
     };
 
 
@@ -70,7 +70,7 @@ const EjercicioCRUD = () => {
                 <input type="text" name="color" value={item.color} onChange={(e) => handleProduct(e)}/><br/>
                 <label>Precio:</label>{" "}
                 <input type="number" name="precio" value={item.precio} onChange={(e) => handleProduct(e)}/><br/>
-                <button type="submit">Enviar</button>
+                <button onClick={() => agregaProducto(item)} type="submit">Enviar</button>
             </form>
         </div>
         <table border={1}>

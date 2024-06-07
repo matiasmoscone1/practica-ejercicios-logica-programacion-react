@@ -42,16 +42,21 @@ const EjercicioCRUD = () => {
         precio: null   
     });
 
+    const [editando, setEditando] = useState(false);
     
     const handleSubmit = (e) => {
         e.preventDefault();
-        const nuevoId = {...item, id: productos.length + 1}
-        agregaProducto(nuevoId);
-        setItem({
-            articulo: "",
-            color: "",
-            precio: ""
-        })
+        if(!editando){
+            const nuevoId = {...item, id: productos.length + 1}
+            agregaProducto(nuevoId);
+            setItem({
+                articulo: "",
+                color: "",
+                precio: ""
+            })
+        }else{
+            updateProducto(item);
+        }
     }
 
     const agregaProducto = (obj) => {
@@ -72,7 +77,15 @@ const EjercicioCRUD = () => {
         const prodChange = productos.find((prod) => prod.id === id);
         console.log(prodChange);
         setItem(prodChange);
+        setEditando(true);
+    }
 
+    const updateProducto = (updatedItem) => {
+        setProductos((prevProductos) =>
+            prevProductos.map((prod) =>
+                prod.id === updatedItem.id ? updatedItem : prod
+            )
+        );
     }
 
     return(

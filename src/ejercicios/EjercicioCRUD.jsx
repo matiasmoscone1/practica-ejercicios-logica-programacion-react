@@ -71,7 +71,8 @@ const EjercicioCRUD = () => {
     const updateProduct = (id) => {
         const prodChange = productos.find((prod) => prod.id === id);
         console.log(prodChange);
-        
+        setItem(prodChange);
+
     }
 
     return(

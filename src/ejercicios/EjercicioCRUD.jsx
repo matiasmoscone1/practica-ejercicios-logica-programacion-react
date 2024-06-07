@@ -68,6 +68,10 @@ const EjercicioCRUD = () => {
     console.log(item);
     console.log(productos);
 
+    const updateProduct = (id) => {
+
+    }
+
     return(
     <div className="crud-container">
         <div className="form-container">
@@ -99,7 +103,7 @@ const EjercicioCRUD = () => {
                             <td>{producto.articulo}</td>
                             <td>{producto.color}</td>
                             <td>{producto.precio}</td>
-                            <td><button>Editar</button></td>
+                            <td><button onClick={() => updateProduct(producto.id)}>Editar</button></td>
                             <td><button>Eliminar</button></td>
                         </tr>
                     )

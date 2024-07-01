@@ -47,8 +47,9 @@ const EjercicioCRUD = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         if(!editando){
-            const nuevoId = {...item, id: productos.length + 1}
+            const nuevoId = {...item, id: productos[productos.length - 1].id + 1}
             agregaProducto(nuevoId);
+            nuevoId();
             setItem({
                 articulo: "",
                 color: "",
@@ -63,7 +64,9 @@ const EjercicioCRUD = () => {
         setProductos((prevProductos) => [...prevProductos, obj]);
     };
 
-
+    const nuevoId = () => {
+        return(productos.map((prod) => console.log(prod)));
+    }
 
     const handleProduct = (e) => {
         const { name, value } = e.target;

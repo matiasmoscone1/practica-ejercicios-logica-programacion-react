@@ -88,6 +88,10 @@ const EjercicioCRUD = () => {
         );
     }
 
+    const deleteItem = (id) => {
+        return(productos.filter((prod) => prod.id === id));
+    }
+
     return(
     <div className="crud-container">
         <div className="form-container">
@@ -120,7 +124,7 @@ const EjercicioCRUD = () => {
                             <td>{producto.color}</td>
                             <td>{producto.precio}</td>
                             <td><button onClick={() => updateProduct(producto.id)}>Editar</button></td>
-                            <td><button>Eliminar</button></td>
+                            <td><button onClick={() => deleteItem(producto.id)}>Eliminar</button></td>
                         </tr>
                     )
                 })}

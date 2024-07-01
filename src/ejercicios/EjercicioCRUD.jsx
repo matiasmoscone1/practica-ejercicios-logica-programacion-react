@@ -89,7 +89,7 @@ const EjercicioCRUD = () => {
     }
 
     const deleteItem = (id) => {
-        return(productos.filter((prod) => prod.id === id));
+        setProductos(productos.filter((prod) => prod.id !== id));
     }
 
     return(

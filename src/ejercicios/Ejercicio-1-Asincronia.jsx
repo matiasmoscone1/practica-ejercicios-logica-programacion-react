@@ -11,7 +11,6 @@ https://api.github.com/users/${username}
 
 */
 
-import { response } from "express";
 import { useEffect } from "react";
 import { useContext } from "react";
 import { ContextGithub } from "./Context";
@@ -31,17 +30,16 @@ const Ejercicio1 = () => {
             fetch(URL)
             .then((response) => response.json())
             .then((data) => setDataGithub(data));
-            console.log(dataGithub);  
+             
         }catch(err){
             console.log(err);
         }
 
     }
+    console.log(dataGithub); 
 
     useEffect(() => {
-        if(username){
-            fetchAPI();
-        }
+        
     }, []);
 
     const handleInput = (e) => {
@@ -50,8 +48,7 @@ const Ejercicio1 = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if(username){
-            fetchAPI();}
+        fetchAPI();
         setUsername("");
     }
 

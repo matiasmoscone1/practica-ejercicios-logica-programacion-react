@@ -49,6 +49,8 @@ import ApiToDo from './ejercicios/ApiToDo';
 import { createContext } from 'react';
 import CambiaTema from './ejercicios/CambiaTema';
 import EjercicioCRUD from './ejercicios/EjercicioCRUD';
+import { ContextGithub, ContextGithubProvider } from './ejercicios/Context';
+import Ejercicio1 from './ejercicios/Ejercicio-1-Asincronia';
 
 export const themeContext = createContext();
 
@@ -268,7 +270,12 @@ function App() {
       <section>
         <EjercicioCRUD />
       </section>
-      
+
+      <section>
+        <ContextGithubProvider>
+          <Ejercicio1 />
+        </ContextGithubProvider>
+      </section>    
   
   
     </div>

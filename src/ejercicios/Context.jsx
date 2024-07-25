@@ -3,7 +3,7 @@ import { useState } from "react";
 
 export const ContextGithub = createContext();
 
-export const ContextProvider = ({ children }) => {
+export const ContextGithubProvider = ({ children }) => {
 
     const [dataGithub, setDataGithub] = useState();
 

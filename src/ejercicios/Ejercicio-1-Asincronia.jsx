@@ -26,26 +26,30 @@ const Ejercicio1 = () => {
 
     const fetchAPI = () => {
         /* bloque trycatch */
-        fetch(URL)
-        .then((response) => response.json())
-        .then((data) => setDataGithub(data));
-
+        try{
+            fetch(URL)
+            .then((response) => response.json())
+            .then((data) => setDataGithub(data));
+            console.log(dataGithub);  
+        }catch(err){
+            console.log(err);
+        }
+        
     }
 
     useEffect(() => {
         fetchAPI();
     }, []);
 
-    console.log(dataGithub);
 
     const handleInput = (e) => {
         setUsername(e.target.value);
-        console.log(username);
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetchAPI();
+        if(username){
+            fetchAPI();}
         setUsername("");
     }
 

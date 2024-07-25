@@ -19,12 +19,13 @@ const Ejercicio1 = () => {
 
     /*const URL = `https://api.github.com/users/${username}`*/
 
-    const URL = `https://api.github.com/users/matiasmoscone1`;
-
     const { dataGithub, setDataGithub, username, setUsername } = useContext(ContextGithub);
+
+    const URL = `https://api.github.com/users/${username}`;
 
 
     const fetchAPI = () => {
+        /* bloque trycatch */
         fetch(URL)
         .then((response) => response.json())
         .then((data) => setDataGithub(data));
@@ -42,10 +43,18 @@ const Ejercicio1 = () => {
         console.log(username);
     }
 
-    return(<div>
-        <label>Ingrese el username para buscar</label>
-        <input onChange={(e) => {handleInput(e)}}/>
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        fetchAPI();
+        setUsername("");
+    }
 
+    return(<div>
+        <label>Ingrese el usuario para buscar</label>
+        <form onSubmit={(e) => {handleSubmit(e)}}>
+            <input value={username} onChange={(e) => {handleInput(e)}}/>
+            <button type="submit">Buscar</button>
+        </form>
     </div>)
 
 }

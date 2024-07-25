@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 
-export const Contexto = createContext();
+export const ContextGithub = createContext();
 
 export const ContextProvider = ({ children }) => {
 
@@ -9,9 +9,9 @@ export const ContextProvider = ({ children }) => {
 
 
 
-    return(<Contexto.Provider value={{}}>
+    return(<ContextGithub.Provider value={{}}>
         { children }
-    </Contexto.Provider>);
+    </ContextGithub.Provider>);
 
 }
 

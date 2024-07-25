@@ -12,17 +12,21 @@ https://api.github.com/users/${username}
 */
 
 import { useContext } from "react";
-import { ContextGithubProvider } from "./Context";
+import { ContextGithub } from "./Context";
 
 const Ejercicio1 = () => {
+
+    /*const URL = `https://api.github.com/users/${username}`*/
+
+    const URL = `https://api.github.com/users/matiasmoscone1`;
 
     const { dataGithub, setDataGithub } = useContext(ContextGithub);
 
 
     const fetchAPI = () => {
-
-
-
+        fetch(URL)
+        .then((response) => response.json())
+        .then((data) => setDataGithub(data));
 
     }
 

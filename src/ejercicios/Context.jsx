@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { createContext } from "react";
 
 export const ContextGithub = createContext();
 
@@ -9,7 +9,7 @@ export const ContextGithubProvider = ({ children }) => {
 
 
 
-    return(<ContextGithub.Provider value={{}}>
+    return(<ContextGithub.Provider value={{ dataGithub, setDataGithub }}>
         { children }
     </ContextGithub.Provider>);
 

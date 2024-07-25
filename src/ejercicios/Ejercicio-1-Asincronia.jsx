@@ -11,6 +11,7 @@ https://api.github.com/users/${username}
 
 */
 
+import { useEffect } from "react";
 import { useContext } from "react";
 import { ContextGithub } from "./Context";
 
@@ -30,8 +31,11 @@ const Ejercicio1 = () => {
 
     }
 
+    useEffect(() => {
+        fetchAPI();
+    }, []);
 
-
+    console.log(dataGithub);
 
 }
 

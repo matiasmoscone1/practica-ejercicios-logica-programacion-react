@@ -21,7 +21,7 @@ const Ejercicio1 = () => {
 
     const URL = `https://api.github.com/users/matiasmoscone1`;
 
-    const { dataGithub, setDataGithub } = useContext(ContextGithub);
+    const { dataGithub, setDataGithub, username, setUsername } = useContext(ContextGithub);
 
 
     const fetchAPI = () => {
@@ -36,6 +36,17 @@ const Ejercicio1 = () => {
     }, []);
 
     console.log(dataGithub);
+
+    const handleInput = (e) => {
+        setUsername(e.target.value);
+        console.log(username);
+    }
+
+    return(<div>
+        <label>Ingrese el username para buscar</label>
+        <input onChange={(e) => {handleInput(e)}}/>
+
+    </div>)
 
 }
 

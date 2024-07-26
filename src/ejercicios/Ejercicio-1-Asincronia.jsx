@@ -77,15 +77,16 @@ const Ejercicio1 = () => {
             {loading && <div>Cargando...</div>}
             {error && <div>{error}</div>}
             {dataGithub && 
-            <ul>
-                <li>{dataGithub.avatar_url}</li>
-                <li>{dataGithub.login}</li>
-                <li>{dataGithub.created_at}</li>
-                <li>{dataGithub.followers}</li>
-                <li>{dataGithub.following}</li>
-                <li>{dataGithub.id}</li>
-                <li>{dataGithub.html_url}</li>
-                <li>{dataGithub.updated_at}</li>
+            <ul className="datos-container">
+                <li><img src={dataGithub.avatar_url}></img></li>
+                <li>Usuario: {dataGithub.login}</li>
+                <li>Id:{dataGithub.id}</li>
+                <li>Email: </li>
+                <li>Seguidores: {dataGithub.followers}</li>
+                <li>Siguiendo: {dataGithub.following}</li>                
+                <li><a href={dataGithub.html_url}></a></li>
+                <li>Usuario creado: {dataGithub.created_at}</li>
+                <li>Ultimos cambios: {dataGithub.updated_at}</li>
             </ul>
                 
             }

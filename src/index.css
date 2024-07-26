@@ -154,7 +154,14 @@ button{
 }
 
 
+.datos-container img{
+    width: 200px;
+    height: 240px;
+}
 
+.datos-container li{
+    list-style: none;
+}
 
 
 

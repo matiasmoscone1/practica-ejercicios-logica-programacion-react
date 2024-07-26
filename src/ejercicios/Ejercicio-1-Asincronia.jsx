@@ -20,6 +20,7 @@ const Ejercicio1 = () => {
     /*const URL = `https://api.github.com/users/${username}`*/
 
     const { dataGithub, setDataGithub, username, setUsername } = useContext(ContextGithub);
+    /* useState con loading para poner el spinner cuando el loading sea true */
 
     const URL = `https://api.github.com/users/${username}`;
 
@@ -52,12 +53,27 @@ const Ejercicio1 = () => {
         setUsername("");
     }
 
-    return(<div>
+    return(
+    <div>
         <label>Ingrese el usuario para buscar</label>
         <form onSubmit={(e) => {handleSubmit(e)}}>
             <input value={username} onChange={(e) => {handleInput(e)}}/>
             <button type="submit">Buscar</button>
         </form>
+
+        <div>
+            {dataGithub && dataGithub.map((dato) => {
+                return(<ul>
+                    <li>Creado: {dataGithub.created_at}</li>
+                    <li>Usuario: {dataGithub.login}</li>
+                    <li>Link: {dataGithub.html_url}</li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>)
+            })}
+        </div>
+
     </div>)
 
 }

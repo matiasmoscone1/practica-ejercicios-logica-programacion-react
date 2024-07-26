@@ -44,6 +44,7 @@ const Ejercicio1 = () => {
             /*}, 3000);*/
         }catch(err){
             setError(err.message);
+            setLoading(false);
             console.error(err);
         }
 
@@ -77,7 +78,7 @@ const Ejercicio1 = () => {
 
         <div>
             {loading && <div>Cargando...</div>}
-            {error && <div>No se pudo cargar los datos: {error}</div>}
+            {error && <div>{error}</div>}
             {dataGithub && 
             <ul>
                 <li>{dataGithub.avatar_url}</li>

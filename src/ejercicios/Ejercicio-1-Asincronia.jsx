@@ -20,12 +20,12 @@ const Ejercicio1 = () => {
     /*const URL = `https://api.github.com/users/${username}`*/
 
     const { dataGithub, setDataGithub, username, setUsername, 
-        loading, setLoading } = useContext(ContextGithub);
+        loading, setLoading, error, setError } = useContext(ContextGithub);
 
     const URL = `https://api.github.com/users/${username}`;
 
 
-    const fetchAPI = () => {
+    const fetchAPI = async () => {
         /* bloque trycatch */
         try{
             setLoading(true);
@@ -35,9 +35,9 @@ const Ejercicio1 = () => {
                 .then((data) => setDataGithub(data));
                 setLoading(false);
             }, 3000);
-
         }catch(err){
-            console.log(err);
+            setError(err);
+            console.error(err);
         }
 
     }
@@ -58,9 +58,7 @@ const Ejercicio1 = () => {
     }
 
 
-    const toggleLoading = () => {
-        setLoading(!loading);
-    }
+    
 
     return(
     <div>
@@ -72,8 +70,10 @@ const Ejercicio1 = () => {
 
         <div>
             {loading && <div>Cargando...</div>}
+            {error && <div>No se pudo cargar los datos: {error}</div>}
             {dataGithub && 
             <ul>
+                <li>{dataGithub.avatar_url}</li>
                 <li>{dataGithub.login}</li>
                 <li>{dataGithub.created_at}</li>
                 <li>{dataGithub.followers}</li>

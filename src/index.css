@@ -163,7 +163,10 @@ button{
     list-style: none;
 }
 
-
+.spinner-img img{
+    width: 40px;
+    height: 40px;
+}
 
 
 

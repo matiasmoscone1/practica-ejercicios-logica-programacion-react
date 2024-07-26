@@ -34,8 +34,12 @@ const Ejercicio1 = () => {
                     throw new Error("No se pudo cargar los datos...");
                 }
                 const data = await response.json();
-                setDataGithub(data);
-                setLoading(false);
+                setTimeout(() => {
+                    console.log("esperando");
+                    setDataGithub(data);
+                    setLoading(false);
+                }, 3000);
+
         }catch(err){
             setError(err.message);
             setLoading(false);
@@ -74,7 +78,7 @@ const Ejercicio1 = () => {
         </form>
 
         <div>
-            {loading && <div>Cargando...</div>}
+            {loading && <div className="spinner-img"><img src="./public/assets/spinner.gif"></img></div>}
             {error && <div>{error}</div>}
             {dataGithub && 
             <ul className="datos-container">

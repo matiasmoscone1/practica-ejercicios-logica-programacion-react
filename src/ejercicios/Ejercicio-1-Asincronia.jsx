@@ -29,14 +29,21 @@ const Ejercicio1 = () => {
         /* bloque trycatch */
         try{
             setLoading(true);
-            setTimeout(() => {
+/*            setTimeout(() => {*/
+                const response = await fetch(URL);
+                if(!response.ok){
+                    throw new Error("No se pudo cargar los datos...");
+                }
+                const data = await response.json();
+                setDataGithub(data);
+                /*
                 fetch(URL)
                 .then((response) => response.json())
-                .then((data) => setDataGithub(data));
+                .then((data) => setDataGithub(data));*/
                 setLoading(false);
-            }, 3000);
+            /*}, 3000);*/
         }catch(err){
-            setError(err);
+            setError(err.message);
             console.error(err);
         }
 

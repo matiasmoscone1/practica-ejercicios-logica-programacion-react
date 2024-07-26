@@ -31,7 +31,6 @@ const Ejercicio1 = () => {
             fetch(URL)
             .then((response) => response.json())
             .then((data) => setDataGithub(data));
-             
         }catch(err){
             console.log(err);
         }
@@ -40,7 +39,7 @@ const Ejercicio1 = () => {
     console.log(dataGithub); 
 
     useEffect(() => {
-        
+       
     }, []);
 
     const handleInput = (e) => {
@@ -53,6 +52,7 @@ const Ejercicio1 = () => {
         setUsername("");
     }
 
+
     return(
     <div>
         <label>Ingrese el usuario para buscar</label>
@@ -62,16 +62,18 @@ const Ejercicio1 = () => {
         </form>
 
         <div>
-            {dataGithub && dataGithub.map((dato) => {
-                return(<ul>
-                    <li>Creado: {dataGithub.created_at}</li>
-                    <li>Usuario: {dataGithub.login}</li>
-                    <li>Link: {dataGithub.html_url}</li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>)
-            })}
+            {dataGithub &&
+            <ul>
+                <li>{dataGithub.login}</li>
+                <li>{dataGithub.created_at}</li>
+                <li>{dataGithub.followers}</li>
+                <li>{dataGithub.following}</li>
+                <li>{dataGithub.id}</li>
+                <li>{dataGithub.html_url}</li>
+                <li>{dataGithub.updated_at}</li>
+            </ul>
+                
+            }
         </div>
 
     </div>)

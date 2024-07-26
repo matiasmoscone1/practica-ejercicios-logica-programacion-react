@@ -19,8 +19,8 @@ const Ejercicio1 = () => {
 
     /*const URL = `https://api.github.com/users/${username}`*/
 
-    const { dataGithub, setDataGithub, username, setUsername } = useContext(ContextGithub);
-    /* useState con loading para poner el spinner cuando el loading sea true */
+    const { dataGithub, setDataGithub, username, setUsername, 
+        loading, setLoading } = useContext(ContextGithub);
 
     const URL = `https://api.github.com/users/${username}`;
 
@@ -28,9 +28,14 @@ const Ejercicio1 = () => {
     const fetchAPI = () => {
         /* bloque trycatch */
         try{
-            fetch(URL)
-            .then((response) => response.json())
-            .then((data) => setDataGithub(data));
+            setLoading(true);
+            setTimeout(() => {
+                fetch(URL)
+                .then((response) => response.json())
+                .then((data) => setDataGithub(data));
+                setLoading(false);
+            }, 3000);
+
         }catch(err){
             console.log(err);
         }
@@ -53,6 +58,10 @@ const Ejercicio1 = () => {
     }
 
 
+    const toggleLoading = () => {
+        setLoading(!loading);
+    }
+
     return(
     <div>
         <label>Ingrese el usuario para buscar</label>
@@ -62,7 +71,8 @@ const Ejercicio1 = () => {
         </form>
 
         <div>
-            {dataGithub &&
+            {loading && <div>Cargando...</div>}
+            {dataGithub && 
             <ul>
                 <li>{dataGithub.login}</li>
                 <li>{dataGithub.created_at}</li>

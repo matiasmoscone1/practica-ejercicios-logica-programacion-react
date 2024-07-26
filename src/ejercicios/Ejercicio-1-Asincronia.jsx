@@ -29,23 +29,17 @@ const Ejercicio1 = () => {
         /* bloque trycatch */
         try{
             setLoading(true);
-/*            setTimeout(() => {*/
                 const response = await fetch(URL);
                 if(!response.ok){
                     throw new Error("No se pudo cargar los datos...");
                 }
                 const data = await response.json();
                 setDataGithub(data);
-                /*
-                fetch(URL)
-                .then((response) => response.json())
-                .then((data) => setDataGithub(data));*/
                 setLoading(false);
-            /*}, 3000);*/
         }catch(err){
             setError(err.message);
             setLoading(false);
-            console.error(err);
+            console.log(error);
         }
 
     }
@@ -63,6 +57,9 @@ const Ejercicio1 = () => {
         e.preventDefault();
         fetchAPI();
         setUsername("");
+        if(!loading){
+            setError("");
+        }
     }
 
 
